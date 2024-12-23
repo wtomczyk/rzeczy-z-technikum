@@ -1,0 +1,7 @@
+C:\Users\Tomczyk Wojciech\source\repos\PortScannerConsole\PortScannerConsole\bin\Debug\PortScannerConsole.exe.config
+C:\Users\Tomczyk Wojciech\source\repos\PortScannerConsole\PortScannerConsole\bin\Debug\PortScannerConsole.exe
+C:\Users\Tomczyk Wojciech\source\repos\PortScannerConsole\PortScannerConsole\bin\Debug\PortScannerConsole.pdb
+C:\Users\Tomczyk Wojciech\source\repos\PortScannerConsole\PortScannerConsole\obj\Debug\PortScannerConsole.csprojAssemblyReference.cache
+C:\Users\Tomczyk Wojciech\source\repos\PortScannerConsole\PortScannerConsole\obj\Debug\PortScannerConsole.csproj.CoreCompileInputs.cache
+C:\Users\Tomczyk Wojciech\source\repos\PortScannerConsole\PortScannerConsole\obj\Debug\PortScannerConsole.exe
+C:\Users\Tomczyk Wojciech\source\repos\PortScannerConsole\PortScannerConsole\obj\Debug\PortScannerConsole.pdb

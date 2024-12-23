@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="libs/jquery331.js"></script></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="libs/three/three_ver97.js"></script>
+    <script src="js/Main.js"></script>
+    <script src="js/Net.js"></script>
+    <script src="js/Cannon.js"></script>
+    <script src="js/Ball.js"></script>
+    <title>Document</title>
+    <script>
+    var main
+    var client
+    var net
+    $(document).ready(function () {
+        client = io()
+        net = new Net()
+
+        //połączenie
+		client.on("onconnect", function (data) {
+			$("#root").remove()
+			var div = $("<div>")
+			div.attr("id","root")
+			$("body").append(div)
+			
+            if(data.players == 1) main = new Main(data.players, false)
+            else if(data.first == client.id) main = new Main(data.players - 1, true)
+			else main = new Main(data.players, true)
+		})
+    })
+    </script>
+</head>
+<body>
+    <input type="submit" value="STRZAŁ" id="strzał" />
+    <div id="root"></div>
+</body>
+</html>

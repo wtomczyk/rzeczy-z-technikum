@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>zadanie</title>
+		<meta name="author" content="Wojciech Tomczyk">
+		<meta charset="UTF-8">
+		<style>
+		#calosc
+		{
+		width:960px;
+		margin:0 auto;
+		border:2px solid black;
+		border-radius:5px;
+		background-color:rgb(254, 206, 168);
+		position:relative;
+		}
+		header
+		{
+		text-align:center;
+		letter-spacing:10px;
+		width:100%;
+		border-bottom:none;
+		}
+		#pierwszy
+		{
+		width:100%;
+		}
+		#spoda
+		{
+		position:absolute;
+		width:300px;
+		height:100px;
+		left:40px;
+		top:80px;
+		z-index:1;
+		}
+		#drugi
+		{
+		width:100%;
+		}
+		#spodb
+		{
+		position:absolute;
+		width:300px;
+		height:100px;
+		left:40px;
+		top:300px;
+		z-index:1;
+		}
+		footer
+		{
+		position:absolute;
+		width:400px;
+		line-height:50px;
+		height:50px;
+		background-color:rgb(255, 132, 124);
+		right:50px;
+		border:2px solid black;
+		border-radius:0 0 5px 5px;
+		text-align:center;
+		color:white;
+		}
+		figure
+		{
+		position:relative;
+		}
+		figcaption
+		{
+		position:absolute;
+		width:400px;
+		height:150px;
+		background-color:gray;
+		right:100px;
+		}
+		.z
+		{
+		bottom:60px;
+		}
+		.y
+		{
+		top:20px;
+		}
+		figure:hover img
+		{
+		opacity:1;
+		}
+		#spoda
+		{
+		z-index:0;
+		}
+		#spodb
+		{
+		z-index:0;
+		}
+		figure
+		{
+		z-index:5;
+		}
+		figure:hover img
+		{
+		opacity:0
+		}
+		</style>
+	</head>
+	<body>
+		<div id="calosc">
+			<header>
+			<h1>Sprawdzien wiadomości pozycjonowanie</h1>
+			</header>
+			<div id="pierwszy">
+				<figure>
+					<img src="rys1.jpg" alt="a">
+					<figcaption class="y">
+					<p class="a">Uwaga!</p>
+					<p class="b">Opis po najechaniu myszką na obrazek albo tutaj</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div id="spoda">
+				<img src="rys2.jpg" alt="a">
+			</div>
+			<div id="drugi">
+				<figure>
+					<img src="rys2.jpg" alt="a">
+					<figcaption class="z">
+						<p class="a">Uwaga!</p>
+						<p class="b">Opis po najechaniu myszką na obrazek albo tutaj</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div id="spodb">
+			<img src="rys1.jpg" alt="a">
+				</div>
+			<footer>
+				Strona utworzona przez Wojciecha Tomczyka
+			</footer>
+		</div>	
+	</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="author" content="Dawid Sroka" />
+	<title> Sprawdzian </title>
+		<style>
+		*
+		{
+			padding: 0;
+			margin: 0;
+		}
+		#poj
+		{
+			margin: 0 auto;
+			background: rgb(99, 182, 95);
+			width: 960px;
+			padding: 30px;
+			font-family: Calibri;
+			position: relative;
+			border: 2px solid black;
+			margin-top: 60px;
+		}
+		a
+		{
+			position: absolute;
+			background: rgb(99, 182, 95);
+			border: 2px solid black;
+			width: 100px;
+			left: -2px;
+			top: -50px;
+		}
+		h2
+		{
+			padding-top: 30px;
+			padding-bottom: 20px;
+		}
+		form
+		{
+			position: relative;
+			width: 630px;
+			margin: 0 auto;
+			background: rgb(216, 139, 103);
+			border: 2px solid black;
+			border-radius: 10px;
+			padding: 30px 3px 20px 3px;
+		}
+		label
+		{
+			display:block;
+			position: relative;
+			width: 160px;
+			margin: 0 0 10px 10px;
+		}
+		input, textarea
+		{
+			width: 200px;
+			position: absolute;
+			left: 380px;
+			border: 1.5px solid black;
+			border-radius: 5px;
+		}
+		select
+		{
+			width: 110px;
+			position: absolute;
+			left: 30px;
+			border: 1px solid black;
+		}
+		textarea
+		{
+			top: 5px;
+			width: 205px;
+			height: 45px;
+		}
+		input[required]
+		{
+			background: rgb(183, 94, 96);
+		}
+		p
+		{
+			margin-bottom: 20px;
+		}
+		fieldset
+		{
+			border: 1px solid black;
+			padding: 10px 0 10px 0;
+		}
+		legend
+		{
+			margin-left: 10px;
+		}
+		input[type="submit"]
+		{
+			position: static;
+			background: rgb(183, 94, 96);
+			color: white;
+			width: 90px;
+			margin: 20px 0 0 5px;
+		}
+		.dane
+		{
+			padding-bottom: 30px;
+		}
+		footer
+		{
+			background: rgb(183, 94, 96);
+			border: 2px solid black;
+			border-top: none;
+			border-radius: 0 0 5px 5px;
+			color: white;
+			width: 300px;
+			text-align: center;
+			margin-left: 400px;
+		}
+		</style>
+</head>
+<body>
+	<div id="poj">
+	<a> Kontakt </a>
+	<form>
+		<h1> CHCESZ U NAS PRACOWAĆ </h1>
+		<h2> FORMULARZ ZGŁOSZENIOWY </h2>
+		<p> <i> Proszę wypełnić formularz. Obowiązakowe pola oznaczono kolorem. </i> </p>
+		<fieldset>
+			<legend> DANE KONTAKTOWE </legend>
+			<label>
+				Imię  <input type="text" name="Imię" required /> 
+			</label>
+			<label>
+				Nazwisko  <input type="text" name="Nazwisko" required /> 
+			</label>
+			<label style="margin-bottom: 14px;">
+				Nr telefonu  <input type="tel" name="telefon" required /> 
+			</label>
+			<label>
+				Płeć 
+				<select name="płeć">
+					<option> Kobieta </option>
+					<option> Mężczyzna </option>
+				</select>
+			</label>
+		</fieldset>
+		<fieldset class="dane">
+			<legend> DANE ZGŁOSZENIOWE </legend>
+			<label>
+				CV <input type="file" value="Wyślij plik" name="Plik" required/>
+			</label>
+			<label>
+				Dodatkowe informacje <textarea name="opis"></textarea>
+			</label>
+		</fieldset>
+		<input type="submit" value="WYŚLIJ" name="Wyślij" />
+	</form>
+	<footer>
+		<p> Strona wykonana przez <b> Dawid Sroka </b> </p>
+	</footer>
+	</div>
+</body>
+</html>

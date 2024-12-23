@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="libs/jquery331.js"></script>
+    <script>
+    //wykrycie faktu załadowania strony html z jquery
+    $(document).ready(function (){
+    console.log("dokument załadowany")
+    //aaaa
+    $("#a").on("click", function(){
+    alert("komunikat")
+    console.log("klik")
+
+    })
+    //aaaa
+    $("#b").on("click", function(){
+        var czy = confirm("chcesz czy nie")
+        console.log(czy)
+        if(czy)
+
+        {
+            console.log("ok")
+        }else{
+            console.log("nie ok")
+        }
+    })
+    $("#c").on("click", function(){
+        prompt()
+    })
+    $("#e").on("click", function(){
+        $("#a").off("click")
+        $("#b").off("click")
+        $("#c").off("click")
+    })
+    $("#f").on("click", function(){
+        $("#f").css("color", "#0000ff")
+        .css("font-size",16)
+        .width(500)
+        .html("tekst")
+    })
+    })
+    </script>
+    <style>
+    #a, #b, #c{
+        background-color: red;
+        color: white;
+        width:60px;
+        height:30px;
+    }
+    
+    </style>
+</head>
+<body>
+    <button id="a">alert</button>
+    <button id="b">confirm</button>
+    <button id="c">prompt</button>
+    <button id="e">anuluj działanie 3 pierwszych buttonów</button>
+    <button id="f">zmień htmla w 5 buttonie</button>
+</body>
+</html>

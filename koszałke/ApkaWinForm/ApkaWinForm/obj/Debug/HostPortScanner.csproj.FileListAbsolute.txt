@@ -1,0 +1,10 @@
+C:\Users\Piwowarski Michał\Desktop\VS2k17 projekty\ApkaWinForm\ApkaWinForm\bin\Debug\ApkaWinForm.exe.config
+C:\Users\Piwowarski Michał\Desktop\VS2k17 projekty\ApkaWinForm\ApkaWinForm\bin\Debug\ApkaWinForm.exe
+C:\Users\Piwowarski Michał\Desktop\VS2k17 projekty\ApkaWinForm\ApkaWinForm\bin\Debug\ApkaWinForm.pdb
+C:\Users\Piwowarski Michał\Desktop\VS2k17 projekty\ApkaWinForm\ApkaWinForm\obj\Debug\HostPortScanner.csprojAssemblyReference.cache
+C:\Users\Piwowarski Michał\Desktop\VS2k17 projekty\ApkaWinForm\ApkaWinForm\obj\Debug\ApkaWinForm.mainWindow.resources
+C:\Users\Piwowarski Michał\Desktop\VS2k17 projekty\ApkaWinForm\ApkaWinForm\obj\Debug\ApkaWinForm.Properties.Resources.resources
+C:\Users\Piwowarski Michał\Desktop\VS2k17 projekty\ApkaWinForm\ApkaWinForm\obj\Debug\HostPortScanner.csproj.GenerateResource.cache
+C:\Users\Piwowarski Michał\Desktop\VS2k17 projekty\ApkaWinForm\ApkaWinForm\obj\Debug\HostPortScanner.csproj.CoreCompileInputs.cache
+C:\Users\Piwowarski Michał\Desktop\VS2k17 projekty\ApkaWinForm\ApkaWinForm\obj\Debug\ApkaWinForm.exe
+C:\Users\Piwowarski Michał\Desktop\VS2k17 projekty\ApkaWinForm\ApkaWinForm\obj\Debug\ApkaWinForm.pdb

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>formularz</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        form {
+            background: cyan;
+            width: 400px;
+            height: 225px;
+            padding-top:20px;
+            text-align: center;
+        }
+        label {
+            width: 60px;
+            display: inline-block;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+        fieldset {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        a {
+            display: block;
+            width:100px;
+            text-align: center;
+            border:2px solid black;
+            color:black;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 3px auto;
+        }
+        a:hover {
+            transform: scale(1.1)
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/addUser" method="POST">
+        <fieldset>
+            <legend>Zapisz się na newsletter</legend>
+            <label>Email:</label>
+            <input type="email" name="email" id="" required>
+            <br>
+            <label>Nick:</label>
+            <input type="text" name="nick" id="">
+            <br>
+            <input type="submit" value="Wyslij">
+        </fieldset>
+        <a href="/removeUser1">removeUser1</a>
+        <a href="/removeUser2">removeUser2</a>
+        <a href="/list">lista adresów</a>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <title>Document</title>
+    <style>
+    .klasa{
+        color: red
+    }
+    </style>
+</head>
+<body>
+    <div id="react-app">
+
+    </div>
+    <script type="text/babel">
+        class MyForm extends React.Component {
+
+            constructor(props) {
+                super(props);
+                this.state = {
+                    data: '',
+                    wyslane: "nie wyslane",
+                    informacyjka:""
+                };
+
+                this.handleChange = this.handleChange.bind(this);
+                this.handleSubmit = this.handleSubmit.bind(this);
+            }
+
+            // funkcja wykonywana na bieżąco przy wpisywaniu danych (lub strzałkowa, bez bind-a)
+
+            handleChange(event) {
+                this.setState({ data: event.target.value, wyslane:"nie wyslane" });
+            }
+
+            //funkcja wykonywana przy wysłaniu formularza (lub strzałkowa, bez bind-a)
+
+            handleSubmit(event) {
+                console.log(this.state.data)
+                this.setState({
+                    data: "",
+                    informacyjka:this.state.data,
+                    wyslane:"wyslane"
+                })
+                //blokada przed wysłaniem formularza
+                event.preventDefault();
+                
+            }
+
+            render() {
+                return (
+                    <form onSubmit={this.handleSubmit} >
+                        <input type="text" value={this.state.data} onChange={this.handleChange} />
+                        <input type="submit" value="send" /><br />
+                        <a id="data">data: {this.state.informacyjka}</a> <br />
+                        <a id="zmiana">status: {this.state.wyslane}</a>
+                    </form>
+                );
+            }
+        }
+        ReactDOM.render(
+            <MyForm />,
+            document.getElementById('react-app')
+        );
+    </script>
+</body>
+</html>

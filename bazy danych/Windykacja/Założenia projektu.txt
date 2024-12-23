@@ -1,0 +1,106 @@
+Troche informacji na temat bazy danych, ¿eby siê w tym wszystkim po³apaæ itd.
+
+1.Logowanie
+	- na konto admninistratora:
+		L: admin
+		H: admin
+	- pracownik:
+		L: q
+		H: q
+	lub inne, które mo¿na znaleŸæ w tabeli "Has³a"
+
+
+2. Œrodowisko pracy
+	Baza danych powsta³a w Microsoft Access 2002 (taki sam jak w szkole)
+	Referencje w u¿yte w œrodowisku VB:
+		- Visual Basic For Applications 
+		- Microsoft Access 10.0 Object Library
+		- OLE Automation
+		- Microsoft ActiveX Data Objects 2.1 Library
+		- Microsoft ActiveX Data Objects (Multi-dimensional) 2.8 Library
+		- Microsoft ADO Ext. 2.8 for DLL and Security
+		- Microsoft DAO 3.6 Object Library
+		- Microsoft Calendar Control 10.0
+	Ostatni dodatek jest wymagany przez umieszczony w projekcie kalendarz (tj Formant Kalendarz Microsoft Access, wersja 10.0)
+
+3. Organizacja danych
+	- Ca³oœæ podzielona jest na dwie sekcje - z której do jednej dostêp ma tylko pracownik nale¿¹cy do dzia³u "Administratorzy"
+	- Zwyk³y pracownik ma dostep do aplikacji g³ównej sk¹d mo¿e zarz¹dzaæ sprawami
+	- Weryfikacja uprawnieñ dokonuje siê podczas logowania do programu (albo pracownik nale¿y do grupy "Administratorzy", albo nie)
+	- Ka¿dy pracownik ma swój w³asny login i has³o (tabela "Has³a")
+	- Data i godzina logowania do programu zostaj¹ zapisane gdy u¿ytkownik wprowadzi prawid³owy login i has³o (w przeciwnym wypadku dodawany jest wpis do tabeli "BledneLogowania")
+	- Data i godzina wylogowania z programu zostaj¹ zapisane gdy u¿ytkownik zamknie panel prze³¹czania
+	- Czas logowañ jest przedstawiony w tabeli "Logowania" - dostêp tylko administrator, jednak nie mo¿e edytowaæ, to samo z nieudanymi próbami logowania
+	- Aplikacja g³ówna:
+		- aby przegl¹daæ sprawy nale¿y wpisaæ kryteria wyszukiwania i przejœæ dalej b¹dŸ nacisn¹æ klawisz "Szukaj"
+		- wyszukani zostan¹ tylko d³u¿nicy którzy posiadaj¹ jakieœ sprawy
+		- po wyszukaniu wyniki uka¿¹ siê w liœcie poni¿ej, nalezy dwukrotnie klikn¹æ w jedn¹ z pozycji by zacz¹æ j¹ przegl¹daæ
+		- na cele spraw przewidzianych zosta³o 5 zak³adek, ich tytu³ami s¹ numery spraw
+		- gdy otwieramy jedn¹ sprawê w zak³adkach ukazuja siê równie¿ inne sprawy tego samego d³u¿nika, przy czym je¿eli d³u¿nik posiada wiecej ni¿ 5 spraw zostanie wyœwietlona wybrana sprawa i cztery inne o najni¿szych numerach
+		- na ka¿dej z zak³adek przedstawione s¹ dane dotycz¹ce sprawy i d³u¿nika
+		- u¿ytkownik programu w ³atwy sposób mo¿e edytowaæ wiêkszoœc danych, klikaj¹c odpowiednie przyciski, b¹dŸ w przypadku adresów i zad³u¿enia bezpoœrednio w liste
+		- nie wszystkie dane mog¹ zostaæ edytowane (przynajmniej nie przez administratora) - ze wzgledów oczywistych 
+		- zad³u¿enie to ró¿nica tego co Pozostalo do sp³acenia i tego co zosta³o sp³acone - odsetki liczone s¹ osobno
+		- odsetki ustawowe (roczne 13%) liczone s¹ od kwoty zad³u¿enia od terminu p³atnoœci
+		- odsetki nie wliczaj¹ siê do sekcji pozosta³e, traktujemy je osobno
+		- zad³u¿enie dzieli siê na sprawê g³ówn¹, notê odsetkow¹ oraz koszty komornika
+		- "Kupiono za" to kwota, za któr¹ firma windykacyjna kupuje sprawê od cedenta, nastêpnie egzekwuj¹c ca³¹ kwote d³ugu od d³u¿nika
+		- ka¿demu d³uznikowi przypisane s¹ 3 rodzaje adresów: korespondencyjny, dzia³alnoœci (wymagane do okreœlenia) oraz zamieszkania
+		- ka¿dy d³u¿nik mo¿e mieæ przypisane dwa numery telefonów - stacjonarnego lub komórkowego - tak samo jak pracownik
+		- cedent to osoba która zleca egzekucjê d³ugu, sprzedaj¹c go za znacznie ni¿sz¹ kwotê (w przypadkach w których zwyk³y komornik sobie nie radzi)
+		- data wystawienia to data dodania sprawy do bazy danych 
+		- notatki do sprawy - mo¿na je dodawaæ lecz nie mo¿na ich potem edytowaæ, dziêki temu tworzony jest przegl¹d przebiegu sprawy
+		- terminarz pozwala na usprawnienie pracy, poprzez ustalnie zadañ na konkretny dzieñ - dobry wynalazek, bardzo sie przyda³ podczas tworzenia bazy
+		- zadanie mo¿na dodaæ klikaj¹c w "Terminarz" u góry aplikacji
+		- domyœlnie zadania wyœwietlane s¹ na dzieñ bie¿¹cy, mo¿na to zmieniæ wybieraj¹c datê z kalendarza w lewym górnym rogu
+		- zadania usuwane s¹ z bazy gdy mija 3 dzieñ po terminie zadania
+		- dane, które nie zmieœci³y sie na formularzu s¹ ujrzymy po klikniêciu napisu "Szczegó³y"
+		- etykieta "Drukuj" obok "Szczegó³ów" s³u¿y do drukowania informacji o sprawie na bie¿¹cej zak³adce
+		- informacje o Cedencie i Komorniku przypisanymi do sprawy mozna przegl¹caæ bez mo¿liwoœci edycji (przyciski "Wiêcej")
+		- adres d³u¿nika mo¿e byæ edytowany poprzez bezpœrednie klikniecie w listê badŸ tez poprzez przyscisk "Edytuj" obok - edytowany zostanie zaznaczony adres
+		- podczas edycji adres mo¿na wydrukowaæ lub poogladaæ sobie Raport
+		- edycja zad³u¿enia odbywa siê w podobny sposób  - mo¿emy wype³niæ tylko pierwsze trzy kolumny, pozosta³e bed¹ automatycznie uzupe³niane
+		- Przycisk "Nowa Sprawa":
+			- aby dodaæ sprawê nale¿y wype³niæ wszystkie pola z sekcji "Wymagane"
+			- "IDSprawy" nadawane jest automatycznie, jest to nastêpny wolny  numer
+			- identyfikuj¹c d³u¿nika mo¿emy wybraæ go z listy badŸ podaæ jego ID je¿eli takie znamy
+			- sprawa zostaje przypisana aktualnie zalogowanemu pracownikowi
+			- jako data wystawienia przypisana zostaje bie¿¹ca data 
+			- mo¿emy równie¿ dodaæ nowego d³uznika z poziomu tego samego formularza klikaj¹c "Nowy d³u¿nik"
+			- dopóki nie wype³nimy terminu p³atnoœci nie mo¿emy edytowaæ zad³u¿enia, poniewa¿ odsetki naliczane s¹ od tej daty
+			- wybieranie komornika jest wygodniejsze w przypadku drugiej opcji - mamy lepszy przegl¹d, wystarczy dwukrotnie klikn¹c w odpowiedniego komornika, badŸ zaznaczyæ go i klikn¹æ przycisk "Wybierz"
+			- z poziomu formularza mozna dodaæ równie¿ nowego cedenta - po dodaniu bêdzie figurowa³ ju¿ na liœcie 
+		- dodawanie nowych d³u¿ników polega tylko na wype³nieniu wymaganych pól, przy czym nale¿y pamiêtaæ ze na pocz¹tku d³u¿nik nie bêdzie mia³ ¿adnej sprawy i nie bêdzie go mozna wyszukaæ na w wyszukiwarce
+		- istnieje równie¿ mo¿liwoœæ dodania cedenta - przyscisk "Nowy Cedent"
+		- klikaj¹c przycisk "Komornicy" mozna przegl¹daæ wszystkich komorników bez mo¿liwoœci edycji
+		- tabela "Komornicy" by³a improtowana z Excela, wiec ma trochê inn¹ strukturê od innych (chodzi o adres)
+		- przycisk "Druki" otwiera panel drukowania, który mo¿e s³u¿yæ rownie¿ do przegl¹dania danych (d³u¿nicy, cedenci, komornicy), mo¿na podaæ tylko jedno kryterium 
+		- na dole aplikacji g³ownej zosta³y umieszczone informacje bezpoœrednio zwi¹zane z logowaniem oraz bie¿¹c¹ dat¹
+		- przycisk "Wyjœcie" przenosi nas z powrotem do Panelu Prze³¹czania
+	- Administracja:
+		- dostêp tylko dla cz³onków grupy "Administratorzy"
+		- zarz¹dzanie pracownikami - dodawanie, edytowanie danych (w postaci edytowalnej tabeli)
+		- nadzór nad procesem logowania - oczywista(?) funkcja admina
+		- jednak nawet wszechmocny admin nie mo¿e edytowaæ dat i godzin logowañ
+		- zarz¹dzanie tabelami, którymi nie powinien zarz¹dzaæ normalny u¿ytkownik - mo¿e zaistniec potrzeba ich edycji
+		- je¿eli to coœ nam da to mo¿emy ustawiæ autonumerowanie z tabeli w której ono wystêpuje na wartoœæ nastêpn¹ po ostatniej, sytuacjê w której zajdzie taka potrzeba w zasadzie mo¿e wywo³aæ tylko sam admin usuwaj¹c jakiœ rekord
+		- do tego wszystkiego mo¿liwoœæ szybkiego wydrukowania interesuj¹cych nas danych 
+	- w razie gdyby szanowny admin chcia³ szybko dostaæ swoje uprawnienia istnieje mo¿liwoœæ przelogowania bez wy³¹czania bazy danych
+	- do wiêkszosci przycisków zosta³y przypisane skróty z alt-em
+	- na wiêkszoœci formularzy indeksy kolejnoœci dostêpu zosta³y rozdysponowane w sposób jak najepszy dla operatora 
+
+4. W³asne przemyœlenia 
+	Algorytm wyszukiwania -  masakra
+	Sam program jest prawie w ca³oœci oparty na recordsetach, przez co modyfikacja przez osobê niezaznajomion¹ z projektem mo¿e siê okazaæ nieop³acalna albo wrêcz totalnie niemo¿liwa - lepiej napisaæ od nowa. 
+	Projekt zawiera 2 modu³y. Powinien przynajmniej z 10 - du¿o kodu jest identyczne. Z powodu pocz¹tkowych trudnoœci z przekazywaniem danych do modu³ów póŸniej ju¿ nie próbowa³em.	
+	Niektore formularze (w³aœciwie wiêkszoœæ) nie bed¹ dzia³aæ prawid³owo je¿eli nie uruchomi siê ich z poziomu formularza g³ównego. Jednak to nie powinno stanowiæ problemu, gdy¿ w przypadku normalnego u¿ytkowania sytuacja taka nie jest mo¿liwa.
+	Równie¿ je¿eli bêdziemy siê prze³¹czaæ pomiêdzy widokami projektu i arkusza danych w formularzu main (co normalnie by³oby niewykonalne - ale napewno bêdzie to konieczne) mo¿liwe b³êdy (poprostu nie bedzie akcji po wyszukiwaniu).
+	Nijak nie da siê ³adnie pouk³adac relacji wiec s¹ jakie s¹.
+	Notatki i terminarz trzeba osobiœcie przetestowaæ i wszystko bêdzie jasne.
+	Kwerendy zawarte w projekcie (poza tymi w kodzie) w wiêkszoœci mo¿naby usun¹æ bo nic nie robi¹. Tylko teraz ju¿ nie wiem które to, wiêc lepiej nie.
+	Radzi³bym testowaæ baze danych bed¹c zalogowanym - gdy w³¹czamy baze danych z mozliwoœci¹ projektowania odrazu w³¹czyæ "Panel prze³¹czania" albo lepiej frm "Zabezpieczenie" - na nich w du¿ej czêœci opieraja siê inne formularze	
+
+	Chcia³em podkreœliæ ¿e robi³em jak umia³em. 
+	Poza tym mi by siê nie chcia³o tego czytaæ:)
+
+Mi³ego testowania :]

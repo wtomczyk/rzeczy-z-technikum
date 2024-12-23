@@ -1,0 +1,123 @@
+body{
+    min-height: 500px;
+    min-width:1000px !important;
+   
+}
+/*
+@font-face
+{
+    font-family: "PressStart2P";
+    src: url("fonts/orange juice 2.0.ttf")
+}
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+}
+
+
+#lewy{
+    width:140px;
+    height:100vh;
+    background-color: cyan;
+    position:absolute;
+    z-index: 2;
+    padding-bottom: 100px;
+    overflow: auto;
+}
+#prawy{
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: 100px;
+    padding-left: 140px;
+    background-color: gray;
+    text-align: center;
+    overflow: auto;
+    position: relative;
+    line-height: 30px
+}
+#dół{
+    clear: both;
+    width: 100vw;
+    height: 150px;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+}
+#lewy div{
+    width:100px;
+    height:100px;
+    float:right;
+}
+img{
+    width:100px;
+    height:100px;
+}
+#dół div img{
+    display: inline-block;
+    
+}
+#dół div{
+    margin:0 auto
+}
+#prawy div{
+    height:60px;
+    width: 100%;
+    position: relative;
+}
+table{
+    width: 80vw;
+}
+td{
+    width:33%;
+    text-align: center;
+}
+#prawy div div{
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    float:right;
+    z-index: 4;
+    position: absolute;
+    right:20px;
+    top:20px;
+    display: none
+}
+#czytajczas{
+    width:50px;
+    height:60px;
+    background-color: white;
+    z-index: 6;
+    margin:0 auto;
+    position: absolute;
+    top:45px;
+    right:45px
+}
+#czytajczas img{
+    width:30px;
+    height: 60px;
+    z-index: 7;
+}
+#pasekpojemnik{
+    width:300px;
+    height:20px;
+    background-color:white;
+    border:1px solid black;
+}
+#pasekprogres{
+    height:20px;
+    width:0;
+    background-color:black;
+    float: left;
+}
+#pojemniknaprzyciski{
+    padding-top:10px;
+    width: 300px
+}
+#przyciskkolejny{
+    background-color: red;
+}

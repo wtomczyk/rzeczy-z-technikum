@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Ćwiczenia</title>
+<style>
+strong{
+color:white;
+}
+td {
+min-height: 40px;
+min-width: 40px;
+line-height: 40px;
+font-size: 20px;
+text-align: center;
+border: 3px solid black;
+}
+.a
+{
+background-color:blue;
+color:white;
+}
+.b {
+background-color:yellow;
+color: black;
+}
+
+</style>
+</head>
+<body>
+<script>
+document.write("<h1>Witaj w JavaScript</h1>")
+for (i = 100; i >= -100; i--) {
+    document.write("<p>"+i+"</p>")
+}  
+</script>
+<script>
+    for (var i = 50; i > 0;)  { 
+    document.writeln(i);
+    i=i-3;
+}
+    </script> 
+    <br>
+<script>
+    for (var i = 50; i >= 10;)  { 
+    document.writeln(i);
+    i=i-1;
+}
+    </script> 
+    <br>
+    <script>
+    for (var i = 39; i >= 21;)  { 
+    document.writeln(i);
+    i=i-1;
+}
+    </script>  
+    <br>
+   
+<script>
+/*
+rzeczy do konsoli
+
+for (var i = 39; i >= -20; i--)  { if(i%2==0)
+    console.log(i)}
+
+for (var i = 11; i >= -4; i--)  { if(i%2==0)
+    console.log(i)}
+
+for (var i = 39; i >= -10; i--)  { if(i%2==1||i%2==-1)
+ console.log(i)}	
+for (var i = 11; i >= 3; i--)  { if(i%2==1||i%2==-1)
+   console.log(i)}
+	
+for (var i = 39; i >= -100; i--)  { if(i%3==0)
+   console.log(i)}
+	
+for (var i = 11; i >= -49; i--)  { if(i%3==0)
+    console.log(i)}
+*/
+</script>	
+
+<script>
+var wartosc = prompt("podaj wartosc zadanie 1a");
+for (var i = wartosc; i>0;) {
+document.write("X");
+i=i-1;
+}
+document.write("<br />");
+</script>
+<br>
+<script>
+var wartosc = prompt("podaj wartosc zadanie 1b");
+for (var i = wartosc; i>0;) {
+document.write("X ");
+i=i-1;
+console.log("a");
+}
+for (var a = wartosc-2; a>0; a--){
+	document.write("<br />");
+	document.write("X ");
+		for (var b = wartosc-2; b>0; b--){
+		document.write("<strong>Y </strong>");
+		}
+	document.write("X");
+}
+	document.write("<br />");
+for (var i = wartosc; i>0;) {
+document.write("X ");
+i=i-1;
+console.log("a");
+}
+document.write("<br />");
+document.write("<br />");
+</script>
+<script>
+var wartosc = prompt("podaj wartosc zadanie 1c");
+i = wartosc*2 -1;
+a=(i-1)/2;
+b=1;
+for (var x = wartosc; x>0; x--){
+	for (var c = a ; c>0; c--){
+		document.write("<strong>Y</strong>");
+	}
+	for (var d=b; d>0; d--){
+		document.write("X");
+	}
+	for (var c = a ; c>0; c--){
+		document.write("<strong>Y</strong>");
+	}
+	a=a-1;
+	b=b+2;
+	document.write("<br />");
+}
+</script>
+<script>
+var wartosc = prompt("podaj wartosc zadanie 1d");
+i = wartosc-1;
+a=1;
+for (var x = wartosc; x>0; x--){
+	for(var c=a; c>0; c--){
+	document.write(c);
+	}
+	for(var b=i; b>0; b--){
+	document.write("<strong>1</strong>");
+	}
+	i=i-1;
+	a=a+1;
+	document.write("<br />");
+}
+document.write("<br />");
+</script>
+<script>
+var wartosc = prompt("podaj wartosc zadanie 1e");
+i = wartosc-1;
+a=1;
+for (var x = wartosc; x>0; x--){
+	for(var b=i; b>0; b--){
+	document.write("<strong>1</strong>");
+	}
+	for(var c=a; c>0; c--){
+	document.write(c);
+	}
+	i=i-1;
+	a=a+1;
+	document.write("<br />");
+}
+</script>
+<script>
+document.write("<br />");
+var wartosc = prompt("podaj wartosc zadanie 1f");
+a=wartosc;
+b=wartosc-1;
+for (var x = wartosc-1; x>0; x--){
+a=a*b;
+b=b-1;
+}
+document.write(a);
+document.write("<br />");
+</script>
+<script>
+var wartosc = prompt("podaj wartosc zadanie 1h");
+var a = 0;
+var b = 0;
+while (a<=wartosc){
+	if(a%2==1){
+	b=b+a;
+	}
+	a=a+1;
+}
+document.write(b);
+document.write("<br />");
+</script>
+<script>
+var wartosc = prompt("podaj wartosc zadanie 1i");
+var a=1;
+var b=0;
+while (a<=wartosc){
+	if(wartosc%a==0){
+	b=b+1;
+	}
+	a=a+1;
+}
+if(b==2){
+document.write("liczba pierwsza");
+}else{
+document.write("liczba złożona");
+}
+
+</script>
+<script>
+var wartosc = prompt("podaj wartosc zadanie 1j");
+if (wartosc>0) {
+document.write("<table>")
+for (var c=0; c<=wartosc;) {
+document.write("<tr>")
+for (var d=0; d<=wartosc;) {
+if (c==0 && d==0) {
+document.write("<td>")
+document.write(" ")
+document.write("</td>")
+} else if (c==0) {
+document.write("<td class=\"a\">")
+document.write(d)
+document.write("</td>")
+} else if (d==0) {
+document.write("<td class=\"a\">")
+document.write(c)
+document.write("</td>")
+} else if (c==d) {
+document.write("<td class=\"b\" style=\"background-color: white;\">")
+document.write(c*d)
+document.write("</td>")
+} else {
+document.write("<td class=\"b\">")
+document.write(c*d)
+document.write("</td>")
+}
+d=d+1;
+}
+document.write("</tr>")
+c=c+1;
+}
+document.write("</table>")
+} else {
+document.write("podaj wartosc dodatnia")
+}
+</script>
+</body>
+</html>

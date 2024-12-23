@@ -1,0 +1,331 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+function send(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "ajax.php", true);
+        var ikona=document.getElementById("ikona").value;
+        var nominal=document.getElementById("nominal").value;
+        var kategoria=document.getElementById("kategoria").value;
+        var stop=document.getElementById("stop").value;
+        var rok=document.getElementById("rok").value;
+        xhttp.onreadystatechange = function() {
+                //console.log(this.readyState);
+        if (this.readyState == 4 && this.status == 200) {
+                        gett();
+                 }   
+        };
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("f=add&ikona="+encodeURIComponent(ikona)+"&nominal="+encodeURIComponent(nominal)+"&kategoria="+encodeURIComponent(kategoria)+"&stop="+encodeURIComponent(stop)+"&rok="+encodeURIComponent(rok)); 
+}
+function update(info,ob){
+        var id = info.split("_")
+        id = id[1]
+        document.getElementById("out").innerHTML = "";
+                var pudlo1=document.createElement("div");  
+                pudlo1.className="pudlo"  
+                var pudlo2=document.createElement("div");  
+                pudlo2.className="pudlo"
+                pudlo2.innerHTML="nominal"
+                var pudlo3=document.createElement("div");  
+                pudlo3.className="pudlo"
+                pudlo3.innerHTML="nr kat."
+                var pudlo4=document.createElement("div");  
+                pudlo4.className="pudlo"
+                pudlo4.innerHTML="stop"
+                var pudlo5=document.createElement("div");  
+                pudlo5.className="pudlo"
+                pudlo5.innerHTML="rok"
+                var pudlo6=document.createElement("div");  
+                pudlo6.className="pudlo"
+                pudlo6.innerHTML="captcha"
+                var pudlo7=document.createElement("div");  
+                pudlo7.className="pudlo"
+                document.getElementById("out").append(pudlo1);
+                document.getElementById("out").append(pudlo2);
+                document.getElementById("out").append(pudlo3);
+                document.getElementById("out").append(pudlo4);
+                document.getElementById("out").append(pudlo5);
+                document.getElementById("out").append(pudlo6);
+                document.getElementById("out").append(pudlo7);
+        ob.forEach(function(k,v){
+                var pudlo1=document.createElement("div");  
+                pudlo1.className="pudlo_"+k.id 
+                pudlo1.innerHTML= '<img src="gfx/'+ k.ikona +'">'
+                var pudlo2=document.createElement("div");  
+                pudlo2.className="pudlo_"+k.id 
+                pudlo2.innerHTML=k.nominal
+                var pudlo3=document.createElement("div");  
+                pudlo3.className="pudlo_"+k.id 
+                pudlo3.innerHTML=k.kategoria       
+                var pudlo4=document.createElement("div");  
+                pudlo4.className="pudlo_"+k.id 
+                pudlo4.innerHTML=k.stop
+                var pudlo5=document.createElement("div");  
+                pudlo5.className="pudlo_"+k.id 
+                pudlo5.innerHTML=k.rok
+                if(k.id!=id){
+                        pudlo1.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                        pudlo2.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                        pudlo3.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                        pudlo3.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                        pudlo4.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                        pudlo5.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                }
+                var pudlo6=document.createElement("div");  
+                pudlo6.className="pudlo_"+k.id 
+                var pudlo7=document.createElement("div");  
+                pudlo7.className="pudlo_"+k.id 
+                pudlo7.innerHTML='<img src="gfx/u.gif" onclick=delet(this.parentElement.className)>'
+                document.getElementById("out").append(pudlo1);
+                document.getElementById("out").append(pudlo2);
+                document.getElementById("out").append(pudlo3);
+                document.getElementById("out").append(pudlo4);
+                document.getElementById("out").append(pudlo5);
+                document.getElementById("out").append(pudlo6);
+                document.getElementById("out").append(pudlo7);
+        })
+        var pudlo = document.createElement("p");
+        pudlo.className="dlugiepudlo"
+        pudlo.innerHTML="dodawanie rekordu"
+        document.getElementById("out").append(pudlo);
+        var pudlo1=document.createElement("div"); 
+        pudlo1.className='pudlo'
+        pudlo1.innerHTML='<select id="ikona" class="input"><option value="ALBANIA.JPG">ALBANIA</option><option value="ALGIERIA.JPG">ALGIERIA</option><option value="ANDORA.JPG">ANDORA</option><option value="antyle_hol.jpg">ANTYLE_HOL</option><option value="argentyna.jpg">ARGENTYNA</option><option value="ARMENIA.JPG">ARMENIA</option><option value="ARUBA.JPG">ARUBA</option><option value="australia.jpg">AUSTRALIA</option></select>'
+        var pudlo2=document.createElement("div");  
+        pudlo2.className="pudlo"
+        pudlo2.innerHTML='<input placeholder="nominal" id="nominal" class="input">'
+        var pudlo3=document.createElement("div");  
+        pudlo3.className="pudlo"
+        pudlo3.innerHTML='<input placeholder="kategoria" id="kategoria" class="input">'
+        var pudlo5=document.createElement("div");  
+        pudlo5.className="pudlo"
+        pudlo5.innerHTML='<input placeholder="rok" id="rok" class="input">'
+        var pudlo4=document.createElement("div");  
+        pudlo4.className="pudlo"
+        pudlo4.innerHTML='<select id="stop" class="input"><option value="aluminum">aluminum</option><option value="aluminum-bronze">aluminum-bronze</option><option value="bronze">bronze</option><option value="copper plated zinc">copper plated zinc</option><option value="copper-nickel">copper-nickel</option><option value="gold">gold</option><option value="nickel bonded steel">nickel bonded steel</option><option value="nickel clad steel">nickel clad steel</option><option value="silver">silver</option><option value="stainless steel">stainless steel</option><option value="zinc"></option></select>'
+        var pudlo6=document.createElement("div");  
+        pudlo6.className="pudlo"
+        pudlo6.innerHTML=''
+        var pudlo7=document.createElement("div");  
+        pudlo7.className="pudlo"
+        pudlo7.innerHTML='<button onclick="send()">OK</button>'
+        document.getElementById("out").append(pudlo1);
+        document.getElementById("out").append(pudlo2);
+        document.getElementById("out").append(pudlo3);
+        document.getElementById("out").append(pudlo4);
+        document.getElementById("out").append(pudlo5);
+        document.getElementById("out").append(pudlo6);
+        document.getElementById("out").append(pudlo7);    
+        console.log(info)
+        var lista = document.getElementsByClassName(info)
+        console.log(lista)
+        var a_1 = lista[0].innerHTML
+        a_1 = a_1.split("/")
+        a_1 = a_1[1].slice(0,-2)
+        console.log(a_1)
+        var a_2 = lista[1].innerHTML
+        var a_3 = lista[2].innerHTML
+        var a_4 = lista[3].innerHTML
+        var a_5 = lista[4].innerHTML
+        lista[0].innerHTML='<select id="ikona1" class="input"><option value="ALBANIA.JPG">ALBANIA</option><option value="ALGIERIA.JPG">ALGIERIA</option><option value="ANDORA.JPG">ANDORA</option><option value="antyle_hol.jpg">ANTYLE_HOL</option><option value="argentyna.jpg">ARGENTYNA</option><option value="ARMENIA.JPG">ARMENIA</option><option value="ARUBA.JPG">ARUBA</option><option value="australia.jpg">AUSTRALIA</option></select>'
+        lista[1].innerHTML='<input placeholder="'+a_2+'" id="nominal1" class="input">'
+        lista[2].innerHTML='<input placeholder="'+a_3+'" id="kategoria1" class="input">'
+        lista[3].innerHTML='<select id="stop1" class="input"><option value="aluminum">aluminum</option><option value="aluminum-bronze">aluminum-bronze</option><option value="bronze">bronze</option><option value="copper plated zinc">copper plated zinc</option><option value="copper-nickel">copper-nickel</option><option value="gold">gold</option><option value="nickel bonded steel">nickel bonded steel</option><option value="nickel clad steel">nickel clad steel</option><option value="silver">silver</option><option value="stainless steel">stainless steel</option><option value="zinc"></option></select>'
+        lista[4].innerHTML='<input placeholder="'+a_5+'" id="rok1" class="input">'
+        lista[6].innerHTML=""
+        lista[6].addEventListener("click", function(){
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("POST", "ajax.php", true);
+                xhttp.onreadystatechange = function() {
+                        //console.log(this.readyState);
+                if (this.readyState == 4 && this.status == 200) {
+                                gett();
+                        }   
+                };
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("f=update&ikona="+encodeURIComponent(ikona1.value)+"&nominal="+encodeURIComponent(nominal1.value)+"&kategoria="+encodeURIComponent(kategoria1.value)+"&stop="+encodeURIComponent(stop1.value)+"&rok="+encodeURIComponent(rok1.value)+"&id="+encodeURIComponent(id)); 
+        }); 
+}
+function delet(a){
+        a=a.split("_")
+        a=a[1]
+        var xhttp = new XMLHttpRequest();
+                xhttp.open("POST", "ajax.php", true);
+                xhttp.onreadystatechange = function() {
+                        //console.log(this.readyState);
+                if (this.readyState == 4 && this.status == 200) {
+                                gett();
+                        }   
+                };
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("f=delet&id="+encodeURIComponent(a)); 
+        
+}
+function gett(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "ajax.php", true);
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("out").innerHTML = "";
+                        var ob=JSON.parse(this.responseText);
+                        var pudlo1=document.createElement("div");  
+                        pudlo1.className="pudlo"  
+                        var pudlo2=document.createElement("div");  
+                        pudlo2.className="pudlo"
+                        pudlo2.innerHTML="nominal"
+                        var pudlo3=document.createElement("div");  
+                        pudlo3.className="pudlo"
+                        pudlo3.innerHTML="nr kat."
+                        var pudlo4=document.createElement("div");  
+                        pudlo4.className="pudlo"
+                        pudlo4.innerHTML="stop"
+                        var pudlo5=document.createElement("div");  
+                        pudlo5.className="pudlo"
+                        pudlo5.innerHTML="rok"
+                        var pudlo6=document.createElement("div");  
+                        pudlo6.className="pudlo"
+                        pudlo6.innerHTML="captcha"
+                        var pudlo7=document.createElement("div");  
+                        pudlo7.className="pudlo"
+                        document.getElementById("out").append(pudlo1);
+                        document.getElementById("out").append(pudlo2);
+                        document.getElementById("out").append(pudlo3);
+                        document.getElementById("out").append(pudlo4);
+                        document.getElementById("out").append(pudlo5);
+                        document.getElementById("out").append(pudlo6);
+                        document.getElementById("out").append(pudlo7);
+                ob.forEach(function(k,v){
+                        var pudlo1=document.createElement("div");  
+                        pudlo1.className="pudlo_"+k.id 
+                        pudlo1.innerHTML= '<img src="gfx/'+ k.ikona +'">'
+                        pudlo1.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                        var pudlo2=document.createElement("div");  
+                        pudlo2.className="pudlo_"+k.id 
+                        pudlo2.innerHTML=k.nominal
+                        pudlo2.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                        var pudlo3=document.createElement("div");  
+                        pudlo3.className="pudlo_"+k.id 
+                        pudlo3.innerHTML=k.kategoria
+                        pudlo3.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                        var pudlo4=document.createElement("div");  
+                        pudlo4.className="pudlo_"+k.id 
+                        pudlo4.innerHTML=k.stop
+                        pudlo4.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                        var pudlo5=document.createElement("div");  
+                        pudlo5.className="pudlo_"+k.id 
+                        pudlo5.innerHTML=k.rok
+                        pudlo5.addEventListener("click", function(){
+                                update(this.className,ob)
+                        }); 
+                        var pudlo6=document.createElement("div");  
+                        pudlo6.className="pudlo_"+k.id 
+                        var pudlo7=document.createElement("div");  
+                        pudlo7.className="pudlo_"+k.id 
+                        pudlo7.innerHTML='<img src="gfx/u.gif" onclick=delet(this.parentElement.className)>'
+                        document.getElementById("out").append(pudlo1);
+                        document.getElementById("out").append(pudlo2);
+                        document.getElementById("out").append(pudlo3);
+                        document.getElementById("out").append(pudlo4);
+                        document.getElementById("out").append(pudlo5);
+                        document.getElementById("out").append(pudlo6);
+                        document.getElementById("out").append(pudlo7);
+                        })
+                var pudlo = document.createElement("p");
+                pudlo.className="dlugiepudlo"
+                pudlo.innerHTML="dodawanie rekordu"
+                document.getElementById("out").append(pudlo);
+                var pudlo1=document.createElement("div"); 
+                pudlo1.className='pudlo'
+                pudlo1.innerHTML='<select id="ikona" class="input"><option value="ALBANIA.JPG">ALBANIA</option><option value="ALGIERIA.JPG">ALGIERIA</option><option value="ANDORA.JPG">ANDORA</option><option value="antyle_hol.jpg">ANTYLE_HOL</option><option value="argentyna.jpg">ARGENTYNA</option><option value="ARMENIA.JPG">ARMENIA</option><option value="ARUBA.JPG">ARUBA</option><option value="australia.jpg">AUSTRALIA</option></select>'
+                var pudlo2=document.createElement("div");  
+                pudlo2.className="pudlo"
+                pudlo2.innerHTML='<input placeholder="nominal" id="nominal" class="input">'
+                var pudlo3=document.createElement("div");  
+                pudlo3.className="pudlo"
+                pudlo3.innerHTML='<input placeholder="kategoria" id="kategoria" class="input">'
+                var pudlo5=document.createElement("div");  
+                pudlo5.className="pudlo"
+                pudlo5.innerHTML='<input placeholder="rok" id="rok" class="input">'
+                var pudlo4=document.createElement("div");  
+                pudlo4.className="pudlo"
+                pudlo4.innerHTML='<select id="stop" class="input"><option value="aluminum">aluminum</option><option value="aluminum-bronze">aluminum-bronze</option><option value="bronze">bronze</option><option value="copper plated zinc">copper plated zinc</option><option value="copper-nickel">copper-nickel</option><option value="gold">gold</option><option value="nickel bonded steel">nickel bonded steel</option><option value="nickel clad steel">nickel clad steel</option><option value="silver">silver</option><option value="stainless steel">stainless steel</option><option value="zinc"></option></select>'
+                var pudlo6=document.createElement("div");  
+                pudlo6.className="pudlo"
+                pudlo6.innerHTML=''
+                var pudlo7=document.createElement("div");  
+                pudlo7.className="pudlo"
+                pudlo7.innerHTML='<button onclick="send()">OK</button>'
+                document.getElementById("out").append(pudlo1);
+                document.getElementById("out").append(pudlo2);
+                document.getElementById("out").append(pudlo3);
+                document.getElementById("out").append(pudlo4);
+                document.getElementById("out").append(pudlo5);
+                document.getElementById("out").append(pudlo6);
+                document.getElementById("out").append(pudlo7);
+                }
+        };
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("f=get"); 
+}
+</script>
+<style>
+#out div{
+        width:88px;
+        height:25px;
+        float: left;
+        text-align: center;
+        border:1px solid black;
+        line-height: 25px;
+}
+.dlugiepudlo{
+        width:630px;
+        height:25px;
+        float: left;
+        text-align: center;
+        line-height: 25px;  
+}
+#out{
+        width:630px;
+        margin:0 auto;
+}
+.input{
+        width:88px;
+        height:25px;
+        text-align: center
+}
+img{
+        width:50px;
+        height:25px;
+
+}
+*{
+        overflow: hidden
+}
+</style>
+</head>
+<body onload="gett()">
+<div id="out"></div>
+</body>
+</html>

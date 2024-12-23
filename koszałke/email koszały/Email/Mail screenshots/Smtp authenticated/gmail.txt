@@ -1,0 +1,2 @@
+Serwer smtp: smtp.gmail.com
+Bêd¹c zalogowanym na koncie google wchodzimy na stronê https://www.google.com/settings/security/lesssecureapps i wybieramy "w³¹cz".

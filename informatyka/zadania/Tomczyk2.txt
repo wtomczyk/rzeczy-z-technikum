@@ -1,0 +1,30 @@
+info = "BZOIJPYECYNSNEAEDOZNUZNCDOCK"
+dzielenie = 3+(3-2)
+tabelka = [[],[],[],[]]
+licznik = 0
+a=0
+petla = (len(info)/dzielenie)
+while licznik < dzielenie:
+    if licznik == 0:
+        while a< petla:
+            tabelka[0].append(info[a])
+            a=a+1
+        a=0
+    elif licznik == 1:
+        while a < petla*2:
+
+            tabelka[1].append(info[int(petla+a)])
+            tabelka[3].append(info[int(petla+a+1)])
+            a=a+2
+        a=0
+    else:
+        while a< petla:
+            tabelka[2].append(info[int(petla*3+a)])
+            a=a+1
+        a=0
+    licznik = licznik+1
+tekst = ""
+while a< petla:
+    tekst += (tabelka[0][a] + tabelka[1][a] + tabelka[2][a] + tabelka[3][a])
+    a=a+1
+print(tekst)

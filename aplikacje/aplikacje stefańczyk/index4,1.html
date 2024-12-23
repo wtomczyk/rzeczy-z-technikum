@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="libs/jquery331.js"></script>
+    <script>
+        var tablica = [];
+        $(document).ready(function () {
+            var div2 = $("<div>").addClass("ccc")
+                .css("left", 0)
+                .css("top", 700)
+            $("#glowny").append(div2)
+            var d = 0;
+            var g = 1;
+            for (a = 0; a < 25; a++) {
+                var c = 0;
+                for (b = 0; b < 25; b++) {
+                    var div = $("<div>").addClass("bbb")
+                        .css("left", c)
+                        .css("top", d)
+                    $("#glowny").append(div)
+                    c = c + 20;
+                }
+                d = d + 20;
+            }
+            var h = 0;
+            $(".bbb").on("click", function () {
+				this.id="b"
+				if(document.getElementById('b').style.backgroundColor!="yellow"){
+                var X = this.style.left;
+                var Y = this.style.top;
+                var koordynaty = { x: X, y: Y };
+                tablica.push(koordynaty);
+                console.log(koordynaty);
+                $(this).css("background-color", "yellow")
+                    .html(h)
+                h = h + 1;
+				}
+				document.getElementById("b").removeAttribute("id")
+            })
+            var u = 0;
+            $("#jeden").on("click", function () {
+                if (u == tablica.length) {
+                    u = 0;
+                }
+                $(".ccc").css("left", tablica[u].x)
+                $(".ccc").css("top", tablica[u].y)
+                u = u + 1;
+            })
+            $("#dwa").on("click", function () {
+                setInterval(function () {
+                    if (u == tablica.length) {
+                        u = 0;
+                    }
+                    $(".ccc").css("left", tablica[u].x)
+                    $(".ccc").css("top", tablica[u].y)
+                    u = u + 1;
+                }, 1000)
+            })
+            var start;
+
+            var v = 0;
+            var X = 0;
+            var Y = 0;
+			var g=1;
+			function zmianacelu() {
+							if(start){
+								if(v==tablica.length){
+								g=0;
+								}
+								
+							}
+							requestAnimationFrame(zmianacelu, 100)
+						}
+            function animateBee() {
+                if (start) {
+                    console.log(v)
+                    var aaa = { x: tablica[v].x, y: tablica[v].y }
+                    var bbb = { x: tablica[g].x, y: tablica[g].y }
+                    console.log(aaa)
+                    var vector = {
+                        x: (bbb.x - aaa.x) / 100,
+                        y: (bbb.y - aaa.y) / 100
+                    }
+                    X = X + vector.x;
+                    console.log(X)
+                    Y = Y + vector.y;
+                    $(".ccc").css("left", X)
+                    $(".ccc").css("top", Y)
+                    console.log(Y)
+                }
+                requestAnimationFrame(animateBee, 100)
+            }
+			
+            animateBee()
+			zmianacelu()
+            $("#trzy").on("click", function () {
+                start = true;
+            })
+        })
+    </script>
+    <style>
+        .bbb {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        #glowny {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            position: relative;
+            background-color: green;
+        }
+
+        .ccc {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            z-index: 2;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="glowny">
+
+    </div>
+    <button id="jeden">Step</button>
+    <button id="dwa">jump</button>
+    <button id="trzy">fly</button>
+</body>
+
+</html>

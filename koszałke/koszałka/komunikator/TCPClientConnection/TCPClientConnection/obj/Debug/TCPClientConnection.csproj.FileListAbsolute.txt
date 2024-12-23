@@ -1,0 +1,20 @@
+C:\Users\Tomczyk Wojciech\source\repos\TCPClientConnection\TCPClientConnection\bin\Debug\TCPClientConnection.exe.config
+C:\Users\Tomczyk Wojciech\source\repos\TCPClientConnection\TCPClientConnection\bin\Debug\TCPClientConnection.exe
+C:\Users\Tomczyk Wojciech\source\repos\TCPClientConnection\TCPClientConnection\bin\Debug\TCPClientConnection.pdb
+C:\Users\Tomczyk Wojciech\source\repos\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.csprojAssemblyReference.cache
+C:\Users\Tomczyk Wojciech\source\repos\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.Form1.resources
+C:\Users\Tomczyk Wojciech\source\repos\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.Properties.Resources.resources
+C:\Users\Tomczyk Wojciech\source\repos\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.csproj.GenerateResource.cache
+C:\Users\Tomczyk Wojciech\source\repos\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.csproj.CoreCompileInputs.cache
+C:\Users\Tomczyk Wojciech\source\repos\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.exe
+C:\Users\Tomczyk Wojciech\source\repos\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.pdb
+C:\Users\jakub\Desktop\koszałka to debil\TCPClientConnection\TCPClientConnection\bin\Debug\TCPClientConnection.exe.config
+C:\Users\jakub\Desktop\koszałka to debil\TCPClientConnection\TCPClientConnection\bin\Debug\TCPClientConnection.exe
+C:\Users\jakub\Desktop\koszałka to debil\TCPClientConnection\TCPClientConnection\bin\Debug\TCPClientConnection.pdb
+C:\Users\jakub\Desktop\koszałka to debil\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.csprojAssemblyReference.cache
+C:\Users\jakub\Desktop\koszałka to debil\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.Form1.resources
+C:\Users\jakub\Desktop\koszałka to debil\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.Properties.Resources.resources
+C:\Users\jakub\Desktop\koszałka to debil\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.csproj.GenerateResource.cache
+C:\Users\jakub\Desktop\koszałka to debil\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.csproj.CoreCompileInputs.cache
+C:\Users\jakub\Desktop\koszałka to debil\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.exe
+C:\Users\jakub\Desktop\koszałka to debil\TCPClientConnection\TCPClientConnection\obj\Debug\TCPClientConnection.pdb

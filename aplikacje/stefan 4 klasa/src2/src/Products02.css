@@ -1,0 +1,13 @@
+.products_cont{
+    font-size: 60px;
+    line-height: 60px;
+    text-align: center
+}
+.products_comp{
+    width:100%;
+    height:50px;
+    background-color: blue;
+    color: white;
+    line-height: 50px;
+    padding-left:5px
+}

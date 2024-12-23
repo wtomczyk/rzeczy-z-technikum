@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function czekajNaWynikZKomisji(x) {
+    let i = 0
+    let id;
+    return new Promise(policz => {
+        id = setInterval(() => {
+            console.log(i)
+            i++
+            if (i > 3) {
+                policz(x * x)
+                clearInterval(id)
+            }
+        }, 500);
+
+    });
+    }
+    function myFunction(){
+      czekajNaWynikZKomisji(10)
+    .then((wynik) => console.log("wynik z komisji", wynik))
+    .catch((err) => console.log(err))  
+    }
+    
+    </script>
+</head>
+<body>
+    <button onclick="myFunction()">Click me</button> 
+</body>
+</html>

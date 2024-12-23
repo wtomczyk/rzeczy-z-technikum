@@ -1,0 +1,55 @@
+<html> 
+	<head>
+		<title>zadanie</title>
+		<meta name="author" content="Wojciech Tomczyk">
+		<meta charset="UTF-8">
+		<style>
+		label
+		{
+		display:block;
+		position:relative;
+		padding-left:15px;
+		}
+		form
+		{
+		border: 1px solid black;
+		width:200px;
+		position:relative;
+		padding-bottom:30px;
+		padding-top:10px;
+		}
+		input
+		{
+		
+		width:100px;
+		right:10px;;
+		position:absolute;
+		}
+		input[readonly]
+		{
+		background-color:red;
+		}
+		input[disabled]
+		{
+		background-color:yellow;
+		}
+		input[type="reset"]
+		{
+		left:10px;
+		width:80px;
+		}
+		</style>
+	</head>
+	<body>
+		<form>
+			<label>
+				imię:<input type="text" name="login"tabindex="2" accesskey="w">
+			</label>
+			<label>
+				nazwisko:<input type="text" name="hasło" tabindex="3"accesskey="v">
+			</label>
+				<input type="submit" value="wyslij" tabindex="1"accesskey="s"/>
+				<input type="reset" value="reset" tabindex="1"accesskey="s"/>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Grzegorz Mikołajczyk">
+	<title> Sprawdzian </title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			font-family:Arial;
+		}
+		#all{
+			width:600px;
+			margin:20px auto;
+			background:#F2C4A0;
+			border:3px solid black;
+			border-radius:10px;
+			position:relative;
+		}
+		h1{
+			text-align:center;
+			letter-spacing:5px;
+			font-family:Arial;
+			width:600px;
+			margin:30px auto;
+		}
+		figure{
+			width:500px;
+			height:200px;
+			margin:40px auto;
+			clear:both;
+		}
+		img{
+			float:left;
+		}
+		figcaption{
+			z-index:-1;
+			position:relative;
+			background:#999999;
+			text-align:left;
+			margin:0;
+			padding:0;
+			width:200px;
+			float:left;
+			top:10px;
+			left:50px;
+			color:white;
+		}
+		
+		figcaption b{
+			color:black;
+		}
+
+		.txt1{
+			position:absolute;
+			top:200px;
+			left:300px;
+			background:#999999;
+			width:200px;
+			color:white;
+			text-align:center;
+		}
+		
+		.txt2{
+			position:absolute;
+			top:460px;
+			left:300px;
+			background:#999999;
+			width:200px;
+			color:white;
+			text-align:center;
+		}
+		
+		.txt1 b{
+			color:black;
+		}
+		.txt2 b{
+			color:black;
+		}
+		footer{
+			clear:both;
+			background:#F07C75;
+			width:400px;
+			height:30px;
+			position:absolute;
+			bottom:-37px;
+			padding-top:5px;
+			right:50px;
+			border:3px solid black;
+			z-index:-1;
+			border-radius:0 0 10px 10px;
+			text-align:center;
+			color:white;
+		}
+		figure:hover figcaption{
+			z-index:3;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="all">
+		<h1>Sprawdzian wiadomości pozycjonowanie</h1>
+		<figure>
+			<img src="rys1.jpg" alt="bład">
+			<figcaption class="op1">
+				<b>Lorem ipsum d</b><br>
+				consectetur adipiscing elit. Pellentesque bibendum elit non sapien feugiat placerat. Ut venenatis vitae lectus ut blandit. In hac habitasse platea dictumst.  
+			</figcaption>
+			</figure>
+			
+			<figure>
+			<img src="rys2.jpg" alt="bład">
+			<figcaption class="op2">
+				<b>Lorem ipsum d</b><br>
+				consectetur adipiscing elit. Pellentesque bibendum elit non sapien feugiat placerat. Ut venenatis vitae lectus ut blandit. In hac habitasse platea dictumst. 
+			</figcaption>
+			</figure>
+			
+		<div class="txt1">
+			<b>Uwaga</b><br>
+			Opis po najechaniu myszką na obrazek albo tutaj
+		</div>
+		
+		<div class="txt2">
+			<b>Uwaga</b><br>
+			Opis po najechaniu myszką na obrazek albo tutaj
+		</div>
+		
+		<footer>
+			Strona utworzona przez <b>Grzegorza Mikołajczyka</b>
+		</footer>
+	</div>
+</body>

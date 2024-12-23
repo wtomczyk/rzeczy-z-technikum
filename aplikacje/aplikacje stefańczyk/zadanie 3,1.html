@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="libs/jquery331.js"></script>
+    <script>
+        $(document).ready(function () {
+            var tab1 = ["lp", "cena", "produkt"]
+            var tab2 = ["5,60", "3,23", "7,45", "10,00", "3,20"]
+            var tab3 = ["chleb", "mąka", "masło", "kefir", "dżem"]
+
+            $("#przycisk").on("click", function () {
+				for(var z=0, b=0; b<3;b++){
+					var d=tab2[b].replace(",", ".")
+					var e=parseFloat(d);
+					z=z+e;
+					console.log(d)
+				}
+				var n = z.toString();
+				var m = n.replace(".", ",")
+                for (var a = 0; a < 3; a++) {
+                    if (a == 0) 
+					{
+                        let linia = $("<tr>")
+                        $("#tablica").append(linia)
+                        for (var b = 0; b < 3; b++) {
+                            let komorka = $("<td>").html("<i>"+tab1[b]+"</i>")
+                            linia.append(komorka)
+                        }
+                    }
+                    else if(a==1)
+					{ 
+                        for (var b = 0; b < 3; b++) {
+							let linia = $("<tr>")
+                            console.log("a")
+                            $("#tablica").append(linia)
+                            let komorka1 = $("<td>").html(b + 1)
+                            linia.append(komorka1)
+                            let komorka2 = $("<td>").html(tab2[b])
+                            linia.append(komorka2)
+                            let komorka3 = $("<td>").html(tab3[b])
+                            linia.append(komorka3)
+                        }
+					}else if(a==2)
+					{
+							let linia = $("<tr>").css("columns", "3")
+                            console.log("a")
+                            $("#tablica").append(linia)
+                            let komorka = $("<td>").html("suma")
+							linia.append(komorka)
+							let komorka1 = $("<td>").html(m)	
+													.addClass("aaa")
+													.attr("colspan", 2)
+							linia.append(komorka1)	
+
+                    }	
+                }
+            })
+        })
+    </script>
+    <style>
+	table
+	{
+	border:2px solid black;
+	}
+	td
+	{
+	border:1px solid black;
+	text-align:center;
+	padding:5px;
+	}
+	i
+	{
+	color:blue;
+	font-style:normal;
+	}
+	.aaa
+	{
+	color:red
+	}
+    </style>
+</head>
+
+<body>
+    <button id="przycisk">zrobienie tabeli</button>
+    <table id="tablica">
+    </table>
+</body>
+
+</html>

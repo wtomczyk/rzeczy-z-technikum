@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="libs/jquery331.js"></script>
+    <script>
+        // Wykrycie faktu załadowania strony html
+        // za pomocą jquery
+        $(document).ready(function (){
+            console.log("Dokument załadowany");
+
+            var winWidth = $(window).width();
+            var limWidth = 20
+            $("#divA").css("width", winWidth/2-limWidth/2);
+            $("#divB").css("width", winWidth/2-limWidth/2);
+            $("#lim").css("width", limWidth);
+
+            $("#lim").on("mouseover", function() {
+                $(window).on("mousedown", function () {
+                    $(window).on("mousemove", function (e) {
+                        winWidth = $(window).width();
+                        $("#divA").css("width", e.clientX-limWidth/2);
+                        $("#divB").css("width", winWidth - e.clientX-limWidth/2);
+                    })
+                })
+                $(window).on("mouseup", function () {
+                    $(window).off("mousemove")
+                })
+            })
+
+            $("#lim").on("mouseout", function() {
+                $(window).off("mousedown");
+            })
+
+            // zwolnienie klawisza myszy
+
+            $(window).on("mouseup", function (e) {
+                console.log($( window ).width())
+            })
+
+            // poruszanie wskaźnikiem myszy
+
+            $(window).on("mousemove", function (e) {
+                //console.log("x: "+ e.clientX + ", y: "+ e.clientY)
+            })
+        })
+
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            color: red;
+            height: 40px;
+            border: 2px solid black;
+            font-weight: bold;
+        }
+        #spawn {
+            min-width: 30px;
+            min-height: 30px;
+            line-height: 30px;
+            background-color: lightblue;
+            text-align: center;
+        }
+        div {
+            margin: 0;
+            padding: 0;
+            float: left;
+            width: 30px;
+            height: 100vh;
+            background-color: red;
+            font-size: 3em;
+        }
+        #lim {
+            background-color: blue;
+            border: none;
+            width: 4px;
+        }
+        #divA {
+            background-color: gray;
+        }
+        #divB {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="divA" unselectable="on" onselectstart="return false;">A</div>
+    <div id="lim" unselectable="on" onselectstart="return false;"></div>
+    <div id="divB" unselectable="on" onselectstart="return false;">B</div>
+</body>
+</html>

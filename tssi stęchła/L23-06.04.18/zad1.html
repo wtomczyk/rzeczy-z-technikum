@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="author" content="Grzegorz Mikołajczyk"/>
+	<title> title </title>
+	<style>
+		form{
+			width:150px;
+			background:#aaaaaa;
+			padding:10px;
+			position:relative;
+		}
+		label{
+			display:block;
+		}
+		input{
+			position:absolute;
+			right:20px;
+		}
+		input[type="submit"]{
+			position:static;
+			width:100%;
+			height:30px;
+			margin-top:20px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<h1>Cenione zawody:</h1>
+		<label>piłkarz<input type="checkbox" name="1"></label>
+		<label>fryzjer<input type="checkbox" name="2"></label>
+		<label>nauczyciel<input type="checkbox" name="3"></label>
+		<label>programista<input type="checkbox" name="4"></label>
+		<label>sprzątaczka<input type="checkbox" name="5"></label>
+		
+		<input type="submit" value="wybierz">
+	</form>
+</body>
+</html>

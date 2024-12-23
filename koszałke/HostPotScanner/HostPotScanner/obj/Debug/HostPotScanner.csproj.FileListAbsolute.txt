@@ -1,0 +1,10 @@
+c:\users\tomczyk wojciech\source\repos\HostPotScanner\HostPotScanner\bin\Debug\HostPotScanner.exe.config
+c:\users\tomczyk wojciech\source\repos\HostPotScanner\HostPotScanner\bin\Debug\HostPotScanner.exe
+c:\users\tomczyk wojciech\source\repos\HostPotScanner\HostPotScanner\bin\Debug\HostPotScanner.pdb
+c:\users\tomczyk wojciech\source\repos\HostPotScanner\HostPotScanner\obj\Debug\HostPotScanner.csprojAssemblyReference.cache
+c:\users\tomczyk wojciech\source\repos\HostPotScanner\HostPotScanner\obj\Debug\HostPotScanner.MainWindow.resources
+c:\users\tomczyk wojciech\source\repos\HostPotScanner\HostPotScanner\obj\Debug\HostPotScanner.Properties.Resources.resources
+c:\users\tomczyk wojciech\source\repos\HostPotScanner\HostPotScanner\obj\Debug\HostPotScanner.csproj.GenerateResource.cache
+c:\users\tomczyk wojciech\source\repos\HostPotScanner\HostPotScanner\obj\Debug\HostPotScanner.csproj.CoreCompileInputs.cache
+c:\users\tomczyk wojciech\source\repos\HostPotScanner\HostPotScanner\obj\Debug\HostPotScanner.exe
+c:\users\tomczyk wojciech\source\repos\HostPotScanner\HostPotScanner\obj\Debug\HostPotScanner.pdb

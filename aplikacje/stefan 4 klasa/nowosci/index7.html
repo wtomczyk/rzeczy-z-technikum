@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+    <title>Document</title>
+    <style>
+    .klasa1{
+        color: red
+    }
+    .klasa2{
+        color:cyan
+    }
+    </style>
+</head>
+<body>
+    <div id="react-app">
+
+    </div>
+    <script>
+    var square = React.createElement("div", {
+            style: {
+                width: "100px",
+                height: "100px",
+                backgroundColor: "red",
+                color:"white",
+                fontSize:"20px",
+                margin:"2px",
+                float:"left"
+            }
+        },
+            "React comp"
+    )
+    var row = React.createElement("div",
+        {
+            style:{
+                border:"1px solid blue",
+                width:"313px",
+                height:"105px",
+                margin:"2px"
+            }
+        },
+        square,square,square
+    )
+    var table = React.createElement("div",
+        {
+            style:{
+                border:"3px solid green",
+                width:"319px",
+                height:"330px",
+                float:"left"
+            }
+        },
+        row,row,row
+    )
+    var container = React.createElement("div",
+        {
+            style:{
+                border:"3px solid magenta",
+                height:"335px",
+                width:"975px"
+            }
+        },
+        table,table,table
+    )
+    //ReactDOM.render(
+    //container,
+    //document.getElementById('react-app')
+    //)
+    </script>
+    <script type="text/babel">
+
+    class Start extends React.Component {
+        render() {
+            return (
+                <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+            );
+        }
+    }
+
+    ReactDOM.render(
+        <Start />,
+        document.getElementById('react-app')
+    );
+
+    </script>
+</body>
+</html>

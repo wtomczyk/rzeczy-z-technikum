@@ -1,0 +1,41 @@
+Fiszka do projektu "Dratewka".
+
+Imię: Wojciech
+Nazwisko: Tomczyk
+Klasa: 3ib1
+Termin (np. 50%): 100%
+
+poniżej zaznacz jednoznacznie co zrobiłeś/aś w 100%. Plik umieść w folderze z grą.
+-------------
+
+1. wprowadzanie komunikatów (0.5p)
+	- komunikaty wpisywane z klawiatury (zatwierdzanie Enterem) -- jest
+	- rozpoznanie co najmniej trzech komunikatów (co najmniej informacja w konsoli) -- jest
+	- wyglad prompta, jego zachwanie (brak możliwości "wyjścia") -- jest
+	- po wejściu do gry domyślnie wpisuje duże znaki (caps/shift - zmiana) -nie ma
+
+2. mapa, ruch (1p)	
+	- możliwość przechodzenia po dostępnych lokalizacjach (E/W/N/S), pokazywanie odpowiedniej grafiki i nazw lokalizacji -- jest
+	- pokazanie odpowiednich kierunków na kompasie + "You can go" -- jest
+
+3. przemieszczanie przedmiotów (max 1.5p)
+ (0.5p)	- rozmieszczone przedmioty początkowe - "You see" -- jest
+ (1p)	- działanie polecenia T(TAKE) / D(DROP) - "You see" + "You are carrying" (z obostrzeniami) -- jest
+
+4. komunikaty (1p)	
+	- pokazywanie odpowiednich komunikatów co najmniej trzech poleceń (np. przy przechodzeniu po lokalizacjach, use, vocabulary itp.) -- jest
+	- co najmniej dwa wybrane komunikaty "z timeoutem" (np. próba wejścia na lokację za smokiem) -- jest
+
+5. logika gry (max 2.5p)
+ (1p)	- polecenie U(USE) (odpowiedni komunikat, uzyskanie przedmiotów - doprowadzenie do conajmniej jednej części owcy) -- jest
+ (1.5p)	- oprogramowanie wszystkich zależności (przedmioty) doprowadzających do ukończenia gry, możliwość ukończenia gry (bez "oszustw") - cała logika działa -- jest
+		
+6. dodatki (0.5p)
+	- czołówka, instrukcja gry -- jest, trzeba przeklikać
+	- hejnał -- jest, na firefoxie działa odrazu, a na chromie po kliknięciu pierwszego ekranu
+	- polecenia V(VOCABULARY), G(GOSSIPS) -- jest
+	
+
+SUMA PUNKTÓW: 6.5/7
+
+Ważne: owce należy używać w jamie smoka, a nie w miejscu na pułapke

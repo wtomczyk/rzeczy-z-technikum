@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <title>Document</title>
+    <style>
+    .klasa{
+        color: red
+    }
+    </style>
+</head>
+<body>
+    <div id="react-app">
+
+    </div>
+    <script type="text/babel">
+     class MyForm extends React.Component {
+
+        constructor(props) {
+            super(props);
+            this.state = {
+                array: [
+                { checked: false, value: 1 },
+                { checked: true, value: 2 },
+                { checked: false, value: 3 },
+                { checked: true, value: 10 },
+                { checked: false, value: 20 },
+                ]
+            };
+
+            this.handleChange = this.handleChange.bind(this);
+            this.handleSubmit = this.handleSubmit.bind(this);
+            this.handleSelect = this.handleSelect.bind(this);
+            }
+
+            // funkcja wykonywana na bieżąco przy wpisywaniu danych (lub strzałkowa, bez bind-a)
+
+            handleChange(event) {
+                //this.setState({ data: event.target.value });
+            }
+
+
+            handleSubmit(event) {
+                
+                event.preventDefault();
+            }
+            handleSelect(event){
+
+                //sie przyda 
+
+                /*
+                var flaga = true
+                var b = this.state.array
+                for(var a=0;a<b.length;a++){
+                    if(event.target.value==b[a].name){
+                        flaga = false
+                    }
+                }
+                if(flaga){
+                    this.setState({
+                        array2info:event.target.value
+                    })
+                }
+                else{
+                    this.setState({
+                        array1info:event.target.value
+                    })
+                }
+                */
+            }
+            render() {
+                //walnij pentle
+                var checkboxy = []
+                for(var a=0;a<this.state.array.length;a++){
+                    var aa = "aaa"+a
+                    console.log(this.state.array[a])
+                    checkboxy.push(<MyCheckbox handleSelect={this.handleSelect} key={aa} data={this.state.array[a]}/>)
+                }
+                return (
+                    <div>
+                        <form onSubmit={this.handleSubmit}>
+                            {checkboxy}
+                        </form>
+                    </div>
+                );
+            }
+        }
+        class MyCheckbox extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    data:props
+                };
+            this.onChangeCheckbox = this.onChangeCheckbox.bind(this);    
+            }
+            
+            onChangeCheckbox(event) {
+
+            } 
+
+            render() {
+                return (
+                    <input
+                        type="checkbox"
+                        value={this.props.data.value}
+                        checked={this.props.data.checked}
+                        onChange={this.onChangeCheckbox}
+                    />
+                );
+            }
+        }     
+        ReactDOM.render(
+        <div><MyForm /></div>,
+        document.getElementById('react-app')
+        );
+    </script>
+</body>
+</html>

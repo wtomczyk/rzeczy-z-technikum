@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+    <title>Document</title>
+    <style>
+    .klasa{
+        color: red
+    }
+    .klasa{
+        width:98px;
+        height:98px;
+        background-color: red;
+        margin:1px
+    }
+    .klasa2{
+        border:1px solid black;
+        margin:1px;
+        width: 100px;
+        float: left;
+    }
+    .klasa3{
+        float: left;
+        margin:1px;
+        width:312px;
+        height:302px;
+        border:1px solid green
+    }
+    .klasa4{
+        margin:1px;
+        border:1px solid red;
+        height:304px;
+        width:948px
+    }
+    </style>
+</head>
+<body>
+    <div id="react-app">
+
+    </div>
+    <script type="text/babel">
+        class Square extends React.Component {
+            render() {
+                return (            
+                    <div className="klasa">
+                        
+                    </div>
+                );
+            }
+        }
+        class Column extends React.Component {
+            render() {
+                var rzeczy=[]
+                for(var a=0;a<3;a++){
+                    var aa = "aaa_"+a
+                    rzeczy.push(<Square key={aa}/>)
+                }
+                return (            
+                    <div className="klasa2">
+                        {rzeczy}
+                    </div>
+                );
+            }
+        }
+        class Table extends React.Component {
+            render() {
+                var rzeczy=[]
+                for(var a=0;a<3;a++){
+                    var aa = "bbb_"+a
+                    rzeczy.push(<Column key={aa}/>)
+                }
+                return (            
+                    <div className="klasa3">
+                        {rzeczy}
+                    </div>
+                );
+            }
+        }
+        class Container extends React.Component {
+            render() {
+                var rzeczy=[]
+                for(var a=0;a<3;a++){
+                    var aa = "ccc_"+a
+                    rzeczy.push(<Table key={aa}/>)
+                }
+                return (            
+                    <div className="klasa4">
+                        {rzeczy}
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(
+            <Container />,
+            document.getElementById('react-app')
+        );
+    </script>
+</body>
+</html>

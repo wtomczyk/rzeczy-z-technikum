@@ -1,0 +1,759 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Ćwiczenia</title>
+<style>
+.aaa, .bbb, .ccc, .ddd{
+    width:20px;
+    height:20px;
+    border:1px solid black;
+    float:left;
+}
+#pudlo{
+    width:220px;
+    height:220px;
+    margin:50px;
+    float:right;
+}
+#pudlo2{
+    width:220px;
+    height:220px;
+    margin:50px;
+    float:left;
+}
+#pudlo3{
+    clear:both;
+    height:220px;
+    width:100px;
+    position:relative;
+    float:left;
+    margin-left:30px;
+}
+#glowny{
+    width:830px;
+    margin:20px auto;
+    height:440px;
+    border: 3px solid black;
+    position:relative;
+}
+button{
+    display:none;
+    position: absolute;
+    width:100px;
+    height:30px;
+    line-height:30px;
+    left:315px;
+    bottom:20px;
+}
+</style>
+<script>   
+var y=2;
+skret=0;
+iloscstatkow=0;
+ggg=0;
+z=0;
+zz=0;
+komputer=0;
+gracz=0;
+tura=true;
+ var zezwolenie3;
+    function init(){
+        tablica = []
+        rozmiarystatkow = [4, 3, 2, 1];
+        pudlo=document.getElementById("pudlo");
+            for(a=0; a<12; a++){
+                 tablica[a]=[]
+                 for(b=0; b<12; b++){
+                     tablica[a][b] = 0;
+                     }
+                }
+            }
+    function losowanie(){
+        var kierunek = 0;
+        var zgoda;
+        for (var f = rozmiarystatkow.length; f >= 0; f--) {
+            var wielkosc = f+1;
+            var ustawienie = 1;
+                while (ustawienie <= rozmiarystatkow[f]) {
+                    kierunek = Math.round(Math.random());
+                    if(kierunek==0){
+                        y=Math.floor(Math.random()*10+1);
+                        x=Math.floor(Math.random()*(10-wielkosc)+1);
+                        for(var e=0; e<wielkosc+2;e++){
+                            if ((tablica[y - 1][x - 1 + e] == 0) && (tablica[y][x - 1 + e] == 0) && (tablica[y + 1][x - 1 + e] == 0)) {
+                                zgoda = true;
+                            }
+                            else 
+                            {
+                                zgoda = false;
+                                break;
+                            }
+
+                        }
+                    }
+                    else if(kierunek==1){
+                        x=Math.floor(Math.random()*10+1);
+                        y=Math.floor(Math.random()*(10-wielkosc)+1);
+                        for(var e=0; e<wielkosc+2;e++){
+                            if ((tablica[y - 1+ e][x - 1] == 0) && (tablica[y -1 +e][x] == 0) && (tablica[y - 1 + e][x+1] == 0)) {
+                                zgoda = true;
+                            } 
+                            else 
+                            {
+                                zgoda = false;
+                                break;
+                            }
+                        }
+                    }
+                    if(zgoda){
+                        if (kierunek == 0) {
+                            for (var q = 0; q < wielkosc; q++) {
+                                tablica[y][x + q] = 1;
+                            }
+                        }
+                        else 
+                        {
+                            for (var q = 0; q < wielkosc; q++) {
+                                tablica[y + q][x] = 1;
+                            }
+                        }
+                        ustawienie=ustawienie+1;
+                    }
+                }
+            }
+        }
+    function tworzenie(){
+        for(var q=1; q<11; q++){
+            for(var t=1; t<11; t++){
+                div=document.createElement("div");
+                if(tablica[q][t]==0){
+                    div.className="aaa";
+                    }
+                else
+                {
+                    div.className="bbb";
+                }
+             div.id="k_"+q+"_"+t;
+            pudlo.appendChild(div);
+        }
+    }
+    y=1;
+}
+function init2(){
+        tablica2 = []
+        rozmiarystatkow = [4, 3, 2, 1];
+        pudlo=document.getElementById("pudlo2");
+            for(a=0; a<12; a++){
+                 tablica2[a]=[]
+                 for(b=0; b<12; b++){
+                     tablica2[a][b] = 0;
+                     }
+                }
+            }
+            function tworzenie2(){
+        for(var q=1; q<11; q++){
+            for(var t=1; t<11; t++){
+                div=document.createElement("div");
+                    div.className="ccc";  
+             div.id="l_"+q+"_"+t;
+            pudlo2.appendChild(div);
+        }
+    }
+    y=1;
+}  
+function statki(){
+    var g=390;
+        var y=0;
+        h=4;
+    for(var f = rozmiarystatkow.length; f>=0; f--){
+        z=h;
+        while(rozmiarystatkow[f] <= z){
+        var y=0;
+        var t=1;
+        while (t <= rozmiarystatkow[f]) {
+            div=document.createElement("div");
+                    div.className="eee" + z + "_" + f;  
+                    div.style.position="absolute";
+                    div.style.left=y + "px"; 
+                    div.style.top=g + "px";
+                    div.style.width="20px";
+                    div.style.height="20px";
+                    div.style.border="1px solid black";
+                    div.style.background="white"
+            pudlo3.appendChild(div);
+            t=t+1;
+            y=y+22;
+    }
+    g=g-40;
+    z=z-1;
+        }
+}
+h=h-1;
+}
+
+sprawdzenie=true;
+document.oncontextmenu=function(){
+    if(skret==0){
+        skret=1;
+        if(sprawdzenie2){
+        if(event.target.id!="pudlo2"){
+            t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+y==12){
+                y=y-1;
+            }
+            else if(licznik+y==13){
+                y=y-2
+            }
+            else if(licznik+y==14){
+                y=y-3
+            }
+            for(a=0;a<licznik;a++){
+                if(tablica2[y][x]=="1"){
+                document.getElementById("l_"+y+"_"+x).style.background="blue";
+                }
+                else{
+                    document.getElementById("l_"+y+"_"+x).style.background="white";
+                }
+                y=y+1;
+            }
+            t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            
+            if(licznik+x==12){
+                x=x-1;
+            }
+            else if(licznik+x==13){
+                x=x-2
+            }
+            else if(licznik+x==14){
+                x=x-3
+            }
+            for(b=0;b<licznik+2;b++){
+                if ((tablica2[y - 1][x - 1 + b] == 0) && (tablica2[y][x - 1 + b] == 0) && (tablica2[y + 1][x - 1 + b] == 0)) {
+                                zgoda = true;
+                            } 
+                            else 
+                            {
+                                zgoda = false;
+                                break;
+                            }
+            }
+            var t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+x==12){
+                x=x-1;
+            }
+            else if(licznik+x==13){
+                x=x-2
+            }
+            else if(licznik+x==14){
+                x=x-3
+            }
+            if(zgoda){
+            for(a=0;a<licznik;a++){
+                document.getElementById("l_"+y+"_"+x).style.background="green";
+                x=x+1;
+            }
+            for(a=0;a<licznik;a++){
+                x=x-1;
+            }
+            }
+
+            else{
+                for(a=0;a<licznik;a++){
+                document.getElementById("l_"+y+"_"+x).style.background="red";
+                x=x+1;
+                }
+                for(a=0;a<licznik;a++){
+                x=x-1;
+            }
+            }
+        }
+    }
+    }
+    else if(skret==1){
+        skret=0;
+        if(sprawdzenie2){
+        if(event.target.id!="pudlo2"){
+            t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+x==12){
+                x=x-1;
+            }
+            else if(licznik+x==13){
+                x=x-2
+            }
+            else if(licznik+x==14){
+                x=x-3
+            }
+            for(a=0;a<licznik;a++){
+                if(tablica2[y][x]=="1"){
+                document.getElementById("l_"+y+"_"+x).style.background="blue";
+                }
+                else{
+                    document.getElementById("l_"+y+"_"+x).style.background="white";
+                }
+                x=x+1;
+            }
+            t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+y==12){
+                y=y-1;
+            }
+            else if(licznik+y==13){
+                y=y-2
+            }
+            else if(licznik+y==14){
+                y=y-3
+            }
+            for(b=0;b<licznik+2;b++){
+                if ((tablica2[y - 1+ b][x - 1] == 0) && (tablica2[y -1 +b][x] == 0) && (tablica2[y - 1 + b][x+1] == 0))
+                 {
+                                zgoda = true;
+                            } 
+                            else 
+                            {
+                                zgoda = false;
+                                break;
+                            }
+            }
+            var t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+y==12){
+                y=y-1;
+            }
+            else if(licznik+y==13){
+                y=y-2
+            }
+            else if(licznik+y==14){
+                y=y-3
+            }
+            if(zgoda){
+            for(a=0;a<licznik;a++){
+                document.getElementById("l_"+y+"_"+x).style.background="green";
+                y=y+1;
+            }
+            for(a=0;a<licznik;a++){
+                y=y-1;
+            }
+            }
+            else{
+                for(a=0;a<licznik;a++){
+                document.getElementById("l_"+y+"_"+x).style.background="red";
+                y=y+1;
+                }
+                for(a=0;a<licznik;a++){
+                y=y-1;
+            }
+            }
+            
+        }
+    }
+    }
+    return false;
+    }
+function aaa(event){
+    c = "eee4_0"
+    d = document.getElementsByClassName(c)
+    for(a=0;a<d.length;a++){
+            d[a].style.background="red"
+        }
+    sprawdzenie=false;
+    licznik = d.length;
+    sprawdzenie2=true;  
+    z=d;
+        zz=d.length;
+        ggg=1;
+
+}
+function najechanie(event) { 
+    if(event.target.id!="pudlo3"){
+        var c = event.target.className;
+        var d = document.getElementsByClassName(c)
+        for(a=0;a<d.length;a++){
+            if(d[a].style.background!="red"){
+            d[a].style.background="blue"
+            }
+        }
+    }
+}
+c=0;
+sprawdzenie2=false;
+function wyjechanie(event) { 
+    if(event.target.id!="pudlo3"){
+        c = event.target.className;
+        var d = document.getElementsByClassName(c)
+        for(a=0;a<d.length;a++){
+            if(d[a].style.background!="red"){
+            d[a].style.background="white"
+            }
+        }
+    }
+
+}
+function myFunction(event) { 
+    if(event.target.id!="pudlo3"){
+        if(ggg!=0){
+        for(a=0;a<zz;a++){
+            z[a].style.background="white"
+        }
+        }
+        c = event.target.className;
+        d = document.getElementsByClassName(c)
+        for(a=0;a<d.length;a++){
+            d[a].style.background="red"
+        }
+        z=d;
+        zz=d.length;
+        ggg=1;
+    sprawdzenie=false;
+    licznik = d.length;
+    sprawdzenie2=true;    
+    }
+    
+}
+function najechanie2(event){
+    if(skret==0){
+    if(sprawdzenie2){
+        if(event.target.id!="pudlo2"){
+            var t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+y==12){
+                y=y-1;
+            }
+            else if(licznik+y==13){
+                y=y-2
+            }
+            else if(licznik+y==14){
+                y=y-3
+            }
+            for(b=0;b<licznik+2;b++){
+                if ((tablica2[y - 1+ b][x - 1] == 0) && (tablica2[y -1 +b][x] == 0) && (tablica2[y - 1 + b][x+1] == 0)) {
+                                zgoda = true;
+                            } 
+                            else 
+                            {
+                                zgoda = false;
+                                break;
+                            }
+            }
+            if(zgoda){
+            for(a=0;a<licznik;a++){   
+                document.getElementById("l_"+y+"_"+x).style.background="green";
+                y=y+1;
+            }
+            }
+            else{
+                for(a=0;a<licznik;a++){
+                document.getElementById("l_"+y+"_"+x).style.background="red";
+                y=y+1; 
+            }
+            }
+        }
+    }
+    }
+    else if(skret==1){
+        if(sprawdzenie2){
+        if(event.target.id!="pudlo2"){
+            var t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+x==12){
+                x=x-1;
+            }
+            else if(licznik+x==13){
+                x=x-2
+            }
+            else if(licznik+x==14){
+                x=x-3
+            }
+            for(b=0;b<licznik+2;b++){
+                if ((tablica2[y - 1][x - 1 + b] == 0) && (tablica2[y][x - 1 + b] == 0) && (tablica2[y + 1][x - 1 + b] == 0)) {
+                                zgoda = true;
+                            } 
+                            else 
+                            {
+                                zgoda = false;
+                                break;
+                            }
+            }
+            if(zgoda){
+            for(a=0;a<licznik;a++){
+                document.getElementById("l_"+y+"_"+x).style.background="green";
+                x=x+1;
+            }
+            }
+            else{
+                for(a=0;a<licznik;a++){
+                document.getElementById("l_"+y+"_"+x).style.background="red";
+                x=x+1;
+            }
+            }
+        }
+    }
+    }
+    }
+function wyjechanie2(event){
+    if(skret==0){
+    if(sprawdzenie2){
+        if(event.target.id!="pudlo2"){
+            var t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+y==12){
+                y=y-1;
+            }
+            else if(licznik+y==13){
+                y=y-2
+            }
+            else if(licznik+y==14){
+                y=y-3
+            }
+            for(a=0;a<licznik;a++){
+                if(tablica2[y][x]=="1"){
+                document.getElementById("l_"+y+"_"+x).style.background="blue";
+                }
+                else{
+                    document.getElementById("l_"+y+"_"+x).style.background="white";
+                }
+                y=y+1;
+            }
+        }
+    }
+    }
+    else if(skret==1){
+        if(sprawdzenie2){
+        if(event.target.id!="pudlo2"){
+            var t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+x==12){
+                x=x-1;
+            }
+            else if(licznik+x==13){
+                x=x-2
+            }
+            else if(licznik+x==14){
+                x=x-3
+            }
+            for(a=0;a<licznik;a++){
+                if(tablica2[y][x]=="1"){
+                document.getElementById("l_"+y+"_"+x).style.background="blue";
+                }
+                else{
+                    document.getElementById("l_"+y+"_"+x).style.background="white";
+                }
+                x=x+1;
+            }
+        }
+    }
+    }
+}
+function myFunction2(event){
+    if(skret==0){
+    if(sprawdzenie2){
+        if(event.target.id!="pudlo2"){
+            var t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+y==12){
+                y=y-1;
+            }
+            else if(licznik+y==13){
+                y=y-2
+            }
+            else if(licznik+y==14){
+                y=y-3
+            }
+            for(b=0;b<licznik+2;b++){
+                if ((tablica2[y - 1+ b][x - 1] == 0) && (tablica2[y -1 +b][x] == 0) && (tablica2[y - 1 + b][x+1] == 0)) {
+                                zgoda = true;
+                            } 
+                            else 
+                            {
+                                zgoda = false;
+                                break;
+                            }
+            }
+            if(zgoda){
+            for(a=0;a<licznik;a++){
+                document.getElementById("l_"+y+"_"+x).style.background="blue";
+                tablica2[y][x]=1;
+                y=y+1; 
+                }
+                sprawdzenie2=false;
+                sprawdzenie=true;
+                for(a=licznik;a>0;a--){
+                    console.log(d[a])
+                    document.getElementById("pudlo3").removeChild(d[a-1])
+            }
+            iloscstatkow=iloscstatkow+1;
+            if(iloscstatkow==10){
+                document.getElementById("pudlo3").style.width=0;
+                document.getElementById("pudlo3").style.height=0;
+                document.getElementById("glowny").style.width="730px";
+                document.getElementById("przycisk").style.display="block";
+
+            }
+        }
+    }
+}
+}
+else if(skret==1){
+    if(sprawdzenie2){
+        if(event.target.id!="pudlo2"){
+            var t=event.target.id;
+            j=t.split("_");
+            y=parseInt(j[1]);
+            x=parseInt(j[2]);
+            if(licznik+x==12){
+                x=x-1;
+            }
+            else if(licznik+x==13){
+                x=x-2
+            }
+            else if(licznik+x==14){
+                x=x-3
+            }
+            for(b=0;b<licznik+2;b++){
+                if ((tablica2[y - 1][x - 1 + b] == 0) && (tablica2[y][x - 1 + b] == 0) && (tablica2[y + 1][x - 1 + b] == 0)) {
+                                zgoda = true;
+                            } 
+                            else 
+                            {
+                                zgoda = false;
+                                break;
+                            }
+            }
+            if(zgoda){
+            for(a=0;a<licznik;a++){
+                document.getElementById("l_"+y+"_"+x).style.background="blue";
+                tablica2[y][x]=1;
+                x=x+1; 
+                }
+                sprawdzenie2=false;
+                sprawdzenie=true;
+                for(a=licznik;a>0;a--){
+                    document.getElementById("pudlo3").removeChild(d[a-1])
+            }
+            iloscstatkow=iloscstatkow+1;
+            if(iloscstatkow==10){
+                document.getElementById("pudlo3").style.width=0;
+                document.getElementById("pudlo3").style.height=0;
+                document.getElementById("glowny").style.width="730px";
+                document.getElementById("przycisk").style.display="block";
+
+            }
+        }
+    }
+}
+}
+ggg=0;
+}
+function przycisk(event){
+    document.getElementById("przycisk").style.display="none";
+    zezwolenie3 = true;
+}
+
+function gra(event){
+    if(zezwolenie3){
+        if(tura){
+        var t=event.target.id;
+        j=t.split("_");
+        y=parseInt(j[1]);
+        x=parseInt(j[2]);
+            if ((tablica[y][x] == 0)) {
+                zgoda = true;
+                document.getElementById("k_" + y + "_" + x).style.background="cyan"
+                tablica[y][x]=2;
+            }
+            else if((tablica[y][x] == 1)) {
+                document.getElementById("k_" + y + "_" + x).style.background="yellow"
+                zgoda = true;
+                tablica[y][x]=3;
+                gracz=gracz+1;
+            }
+            else{
+                zgoda=false;
+            }
+            if(gracz==20){
+                    window.alert("wygrałeś")
+                    zezwolenie3=false;
+                    zgoda=false;
+                }
+        }
+        else{
+            window.alert("tura komputera")
+        }
+            if(zgoda){
+                for(a=0;a<1;){
+                    y=Math.floor(Math.random()*10+1);
+                    x=Math.floor(Math.random()*10+1);
+                    tura=false;
+                    if ((tablica2[y][x] == 0 || tablica2[y][x] == 1)) {  
+                        a=1;
+                        setTimeout(czaskomputera,1000);
+                        function czaskomputera(){   
+                        if((tablica2[y][x] == 0 )) {
+                        document.getElementById("l_" + y + "_" + x).style.background="cyan"
+                        tablica2[y][x]=2;
+                        }
+                        else if((tablica2[y][x] == 1)) {
+                        document.getElementById("l_" + y + "_" + x).style.background="yellow"
+                        tablica2[y][x]=3;
+                        komputer=komputer+1;
+                        }
+                        tura=true;
+                        }
+                    }
+                            if(komputer==20){
+                            window.alert("przegrałeś")
+                            zezwolenie3=false;
+                        }    
+                }
+            }
+        }
+    }
+    function funkcja() {
+            init();
+            losowanie();
+            tworzenie();
+            init2();
+            tworzenie2();
+            statki();
+            aaa();
+        }
+</script>
+</head>
+<body onload='funkcja()' id="body" oncontextmenu="return false;">
+<div id="glowny">
+<div id="pudlo3" onmouseover="najechanie(event)" onmouseout="wyjechanie(event)"  onclick="myFunction(event)" >
+</div>        
+<div id="pudlo" onclick="gra(event)">
+</div>
+<div id="pudlo2" onmouseover="najechanie2(event)" onmouseout="wyjechanie2(event)" onclick="myFunction2(event)" >
+</div>
+<button id="przycisk" type="button"  onclick="przycisk(event)">Zacznij gre</button>
+</div>
+</body>
+</html>

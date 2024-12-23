@@ -1,0 +1,3 @@
+SELECT Imie, Nazwisko FROM osoby INNER JOIN auta ON auta.Pesel = osoby.Pesel group BY osoby.Pesel HAVING COUNT(osoby.Pesel) > 1 
+SELECT Imie, Nazwisko FROM osoby INNER JOIN auta ON auta.Pesel = osoby.Pesel WHERE auta.Marka="citroen" ORDER BY auta.Rok LIMIT 1 
+UPDATE auta SET Pesel=(SELECT Pesel FROM osoby WHERE Imie="Karol" AND Nazwisko="Hubicki") WHERE Nr_rejestracyjny="KR21004" 

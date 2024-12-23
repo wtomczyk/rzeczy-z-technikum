@@ -1,0 +1,17 @@
+info = "WLASNE MALE OGNISKO CENNIEJSZE OD STOSU ZLOTA"
+info = info.split(" ")
+tekst = ""
+for x in info:
+    for z in x:
+        tekst = tekst + z
+print(tekst)
+a = 2 + (2-2)
+tabelka = ["",""]
+licznik = 0
+for x in tekst:
+    if licznik%2==0:
+        tabelka[0]+=x
+    else:
+        tabelka[1]+=x
+    licznik=licznik+1
+print(tabelka[0] + tabelka [1])

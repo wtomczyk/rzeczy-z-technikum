@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1524473363 source:c:\users\wtomczyk\desktop\porz¹dkowanie\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+

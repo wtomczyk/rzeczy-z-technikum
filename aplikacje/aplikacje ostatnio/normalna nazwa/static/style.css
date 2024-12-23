@@ -1,0 +1,17 @@
+body{
+    overflow: hidden;
+}
+#mainwindow{
+    width:100vw;
+    height:100vh;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: gray
+}
+#loginwindow{
+    width: 400px;
+    height:500px;
+    position: absolute;
+    background-color: white
+}

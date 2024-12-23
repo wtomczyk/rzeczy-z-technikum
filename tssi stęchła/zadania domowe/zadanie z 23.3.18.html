@@ -1,0 +1,117 @@
+<html> 
+	<head>
+		<title>zadanie</title>
+		<meta name="author" content="Wojciech Tomczyk">
+		<meta charset="UTF-8">
+		<style>
+		#glowny
+		{
+		margin:0 auto;
+		width:600px;
+		border:1px solid black;
+		background-color:gray;
+		}
+		header
+		{
+		width:100%
+		}
+		h1
+		{
+		text-align:center;
+		}
+		.pierwszy
+		{
+		width:80%;
+		text-align:center;
+		margin:0 auto;
+		}
+		.drugi
+		{
+		padding-top:70px;
+		width:80%
+		margin:0 auto;
+		padding-bottom:30px;
+		}
+		label
+		{
+		display:block;
+		position:relative;
+		padding-left:100px;
+		font-size:20px;
+		padding-bottom:20px;
+		}
+		form
+		{
+		width:500px;
+		position:relative;
+		}
+		input, textarea
+		{
+		right:10px;
+		position:absolute;
+		width:200px;
+		height:30px;
+		background-color:white;
+		}
+		textarea
+		{
+		height:50px;
+		width:200px;
+		top:0;
+		}
+		input[type="submit"]
+		{
+		
+		}
+		</style>
+	</head>
+	<body>
+		<div id="glowny">
+			<header>
+				<h1>Formularz</h1>
+			</header>
+			<div class="pierwszy">
+				<h3>Formularz ten dotyczy pracy w zakładzie ogrodniczym. Proszę wypełnić wymagane punkty podane poniżej zgodnie z prawdą
+				Odpowiedź zostanie wysłana nie później niż do jednego tygodnia.</h3>
+			</div>
+			<div class="drugi">
+				<form>
+					<label>
+						Imię:<input type="text" name="text">
+					</label>
+					<label>
+						Nazwisko:<input type="text" name="text">
+					</label>
+					<label>
+						Data urodzenia:<input type="date" name="data">
+					</label>
+					<label>
+						Miejsce zamieszkania:<input type="text" name="text">
+					</label>
+					<label>
+						Województwo:<input type="text" name="text">
+					</label>
+					<label>
+						Numer telefonu:<input type="number" name="numer" min="0" max="12" step="1">
+					</label>
+					<label>
+						Email:<input type="email" name="email">
+					</label>
+					<label>
+						Lata doświadczenia:<input type="number" name="numer" min="0" max="100" step="1">
+					</label>
+					<label>
+						Wcześniejsze miejsca </br>pracy:<textarea name="opinie" rows="3"></textarea>
+					</label>
+					<label>
+						Ukończone</br>szkoły/kursy:<textarea name="opinie" rows="3"></textarea>
+					</label>
+					<label>
+						Data wypełnienia:<input type="date" name="data">
+					</label>
+					<input type="submit" value="Wyślij"/>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

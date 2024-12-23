@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1520252327 source:c:\users\w.tomczyk\desktop\lider w zbiorze\main.cpp
+	<iostream>
+	<iomanip>
+	<cstdlib>
+	<time.h>
+

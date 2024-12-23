@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Zad 2</title>
+		<script src="./libs/react.development.js"></script>
+		<script src="./libs/react-dom.development.js"></script>
+		<script src="./libs/babel.js"></script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			class MySelect extends React.Component {
+				constructor(props) {
+					super(props)
+					this.state = {
+						selected: ''
+					}
+					this.handleChange = this.handleChange.bind(this)
+				}
+				handleChange(e) {
+					this.setState({
+						selected: e.target.value
+					})
+					this.props.callback(e.target.value)
+				}
+				render() {
+					return (
+						<div style={{ border: '2px solid red' }}>
+							komponent myselect
+							<br />
+							<select onChange={this.handleChange}>
+								{this.props.options.map(el => {
+									return <option key={el.id}>{el.name}</option>
+								})}
+							</select>
+							<br />
+							wybrane z select: {this.state.selected}
+						</div>
+					)
+				}
+			}
+
+			class MyForm extends React.Component {
+				constructor(props) {
+					super(props)
+					this.state = {
+						data: new Array(2)
+					}
+					this.array = [
+						{ id: 0, name: 'hamlet' },
+						{ id: 1, name: 'krzyzacy' },
+						{ id: 2, name: 'lalka' }
+					]
+					this.array2 = [
+						{ id: 0, name: 'Kraków' },
+						{ id: 1, name: 'Warszawa' },
+						{ id: 2, name: 'Gdańsk' },
+						{ id: 3, name: 'Toruń' }
+					]
+
+					this.handleChange = this.handleChange.bind(this)
+					this.handleSubmit = this.handleSubmit.bind(this)
+				}
+
+				handleChange(data) {
+					let array = this.array.map(el => el.name).includes(data) ? 0 : 1
+					let x = this.state.data
+					x[array] = data
+					this.setState({
+						data: x
+					})
+				}
+
+				handleSubmit(e) {
+					e.preventDefault()
+
+					window.alert('data:', this.state.data)
+				}
+
+				render() {
+					return (
+						<form
+							onSubmit={this.handleSubmit}
+							style={{
+								border: '2px solid blue',
+								width: '200px',
+								float: 'left'
+							}}
+						>
+							<MySelect
+								options={this.array}
+								callback={this.handleChange}
+							/>
+							<MySelect
+								options={this.array2}
+								callback={this.handleChange}
+							/>
+							<input type="submit" value="Wyślij" />
+							<br />
+							wysłane: [{' '}
+							{this.state.data[0] && this.state.data[1]
+								? this.state.data.join(', ')
+								: this.state.data.join('')}{' '}
+							]
+						</form>
+					)
+				}
+			}
+
+			ReactDOM.render(
+				<div>
+					<MyForm />
+					<MyForm />
+				</div>,
+				document.getElementById('root')
+			)
+		</script>
+	</body>
+</html>

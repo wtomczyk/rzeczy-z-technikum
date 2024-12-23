@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <title>Document</title>
+    <style>
+    .klasa{
+        color: red
+    }
+    </style>
+</head>
+<body>
+    <div id="react-app">
+
+    </div>
+    <script type="text/babel">
+     class MyForm extends React.Component {
+
+        constructor(props) {
+            super(props);
+            this.state = {
+                array: [
+                    { id: 0, name: "hamlet" },
+                    { id: 1, name: "krzyzacy" },
+                    { id: 2, name: "lalka" }
+                ],
+                array2: [
+                    { id: 0, name: "Kraków" },
+                    { id: 1, name: "Warszawa" },
+                    { id: 2, name: "Gdańsk" },
+                    { id: 3, name: "Toruń" }
+                ],
+                array1info:"",
+                array2info:"",
+                info:[]
+            };
+
+            this.handleChange = this.handleChange.bind(this);
+            this.handleSubmit = this.handleSubmit.bind(this);
+            this.handleSelect = this.handleSelect.bind(this);
+            }
+
+            // funkcja wykonywana na bieżąco przy wpisywaniu danych (lub strzałkowa, bez bind-a)
+
+            handleChange(event) {
+                //this.setState({ data: event.target.value });
+            }
+
+
+            handleSubmit(event) {
+                if(this.state.array1info!="" && this.state.array2info!=""){
+                    var aa = this.state.info
+                    aa.push(this.state.array1info + " ")
+                    aa.push(this.state.array2info+ " ")
+                    console.log(this.state.info) 
+                    this.setState({
+                        info:aa,
+                        array1info:"",
+                        array2info:""
+                    })
+                    window.alert(this.state.info)
+                }
+                event.preventDefault();
+            }
+            handleSelect(event){
+                var flaga = true
+                var b = this.state.array
+                for(var a=0;a<b.length;a++){
+                    if(event.target.value==b[a].name){
+                        flaga = false
+                    }
+                }
+                if(flaga){
+                    this.setState({
+                        array2info:event.target.value
+                    })
+                }
+                else{
+                    this.setState({
+                        array1info:event.target.value
+                    })
+                }
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleSubmit}>
+                            <MySelect handleSelect={this.handleSelect} key="aaa1" data={this.state.array}/>
+                            <MySelect handleSelect={this.handleSelect} key="aaa2" data={this.state.array2}/>
+                            <input type="submit" value="send" /><br />
+                        </form>
+                        <a>{this.state.info}</a>
+                        <br />
+                    </div>
+                );
+            }
+        }
+        class MySelect extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    data:props,
+                    info:""
+                };
+            this.handleChange = this.handleChange.bind(this);    
+            }
+            
+
+            handleChange(event) {
+                this.setState({ info: event.target.value });
+                //console.log(this)
+                console.log(this.props)
+                this.props.handleSelect(event)
+            } 
+
+            render() {
+                var a = []
+                //console.log(this.props.data)
+                for(var aa = 0;aa<this.props.data.length;aa++){
+                    console.log(this.props.data[aa])
+                    a.push(<option value={this.props.data[aa].name}>{this.props.data[aa].name}</option>)
+                }
+                //console.log(a)
+                return (
+                    <div><select onChange={this.handleChange}>{a}</select>{this.state.info}</div>
+                );
+            }
+        }     
+        ReactDOM.render(
+        <div><MyForm key="bbb1" /><MyForm key="bbb2" /></div>,
+        document.getElementById('react-app')
+        );
+    </script>
+</body>
+</html>

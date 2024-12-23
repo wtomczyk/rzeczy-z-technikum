@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Ćwiczenia</title>
+<style>
+img{
+ width:50px;
+ height:50px;
+}
+textarea{
+    resize:none;
+}
+#tekstzgory {
+margin-top: 30px;
+width: 300px;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<div id="ciagliczb">
+    <img src="35170.jpg" alt="aaaaa" class="aaa">
+    <img src="35170.jpg" alt="aaaaa" class="aaa">
+    <img src="35170.jpg" alt="aaaaa" class="aaa">
+    <img src="35170.jpg" alt="aaaaa" class="aaa">
+    <img src="35170.jpg" alt="aaaaa" class="aaa">
+    <img src="35170.jpg" alt="aaaaa" class="aaa">
+    <img src="35170.jpg" alt="aaaaa" class="aaa">
+    <img src="35170.jpg" alt="aaaaa" class="aaa">
+    <img src="35170.jpg" alt="aaaaa" class="aaa">
+    <img src="35170.jpg" alt="aaaaa" class="aaa">
+</div>
+<form id="punkty">
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+    <input type="radio" class="punkt"/>
+</form>
+<form id="tekstzgory">
+    <p>Punkty lecą z nieba?!</p>
+    <textarea id="tekst" rows="15" cols="40" style="overflow: hidden" readonly></textarea>
+</form>
+<script>
+numery = document.getElementsByClassName("aaa");
+r=numery.length;
+a=0;
+b=0;
+numery[0].src="35172.jpg";
+numery[1].src="35178.jpg";
+numery[2].src="images.jpg";
+function ruch(){
+    if(a==0){
+        if(b==r-3){
+            a=1;
+            numery[b-1].src="35172.jpg";
+            numery[b].src="35178.jpg";
+            numery[b+1].src="images.jpg";
+            numery[b+2].src="35170.jpg";
+            b=b-1;
+        }
+        else{
+            numery[b].src="35170.jpg";
+            numery[b+1].src="35172.jpg";
+            numery[b+2].src="35178.jpg";
+            numery[b+3].src="images.jpg";
+            b=b+1;
+        }
+
+    }
+    else if(a==1){
+        if(b==0){
+            a=0;
+            numery[b].src="35170.jpg";
+            numery[b+1].src="35172.jpg";
+            numery[b+2].src="35178.jpg";
+            numery[b+3].src="images.jpg";
+            b=b+1;
+        }
+        else{
+            numery[b-1].src="35172.jpg";
+            numery[b].src="35178.jpg";
+            numery[b+1].src="images.jpg";
+            numery[b+2].src="35170.jpg";
+            b=b-1;
+        }
+    }
+
+}
+inter = setInterval(ruch, 100);
+
+kropki = document.getElementsByClassName("punkt");
+f=kropki.length;
+w=0;
+e=0;
+function ruchkropek(){
+    w=w+2;
+    e=w-2;
+    if(w>=f){
+        w=w-f;
+    }
+    if(e<0){
+        e=e+f;
+    }
+    kropki[w].checked = true;
+    kropki[e].checked = false;
+}
+inter = setInterval(ruchkropek, 100);
+
+bbb = document.getElementById("tekst");
+        bbb.value = "";
+        jeden = "1p. pierwszy punkt\r\n"
+        dwa = "1p. drugi punkt\r\n"
+        trzy = "1p. trzeci punkt\r\n"
+        cztery = "1p. czwarty punkt\r\n"
+        piec = "1p. piąty punkt\r\n"
+        szesc = "1p. szósty punkt\r\n"
+        siedem = "1p. siódmy punkt\r\n"
+        linia = "\r\n"
+        y=0;
+    function pudloztekstem() {
+        if(y%23==0){
+            bbb.value=linia
+        }
+        else if(y%23==1){
+            bbb.value=jeden+bbb.value
+        }
+        else if(y%23==2){
+            bbb.value=dwa+bbb.value
+        }
+        else if(y%23==3){
+            bbb.value=trzy+bbb.value
+        }
+        else if(y%23==4){
+            bbb.value=cztery+bbb.value
+        }
+        else if(y%23==5){
+            bbb.value=piec+bbb.value
+        }
+        else if(y%23==6){
+            bbb.value=szesc+bbb.value
+        }
+        else if(y%23==7){
+            bbb.value=siedem+bbb.value
+        }
+        else{
+            bbb.value=linia+bbb.value
+        }
+        y=y+1
+    }
+    inter = setInterval(pudloztekstem, 100)
+</script>
+</body>
+</html>

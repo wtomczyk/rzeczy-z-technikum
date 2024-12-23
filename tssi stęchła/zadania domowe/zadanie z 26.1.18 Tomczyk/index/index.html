@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<meta name="author" content="Wojciech Tomczyk 2iB">
+			<title>zadanie</title>
+			<style>
+			#calosc
+			{
+			border:5px double black;
+			margin:0 auto;
+			width:90%;
+			position:relative;
+			height:300px;
+			border-radius:5px;
+			}
+			ul
+			{
+			display:block;
+			margin:20px auto;
+			margin-top:40px;
+			position:relative;
+			z-index:3;
+			}
+			a
+			{
+			display:block;
+			text-decoration:none;
+			color:black;
+			}
+			li
+			{
+			display:inline-block;
+			width:70px;
+			border: 2px solid black;
+			padding-right:10px;
+			padding-left:10px;
+			text-align:center;
+			margin-bottom:20px;
+			border-radius:5px;
+			padding-top:2px;
+			padding-bottom:2px;
+			background-color:gray;
+			}
+			.jeden
+			{
+			position:absolute;
+			right:0px;
+			top:0px;
+			width:65%;
+			height:300px;
+			z-index:2;
+			}
+			.dwa
+			{
+			position:absolute;
+			left:0px;
+			bottom:0px;
+			z-index:2;
+			width:35%;
+			height:150px;
+			}
+			@media(max-width:650px)
+			{
+			li
+			{
+			display:block;
+			}
+			.dwa
+			{
+			height:100px;
+			}
+			}
+			</style>
+		</head>
+		<body>
+			<div id="calosc">
+				<header>
+					<ul>
+						<li><a href="">cos nr 1</a></li>
+						<li><a href="">cos nr 2</a></li>
+						<li><a href="">cos nr 3</a></li>
+						<li><a href="">cos nr 4</a></li>
+					</ul>
+					<img class="jeden" src="./../obrazy/cos.png" alt="brak">
+					<img class="dwa" src="./../obrazy/cos2.png" alt="brak">
+				</header>
+			</div>
+		</body>
+	</html>

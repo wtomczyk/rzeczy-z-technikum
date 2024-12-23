@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<meta name="author" content="Wojciech Tomczyk 2ib">
+			<title>Strona</title>
+			<style>
+			#calosc
+			{
+			width:80%;
+			margin:0 auto;
+			border:1px solid black;
+			height:500px;
+			min-width:600px;
+			max-width:1000px;
+			position:relative;
+			}
+			header,footer
+			{
+			width:100%;
+			height:70px;
+			background-color:silver;
+			}
+			footer
+			{
+			clear:both;
+			line-height:70px;
+			text-align:center;
+			}
+			#srodek
+			{
+			width:500px;
+			float:right;
+			background-color:gray;
+			}
+			#hehe
+			{
+			width:50%;
+			background-color:blue;
+			}
+			#hehe,#srodek
+			{
+			height:360px;
+			}
+			#hehe #lewy p
+			{
+			display:block;
+			margin:0px;
+			width:100px;
+			padding:10px 40px;
+			color:white;
+			}
+			h1
+			{
+			text-align:center;
+			margin:0;
+			line-height:70px;
+			}
+			#hehe
+			{
+			background:linear-gradient(white 0%, white 50%, red 50%, red 100%)
+			}
+			#tekst
+			{
+			height:240px;
+			margin:30px;
+			width:440px;
+			}
+			#srodek  p
+			{
+			height:50px;
+			text-align:center;
+			
+			}
+			a
+			{
+			display:block;
+			color:white;
+			font-size:30px;
+			font-weight:bold;
+			text-decoration:none;
+			line-height:50px;
+			width:160px;
+			margin:0 auto;
+			background-color:silver;
+			margin-bottom:10px;
+			}
+			#animacja
+			{
+			position:absolute;
+			top:0;
+			width:100px;
+			height:50px;
+			border:1px solid black;
+			background-color:red;
+			-webkit-animation-name:aaa;
+			-webkit-animation-duration:3s;
+			-webkit-animation-iteration-count:infinite;
+			-webkit-animation-direction:alternate;
+			
+			text-align:center;
+			}
+			@-webkit-keyframes aaa {
+				from {left: 0%;}
+				to {left: 100%;}
+				10% {background-color:red; width:10px; height:10px;top:500px;}
+				20% {background-color:yellow; width:30px; height:30px;top:0px; }
+				30% {background-color:pink; width:50px; height:50px;top:500px;}
+				40% {background-color:green; width:70px; height:70px; top:0px;}
+				50% {background-color:silver; width:90px; height:90px;top:500px;}
+				60% {background-color:white; width:110px; height:110px;top:0px;}
+				70% {background-color:blue; width:130px; height:130px; top:500px;}
+				80% {background-color:magenta; width:150px; height:150px;top:0;}
+				90% {background-color:cyan; width:170px; height:170px;top:500px;}
+				99% {background-color:gray; width:190px; height:190px;top:0px;}
+			}	
+			</style>
+		</head>
+		<body>
+			<div id="calosc">
+				<header>
+					<h1> Strona o Polsce </h1>
+				</header>
+				
+					
+				<div id="srodek">
+				<div id="tekst">
+					<p>Polska, Rzeczpospolita Polska (RP) – państwo unitarne w Europie Środkowej, położone między Morzem Bałtyckim na północy a Sudetami i Karpatami na południu, w przeważającej części w dorzeczu Wisły i Odry.Od północy Polska graniczy z Rosją (z jej obwodem kaliningradzkim) i Litwą, od wschodu z Białorusią i Ukrainą, od południa ze Słowacją i Czechami, od zachodu z Niemcami. Większość północnej granicy Polski wyznacza wybrzeże Morza Bałtyckiego. Polska Wyłączna Strefa Ekonomiczna na Bałtyku graniczy ze strefami Danii i Szwecji.
+					</p>
+				</div>
+				<p><a href="./../podstrony/podstrona1.html" alt="a">Powrót</a></p>
+				</div>
+				<div id="animacja">
+				tekst
+				</div>
+				<div id="hehe">
+				
+				</div>
+				<footer>
+					Strona wykonana przez Wojciecha Tomczyka 2ib
+				</footer>
+			</div>
+		</body>
+	</html>

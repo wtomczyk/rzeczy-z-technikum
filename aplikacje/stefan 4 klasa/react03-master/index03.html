@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Zad 3</title>
+		<script src="./libs/react.development.js"></script>
+		<script src="./libs/react-dom.development.js"></script>
+		<script src="./libs/babel.js"></script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			class MyCheckbox extends React.Component {
+				constructor(props) {
+					super(props)
+					this.state = {
+						selected: this.props.checked
+					}
+					this.handleChange = this.handleChange.bind(this)
+				}
+				handleChange(e) {
+					this.props.callback({
+						value: this.props.value,
+						checked: !this.state.selected
+					})
+					this.setState({
+						selected: !this.state.selected
+					})
+				}
+				render() {
+					return (
+						<div style={{ border: '2px solid red' }}>
+							<input
+								type="checkbox"
+								checked={this.state.selected}
+								onChange={this.handleChange}
+							/>
+							${this.props.value}
+						</div>
+					)
+				}
+			}
+
+			class MyForm extends React.Component {
+				constructor(props) {
+					super(props)
+					this.state = {
+						data: [
+							{ checked: false, value: 1 },
+							{ checked: true, value: 2 },
+							{ checked: false, value: 3 },
+							{ checked: true, value: 10 },
+							{ checked: false, value: 20 }
+						]
+					}
+
+					this.handleChange = this.handleChange.bind(this)
+					this.handleSubmit = this.handleSubmit.bind(this)
+				}
+
+				handleChange(data) {
+					let i = this.state.data.findIndex(el => el.value == data.value)
+					let _data = this.state.data
+					_data[i] = data
+					this.setState({
+						data: _data
+					})
+				}
+
+				handleSubmit(e) {
+					e.preventDefault()
+
+					let x = this.state.data.reduce(
+						(acc, el) => (el.checked ? acc + el.value : acc),
+						0
+					)
+
+					window.alert('data: ' + x)
+				}
+
+				render() {
+					return (
+						<form
+							onSubmit={this.handleSubmit}
+							style={{
+								border: '2px solid blue',
+								width: '200px',
+								float: 'left'
+							}}
+						>
+							{this.state.data.map((el, i) => {
+								return (
+									<MyCheckbox
+										value={el.value}
+										callback={this.handleChange}
+										key={i}
+										checked={el.checked}
+									/>
+								)
+							})}
+							Suma:{' '}
+							{this.state.data.reduce(
+								(acc, el) => (el.checked ? acc + el.value : acc),
+								0
+							)}
+							<br />
+							<input type="submit" value="Wyślij" />
+							<br />
+						</form>
+					)
+				}
+			}
+
+			ReactDOM.render(
+				<div>
+					<MyForm />
+					<MyForm />
+				</div>,
+				document.getElementById('root')
+			)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Ćwiczenia</title>
+<style>
+b
+{
+    color:red;
+	font-weight:bold
+}
+i
+{
+	font-style:normal;
+	text-decoration:underline;
+}
+strong
+{
+	text-decoration:none;
+}
+</style>
+</head>
+<body>
+<script>
+var wartosc = prompt("podaj zdanie");
+var tab = ["a", "e", "o", "u", "i", "y", "ą", "ę", "ó","A", "E", "O", "U", "I", "Y", "Ą", "Ę", "Ó"]
+var a = wartosc.length;
+var d = 18;
+var tab2 = wartosc.split("");
+for(b=0;b<a;b++){
+	for(c=0;c<d;c++){
+		if(tab2[b]==tab[c]){
+		console.log("aaa")
+			var g= tab2[b].replace(tab2[b], "<b>"+tab2[b]+"</b>");
+			tab2[b]=g;
+		}
+	}
+}
+var z = tab2.join("")
+document.write(z)
+document.write("<br/>")
+</script>
+<script>
+//użyj evala
+var wartosc = eval(window.prompt("Podaj zdanie", "[0, 1, 2, 3, 4, 5, 6, 7]"))
+var decyzja = prompt("gdzie chcesz przesunac i o ile l - lewo, p - prawo k - koniec");
+var k="k"
+var l="l"
+var p="p"
+var a=0;
+var tab=wartosc
+var dlugosc=tab.length;
+aaa=decyzja.split("")
+c=aaa[0]
+aaa.splice(0,1);
+aaa = parseInt(aaa.join(""))
+while(c!=k){
+	if(c==l){
+			b=aaa%dlugosc;
+			for(a=0;a<aaa;a++){
+					for(c=0;c<1;c++){
+					g=tab[0];
+						for(z=0;z<dlugosc-1;z++){
+						tab[z]=tab[z+1];
+						}
+					tab[dlugosc-1]=g
+					console.log(tab)
+					}
+			}
+	console.log("l")
+	}else if(c==p){
+			for(a=0;a<aaa;a++){
+				b=aaa%dlugosc;
+				for(c=0;c<1;c++){
+					g=tab[dlugosc-1];
+						for(z=dlugosc-1;z>0;z--){
+						tab[z]=tab[z-1];
+						}
+					tab[0]=g
+					
+					}
+					console.log(tab)
+			}
+	console.log("p")
+	}
+	var decyzja = prompt("gdzie chcesz przesunac l - lewo, p - prawo k - koniec");
+	aaa=decyzja.split("")
+c=aaa[0]
+aaa.splice(0,1);
+aaa = parseInt(aaa.join(""))
+
+}
+document.write(tab)
+document.write("<br/>")
+</script>
+<script>
+var zdanie = prompt("podaj tekst")
+var wyraz = prompt("podaj szukany wyraz")
+var tab = zdanie.split(" ");
+var dlugosc = tab.length;
+	for(a=0;a<dlugosc;a++){
+		b=tab[a].toLowerCase();
+		if(tab[a]==wyraz||b==wyraz||tab[a]==wyraz+","||b==wyraz+","){
+		console.log("kek")
+		tab[a]="<i>"+tab[a]+"</i>"
+		}
+		else if(tab[a]==wyraz+"."){
+		tab[a]="<i>"+wyraz+"</i>"+"."
+		}
+		else if(b==wyraz+"."){
+			q=tab[a]
+			var bezkropki=q.split("")
+			var t=bezkropki.length
+				for(f=0;f<t;f++){
+					if(bezkropki[f]!=".")
+					bezkropki[f]="<i>"+bezkropki[f]+"</i>"
+				}
+				var y=bezkropki.join("");
+				tab[a]=y;
+		}
+	}
+var wynik = tab.join(" ");
+var tab2 = wynik.split("");
+var dlugosc2 = tab2.length
+	for(c=0;c<dlugosc2;c++){
+		if(tab2[c]==","){
+		tab2[c]="<strong>"+tab2[c]+"</strong>"
+		}
+		else if(tab2[c]=="."){
+		tab2[c]="<strong>"+tab2[c]+"</strong>"
+		console.log("ccc")
+		}
+	}
+var wynik = tab2.join("");
+document.write(wynik)
+</script>
+<script>
+var zdanie2 = prompt("podaj tekst");
+var zdanie2 = zdanie2.toLowerCase();
+var zdanie2 = zdanie2.split("");
+var a = zdanie2.length;
+	for(d=0;d<a;d++){
+		var b = zdanie2.indexOf(",")
+			if(b!=-1){
+				console.log(b)
+				zdanie2.splice(b, 1);}
+		var c = zdanie2.indexOf(".")
+			if(c!=-1){
+				console.log(c)
+				zdanie2.splice(c, 1);}
+	}
+var zdanie2=zdanie2.join("");
+console.log(zdanie2)
+var zdanie2=zdanie2.split(" ");
+var e = zdanie2.length;
+const tablica=[];
+	tablica[0]= [zdanie2[0], 1];
+	var g=1;
+	for(f=1;f<e;f++){
+		for(h=0;h<g;h++){
+			if(zdanie2[f]==tablica[h][0]){
+			tablica[h][1]=tablica[h][1]+1;
+			console.log("aaa")
+			var z=1;
+			}
+		}
+		if(z!=1){
+			tablica[g]=[zdanie2[f], 1];
+			console.log("bbb")
+			g=g+1;
+			}
+		z=0;
+	}
+tablica.sort(function(a,b){
+
+	return b[1]-a[1];
+	
+});
+console.log(tablica)
+var c=0;
+var y = tablica.length
+function kolor(){
+var z = '#'+Math.random().toString(16).slice(-6);
+return z;
+}
+
+	for (var j = 1; j < y+1; j++) {
+            if (j % 5 == 1) {
+                document.write("<div style=color:" + kolor() + ";>")
+            }
+            document.write(tablica[j-1][0] + " " + tablica[j-1][1] + "<br>")
+            if (j % 5 == 0) {
+                document.write("</div>")
+            }
+        }
+</script>
+</body>
+</html>

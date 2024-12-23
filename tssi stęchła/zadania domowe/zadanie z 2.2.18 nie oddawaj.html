@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<meta name="author" content="Wojciech Tomczyk 2iB">
+			<title>zadanie</title>
+			<style>
+			#calosc
+			{
+			margin:0 auto;
+			height:700px;
+			width:80%;
+			}
+			#a
+			{
+			width:32%;
+			border:1px solid black;
+			float:left;
+			height:50%
+			}
+			#b
+			{
+			width:32%;
+			border:1px solid black;
+			float:left;
+			border-left:none;
+			height:50%
+			}
+			#c
+			{
+			width:32%;
+			border:1px solid black;
+			float:left;
+			border-left:none;
+			height:50%
+			}
+			#d
+			{
+			width:32%;
+			border:1px solid black;
+			border-top:none;
+			float:left;
+			clear:both;
+			height:50%
+			}
+			#e
+			{
+			width:32%;
+			border:1px solid black;
+			border-top:none;
+			float:left;
+			border-left:none;
+			height:50%
+			}
+			#f
+			{
+			width:32%;
+			border:1px solid black;
+			border-top:none;
+			float:left;
+			border-left:none;
+			height:50%
+			}
+			p
+			{
+			width:80%;
+			margin:20px auto;
+			}
+			</style>
+		</head>
+		<body>
+			<div id="calosc">
+				<div id="a"><p>
+				static - Element blokowy zajmuje całą dostępną szerokość. Wysokość elementu
+				blokowego jest ustalana na podstawi jego wysokości. Jest to najmniejsza możliwa
+				wartość dla której treść zmieści się wewnątrz elementu. Elementy blokowe które nie są zagnieżdzone układają
+				się jeden pod drugin. Właściwości left, right, top, bottom nie działają.</p>
+				</div>
+				<div id="b"><p>
+				relative - względne, element ma taki sam wpływ na pozycjonowanie jak przy pozycjonowaniu
+				statycznym, właściwości left, right, top, bottom działają, przesunięcie odbywa się względem
+				oryginalnego umiejscowienia elementu. Zmiana punktu względem którego liczone są współrzędne określane jest jako modyfikacja
+				kontesktu pozycjonowania.</p>
+				</div>
+				<div id="c"><p>
+				absolute - Element pozycjonowany bezwzględnie, nie ma żadnego wpływu na inne elementy. Pozostałe elementy
+				zachowują się tak, jakby elementu pozycjonowanego nie było w kodzie html. Element pozycjonowany jest względem strony domyślnie.
+				Położenie elementu zostanie ustaleone na podstawie bieżącego kontrekstu.</p>
+				</div>
+				<div id="d"><p>
+				fixed - trwałe pozycjonowanie, różni się od pozycjonowania względnego tym, że element nie podlega przewijaniu
+				nawet gdy strona zostanie przewinięta w dół</p>
+				</div>
+				<div id="e"><p>
+				initial - ustawia wszelkie zmiany tak jak były na początku</p>
+				</div>
+				<div id="f"><p>
+				sticky - element nie ulega przewijaniu, lecz w przeciwieństwie do fixed można zmienić jego położenie w pewnym zakresie</p>
+				</div>
+			</div>
+		</body>
+	</html>

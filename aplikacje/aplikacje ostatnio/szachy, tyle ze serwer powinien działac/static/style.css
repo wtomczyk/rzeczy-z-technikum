@@ -1,0 +1,32 @@
+body{
+    min-height: 500px;
+    background-color: gray
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#zapytanie{
+    top:20px;
+    width: 200px;
+    height:200px;
+    background-color: gray;
+    
+}
+#przycisk{
+    width:100px;
+    height:50px
+}
+#przycisk2{
+    width:100px;
+    height:50px
+}
+#pole{
+    width:160px;
+    height:160px;
+    background-color: gray;
+    position: relative;
+}

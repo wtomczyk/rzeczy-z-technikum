@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1527496345 source:c:\users\wtomczyk\desktop\scalanie\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+

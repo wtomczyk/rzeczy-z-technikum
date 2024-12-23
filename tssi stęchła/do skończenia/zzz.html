@@ -1,0 +1,136 @@
+<html> 
+	<head>
+		<title>zadanie</title>
+		<meta name="author" content="Wojciech Tomczyk">
+		<meta charset="UTF-8">
+		<style>
+		#calosc
+		{
+		width:700px;
+		margin:0 auto;
+		position:relative;
+		}
+		fieldset
+		{
+		margin-bottom:15px;
+		}
+		input[type="submit"]
+		{
+		height:40px;
+		width:150px;
+		left:0;
+		}
+		input,textarea,select
+		{
+		position:absolute;
+		right:200px;
+		width:300px;
+		}
+		label
+		{
+		display:block;
+		position:relative;
+		margin-bottom:15px;
+		}
+		.gora
+		{
+		margin-top:10px;
+		}
+		form,.ppp
+		{
+		position:relative;
+		width:100%;
+		}
+		textarea
+		{
+		top:0px;
+		height:85px;
+		}
+		.fff
+		{
+		
+		}
+		</style>
+	</head>
+	<body>
+		<div id="calosc">
+			<h1>Opiekun zwierząt w zoo</h1>
+			<h2>Formularz podania o pracę</h2>
+			<h3>Proszę wypełnić ten formularz. Obowiązkowe pola oznaczono znakiem *.</h3>
+			<form method="post">
+				<fieldset>
+					<legend>Dane kontaktowe</legend>
+					<div class="ppp">
+						<label class="gora">
+							Imię*<input type="text" name="text">
+						</label>
+						<label>
+							Nazwisko*<input type="text" name="text">
+						</label>
+						<label>
+							Numer telefonu<input type="tel" name="numer">
+						</label>
+						<label>
+							E-mail*<input type="email" name="email">
+						</label>
+					</d>
+				</fieldset>
+				<fieldset>
+					<legend>Szczegółowe dane osobowe</legend>
+					<div id="ppp">
+						<label class="gora">
+							Data urodzenia*<input type="date" name="data">
+						</label>
+						<label>
+							Wiek*<input type="text" name="wiek">
+						</label>
+						<label>
+						Płeć
+						<select name="plec">
+							<option>Kobieta</option>
+							<option>Męższczyzna</option>
+						</select>
+						</label>
+						<label>
+						Kiedy zdałaś/łeś</br> sobie sprawę, że</br> opiekun zwierząt to</br> zawód dla Ciebie?
+						<textarea name="opinie" rows="3"></textarea>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Zaznacz swoje ulubione zwierzęta</legend>
+					<form class="fff">
+						<label>
+							zebra:<input type="checkbox" name="login">
+						</label>
+						<label>
+							kot:<input type="checkbox" name="login">
+						</label>
+						<label>
+							anakonda:<input type="checkbox" name="login">
+						</label>
+					</form>
+					<form class="fff">
+						<label>
+							człowiek:<input type="checkbox" name="login">
+						</label>
+						<label>
+							słoń:<input type="checkbox" name="login">
+						</label>
+						<label>
+							antylopa:<input type="checkbox" name="login">
+						</label>
+					</form>
+					<form class="fff">
+						<label>
+							gołąb:<input type="checkbox" name="login">
+						</label>
+						<label>
+							krab:<input type="checkbox" name="login">
+						</label>
+					</form>
+				</fieldset>
+				<input type="submit" value="Wyślij formularz">
+			</form>
+		</div>
+	</body>
+</html>

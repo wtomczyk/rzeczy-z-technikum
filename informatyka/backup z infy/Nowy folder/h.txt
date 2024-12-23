@@ -1,0 +1,4 @@
+1 liniowe przeszukiwanie ci¹gu liczbowego 
+2 liniowe przeszukiwanie ci¹gu liczbowego z wartownikiem
+3 znajdowanie min i max element ci¹gu
+4 znajdowanie lidera w zbiorze

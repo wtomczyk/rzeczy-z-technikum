@@ -1,0 +1,48 @@
+b
+{
+    font-weight: lighter
+}
+.wybrane{
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+.dobre{
+    color:green;
+}
+.zle{
+    color:red;
+}
+p, h1{
+    text-align: center
+}
+.losujbutton, .log{
+    margin:10px auto;
+    display: block
+}
+.wyniki{
+    margin:10px auto;
+    width:300px;
+    text-align: center;
+    margin-bottom: 40px;
+    
+}
+.form{
+    width:500px;
+    margin:0 auto;
+    border: 1px solid black;
+    padding:10px;
+}
+.start{
+    width:200px;
+    margin:30px auto
+}
+.table1, .table2, .table3, .table4, .table5{
+    margin:10px auto;
+}
+select{
+    width: 100%;
+    background-color: rgb(237,237,237)
+}
+body, input{
+    background-color: rgb(237,237,237)
+}

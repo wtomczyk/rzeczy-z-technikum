@@ -1,0 +1,10 @@
+C:\Users\Mikołajczyk Grzegorz\source\repos\TCP_Client\TCP_Server\bin\Debug\TCP_Server.exe.config
+C:\Users\Mikołajczyk Grzegorz\source\repos\TCP_Client\TCP_Server\bin\Debug\TCP_Server.exe
+C:\Users\Mikołajczyk Grzegorz\source\repos\TCP_Client\TCP_Server\bin\Debug\TCP_Server.pdb
+C:\Users\Mikołajczyk Grzegorz\source\repos\TCP_Client\TCP_Server\obj\Debug\TCP_Server.csprojAssemblyReference.cache
+C:\Users\Mikołajczyk Grzegorz\source\repos\TCP_Client\TCP_Server\obj\Debug\serverTcp.fWindow.resources
+C:\Users\Mikołajczyk Grzegorz\source\repos\TCP_Client\TCP_Server\obj\Debug\TCP_Server.Properties.Resources.resources
+C:\Users\Mikołajczyk Grzegorz\source\repos\TCP_Client\TCP_Server\obj\Debug\TCP_Server.csproj.GenerateResource.cache
+C:\Users\Mikołajczyk Grzegorz\source\repos\TCP_Client\TCP_Server\obj\Debug\TCP_Server.csproj.CoreCompileInputs.cache
+C:\Users\Mikołajczyk Grzegorz\source\repos\TCP_Client\TCP_Server\obj\Debug\TCP_Server.exe
+C:\Users\Mikołajczyk Grzegorz\source\repos\TCP_Client\TCP_Server\obj\Debug\TCP_Server.pdb

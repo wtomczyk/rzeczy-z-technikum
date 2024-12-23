@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<meta name="author" content="Wojciech Tomczyk 2iB">
+			<title>zadanie</title>
+			<style>
+			#calosc
+			{
+			width:80%;
+			border:1px solid black;
+			margin:0 auto;
+			}
+			dd
+			{
+			width:80%;
+			}
+			header
+			{
+			border-bottom:1px solid black;
+			}
+			#pierwszy
+			{
+			width:30%;
+			float:left;
+			}
+			#drugi
+			{
+			width:39%;
+			float:left;
+			border-right:1px solid black;
+			border-left:1px solid black;
+			}
+			#trzeci
+			{
+			width:30%;
+			float:left;
+			}
+			footer
+			{
+			clear:both;
+			border-top:1px solid black;
+			text-align:center;
+			}
+			h1
+			{
+			text-align:center;
+			}
+			dt
+			{
+			margin-left:10px;
+			}
+			@media(min-width:960px)
+			{
+			#calosc
+			{
+			background-color:red;
+			}
+			}
+			@media(min-width:600px) and (max-width:959px)
+			{
+			#calosc
+			{
+			background-color:green;
+			}
+			#pierwszy
+			{
+			float:left;
+			width:49%;
+			}
+			#drugi
+			{
+			float:right;
+			width:49%;
+			border:none;
+			border-left:1px solid black;
+			}
+			#trzeci
+			{
+			border-top:1px solid black;
+			float:left;
+			width:100%;
+			}
+			}
+			@media(max-width:599px)
+			{
+			#calosc
+			{
+			background-color:yellow;
+			}
+			#pierwszy
+			{
+			width:100%;
+			}
+			#drugi
+			{
+			width:100%;
+			border:none;
+			border-top:1px solid black;
+			}
+			#trzeci
+			{
+			border-top:1px solid black;
+			float:left;
+			width:100%;
+			}
+			}
+			</style>
+		</head>
+		<body>
+			<div id="calosc">
+				<header>
+				<h1>Strona o selektorach</h1>
+				</header>
+				<div id="pierwszy">
+					<dl>
+						<dt>selektor identyfikatora</dt>
+						<dd><br/>#id {właściwość:wartość} gdy odnosimy się do elementów określonych poprzez id
+						<br/><br/>.class {właściwość:wartość} do elementów określonych przez class. <br/><br/>
+						Używane są one do zmiany elementów określonych przez te selektory.
+						</dd>
+					</dl>
+				</div>
+				<div id="drugi">
+					<dl>
+						<dt>*</dt>
+						<dd>selektor uniwersalny, pasuje do wszystkich znaczników</dd>
+						<dt><br/>A B</dt>
+						<dd>selektor potomka, formatowane są wszystkie elementy B zawarte wewnątrzątrz znaczników A</dd>
+						<dt><br/>A>B</dt>
+						<dd>selektor dziecka, rodzic>dziecko, bezpośredni związek między elementami</dd>
+						<dt><br/>A+B</dt>
+						<dd>selektor brata, formatowany jest drugi, muszą być jeden koło drugiego w tym samym rzędzie hierarchii</dd>
+						<dt><br/>A,B,C</dt>
+						<dd>selektor grupowy, formatowane są wszystkie podane znaczniki</dd>
+				</div>
+				<div id="trzeci">
+					<dl>
+						<dt>selektor pseudoelementów</dt>
+						<dd><br/>selektor:first-line/letter {właściwość:wartość}<br/>
+						Służy do zmiany pierwszej linii/litery w danym tekscie zawartym w selektorze
+						</dd>
+						<dt><br/>selektor pseudoklas</dt>
+						<dd>
+							<ul>
+								<li>a:link - dotyczy hiperłącz</li>
+								<li>a:visited - dotyczy już odwiedzonych stron</li>
+								<li>a:hover - aktywuje się po najechaniu</li>
+								<li>a:active - aktywuje się po naciśnięciu</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<footer>
+				Stopka
+				</footer>
+			</div>
+		</body>
+	</html>

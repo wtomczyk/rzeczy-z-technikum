@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="aaa.js"></script>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body id="body">
+    <div id="main">
+        <canvas id="canvas" ></canvas>
+        <input type="text" id="gracz1" class="input" />
+        <p id="gracz1tekst"> Gracz1 </p>
+        <p id="gracz1okrozenia"></p>
+        <input type="text" id="gracz2" class="input" />
+        <p id="gracz2tekst"> Gracz2 </p>
+        <p id="gracz2okrozenia"></p>
+        <input type="text" id="gracz3" class="input" />
+        <p id="gracz3tekst"> Gracz3 </p>
+        <p id="gracz3okrozenia"></p>
+        <input type="text" id="gracz4" class="input" />
+        <p id="gracz4tekst"> Gracz4 </p>
+        <p id="gracz4okrozenia"></p>
+        <p id="gracze"> gracze: </p>
+        <select id="liczbagraczy">
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+        </select>
+        <p id="okrazenia"> okrążenia: </p>
+        <select id="iloscokrazen">
+            <option> 1 </option>
+            <option> 2 </option>
+            <option> 3 </option>
+            <option> 4 </option>
+            <option> 5 </option>
+            <option> 6 </option>
+            <option> 7 </option>
+        </select>
+        <input type="submit" id="gra" value="gra" onclick="gra()"/>
+    </div>
+</body>
+</html>

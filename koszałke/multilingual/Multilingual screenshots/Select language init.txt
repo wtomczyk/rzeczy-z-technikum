@@ -1,0 +1,11 @@
+ protected void ddl_language_Init(object sender, EventArgs e) {
+            if (Session["culture"] != null) {
+                //    ddl_lang.SelectedValue = Session["culture"].ToString();
+                //
+
+                ddl_language.ClearSelection(); //making sure the previous selection has been cleared
+                ddl_language.Items.FindByValue(Session["culture"].ToString()).Selected = true;
+
+                System.Diagnostics.Debug.WriteLine("Culture: " + Session["culture"]);
+            }
+        }

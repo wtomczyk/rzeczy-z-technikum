@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("/res/png/placeholder.png");
+    background-color: black;
+}
+.window{
+    margin:20px auto;
+    width:1200px;
+    height:600px;
+    background-color: gray;
+    position: relative;
+}
+.smollerwindow{
+    width:750px;
+    height:600px;
+    background-color: lightgray;
+}
+.okienko{
+    width:248px;
+    height:298px;
+    background-color: azure;
+    float: left;
+    border:1px solid black;
+    position: relative;
+}
+.oknoinformacyjne{
+    position: absolute;
+    width:400px;
+    height:400px;
+    background-color: azure;
+    right:25px;
+    top:25px
+}
+.okienko img{
+    display: block;
+    margin: 10px auto
+}
+.stats{
+    width:248px;
+    height:150px;
+    position: absolute;
+    bottom: 0;
+    background-color: blanchedalmond;
+    font-size: 13px
+}
+#range_0{
+    position: absolute;
+    top:25px;
+    left:35px
+}
+#range_1{
+    position: absolute;
+    top:25px;
+    left:230px
+}
+#range_2{
+    position: absolute;
+    top:75px;
+    left:35px
+}
+#range_3{
+    position: absolute;
+    top:75px;
+    left:230px
+}
+#range_4{
+    position: absolute;
+    top:125px;
+    left:35px
+}
+#range_5{
+    position: absolute;
+    top:125px;
+    left:230px
+}
+#itemy{
+    position: absolute;
+    bottom: 220px;
+    left:90px
+}
+#itemyinfo{
+    position: absolute;
+    bottom: 220px;
+    left:20px
+}
+.oknoinformacyjne *{
+    position: absolute;
+}
+#val_0{
+    top:25px;
+    left:0px;
+    text-align: center;
+    width:30px
+}
+#val_1{
+    top:25px;
+    left:195px;
+    text-align: center;
+    width:30px
+}
+#val_2{
+    top:75px;
+    left:0px;
+    text-align: center;
+    width:30px
+}
+#val_3{
+    top:75px;
+    left:195px;
+    text-align: center;
+    width:30px
+}
+#val_4{
+    top:125px;
+    left:0px;
+    text-align: center;
+    width:30px
+}
+#val_5{
+    top:125px;
+    left:195px;
+    text-align: center;
+    width:30px
+}
+#maks_0{
+    top:25px;
+    left:165px;
+    text-align: center;
+    width:30px
+}
+#maks_1{
+    top:25px;
+    left:365px;
+    text-align: center;
+    width:30px
+}
+#maks_2{
+    top:75px;
+    left:165px;
+    text-align: center;
+    width:30px
+}
+#maks_3{
+    top:75px;
+    left:365px;
+    text-align: center;
+    width:30px
+}
+#maks_4{
+    top:125px;
+    left:165px;
+    text-align: center;
+    width:30px
+}
+#maks_5{
+    top:125px;
+    left:365px;
+    text-align: center;
+    width:30px
+}
+#abilities{
+    position: absolute;
+    bottom: 220px;
+    left:230px
+}
+#informacjeruchow{
+    width:400px;
+    height:125px;
+    position: absolute;
+    bottom: 0;
+    background-color: lightblue
+}
+#movestitle{
+    position: absolute;
+    left:50px;
+    top:180px
+}
+#move_0{
+    position: absolute;
+    left:20px;
+    top:195px
+}
+#move_1{
+    position: absolute;
+    left:20px;
+    top:215px
+}
+#move_2{
+    position: absolute;
+    left:20px;
+    top:235px
+}
+#move_3{
+    position: absolute;
+    left:20px;
+    top:255px
+}
+#wybieratak_0{
+    position: absolute;
+    right:120px;
+    top:195px
+}
+#wybieratak_1{
+    position: absolute;
+    right:120px;
+    top:215px
+}
+#wybieratak_2{
+    position: absolute;
+    right:120px;
+    top:235px
+}
+#wybieratak_3{
+    position: absolute;
+    right:120px;
+    top:255px
+}
+#potwierdzenie{
+    position: absolute;
+    width:250px;
+    height:125px;
+    bottom: 25px;
+    right: 25px;
+    background-color: bisque;
+    line-height: 125px;
+    text-align: center;
+    font-size: 50px
+}
+#pomoc{
+    position: absolute;
+    width:125px;
+    height:125px;
+    bottom: 25px;
+    right: 300px;
+    background-color: bisque;
+    line-height: 125px;
+    text-align: center;
+    font-size: 50px
+}
+#oknogracza{
+    position: absolute;
+    bottom: 40px;
+    right:40px;
+    width: 798px;
+    height:200px;
+    border:1px solid black;
+    background-color: white
+}
+#oknogracz *{
+    background-color: white
+}
+#okno_0{
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width:148px;
+    height:98px;
+    border:1px solid black;
+}
+#okno_1{
+    position: absolute;
+    top: 0px;
+    left:150px;
+    width:148px;
+    height:98px;
+    border:1px solid black;
+}
+#okno_2{
+    position: absolute;
+    top: 100px;
+    left:0px;
+    width:148px;
+    height:98px;
+    border:1px solid black;
+}
+#okno_3{
+    position: absolute;
+    top: 100px;
+    left:150px;
+    width:148px;
+    height:98px;
+    border:1px solid black;
+}
+#aktywnypokemon{
+    position: absolute;
+    left:300px;
+    width:248px;
+    height:198px;
+    border:1px solid black;
+}
+#stats{
+    width:125px;
+    height:200px;
+    position: absolute;
+    right:0;
+    top:0
+}
+#reszta{
+    position: absolute;
+    right:0;
+    width:248px;
+    height:198px;
+    border:1px solid black;
+}
+#oknoprzeciwnika{
+    position: absolute;
+    top:40px;
+    left:40px;
+    width:200px;
+    height:50px;
+    border:1px solid black;
+    background-color: white
+}
+#przebiegwalki{
+    position: absolute;
+    left:40px;
+    bottom:40px;
+    width:350px;
+    height:200px;
+    border:1px solid black;
+    background-color: white
+}
+#pomoc2{
+    width:50px;
+    height:30px;
+    line-height: 30px;
+    position: absolute;
+    right:20px;
+    top:20px;
+    text-align: center;
+    border: 1px solid black
+}

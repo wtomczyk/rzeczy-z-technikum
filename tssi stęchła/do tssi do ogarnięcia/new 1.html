@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="author" content="Dawid Sroka" />
+	<title>Sprawdzian</title>
+	<style>
+	*
+	{
+		padding: 0;
+		margin: 0;
+	}
+	#poj
+	{
+		width: 960px;
+		margin: 0 auto;
+		background:rgb(224,255,255);
+	}
+	header
+	{
+		background: rgb(0,206,209);
+		padding: 30px 0 30px 0;
+		text-align: center;
+	}
+	nav
+	{
+		border-right: 5px dotted rgb(0,206,209);
+		padding: 10px 0 80px 20px;
+		margin-right: 20px;
+		width: 200px;
+	}
+	nav ul
+	{
+		list-style-type: none;
+	}
+	nav a
+	{
+		display: block;
+		width: 150px;
+		background: rgb(0,206,209);
+		border: 5px double black;
+		text-decoration: none;
+		color: black;
+		margin-top: 5px;
+		text-align: center;
+	}
+	#prawa
+	{
+		position: relative;
+		width: 755px;
+		float: right;
+	}
+	#prawa h1
+	{
+		margin-left: 25px;
+	}
+	#prawa form
+	{
+		margin-left: 25px;
+	}
+	#prawa label
+	{
+		display: block;
+		position: relative;
+		margin-top: 5px;
+	}
+	#prawa input
+	{
+		position: absolute;
+		width: 150px;
+		left: 150px;
+	}
+	#prawa input[type="radio"]
+	{
+		position: static;
+		width: 60px;
+		margin-left: 125px;
+		margin-top: 10px;
+	}
+	#prawa p
+	{
+		width: 250px;
+		position: absolute;
+		left: 25px;
+		top: 105px;
+	}
+	#prawa input[type="submit"]
+	{
+		width: 80px;
+		padding: 5px;
+		top: 180px;
+		left: 200px;
+	}
+	footer
+	{
+		clear: both;
+		background: rgb(0,206,209);
+		text-align: center;
+		padding: 5px 0 5px 0;
+	}
+	</style>
+</head>
+<body>
+	<div id="poj">
+		<header>
+			<h1> <b> Strona internetowa </b> </h1>
+		</header>
+		<div id="główna">
+			<div id="prawa">
+				<h1>Formularz</h1>
+				<form>
+					<label>
+						Imię <input type="text" name="Imię" />
+					</label>
+					<label>
+						Data urodzenia <input type="date" name="Data" />
+					</label>
+					<p> Płeć </p>
+					<label>
+						<input type="radio" name="płeć" /> Kobieta				
+					</label>
+					<label>
+						<input type="radio" name="płeć" /> Mężczyzna			
+					</label>
+					<label>
+						Zamieszkanie <input type="text" name="Zamieszkanie" />
+					</label>
+					<input type="submit" value="Wyślij" name="Wyślij" />
+				</form>
+			</div>
+			<nav>
+				<ul>
+					<li> <a href="#"> Strona Główna </a> </li>
+					<li> <a href="#"> Podstrona nr 1 </a> </li>
+					<li> <a href="#"> Podstrona nr 2 </a> </li>
+					<li> <a href="#"> Pomoc </a> </li>
+				</ul>
+			</nav>
+		</div>
+		<footer>
+			<h2>Strona wykonana przez <b>Dawid Srokę</b></h2>
+		</footer>
+	</div>
+</body>
+</html>

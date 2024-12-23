@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="author" content="Dawid Sroka" />
+	<title>Sprawdzian</title>
+	<style>
+	*
+	{
+		padding: 0;
+		margin: 0;
+	}
+	#poj
+	{
+		width: 960px;
+		margin: 0 auto;
+		background:rgb(224,255,255);
+		z-index: -1;
+		font-family: Calibri;
+	}
+	header
+	{
+		background: rgb(0,206,209);
+		padding: 50px 0 30px 0;
+		text-align: center;
+		position: relative;
+	}
+	header h1
+	{
+		text-decoration: underline;
+		font-variant: small-caps;
+		letter-spacing: 3px;
+		margin: -20px 0 0 450px;
+		position: relative;
+		z-index: 2;
+	}
+	header img
+	{
+		position: absolute;
+	}
+	img[alt="logo1"]
+	{
+		width: 40px;
+		height: auto;
+		left: 850px;
+		top: 15px;
+		z-index: 1;
+	}
+	img[alt="logo2"]
+	{
+		width: 100px;
+		height: auto;
+		left: 172px;
+		top: 15px;
+	}
+	nav
+	{
+		border-right: 5px dotted rgb(0,206,209);
+		padding: 10px 0 130px 20px;
+		margin-right: 20px;
+		width: 200px;
+	}
+	nav ul
+	{
+		list-style-type: none;
+	}
+	nav a
+	{
+		display: block;
+		width: 150px;
+		background: rgb(0,206,209);
+		border: 5px double black;
+		text-decoration: none;
+		color: black;
+		margin-top: 5px;
+	}
+	#prawa
+	{
+		width: 755px;
+		float: right;
+		line-height:30px;
+	}
+	#prawa h2
+	{
+		margin: 30px 0 0 280px;
+	}
+	#prawa form
+	{
+		margin-left: 85px;
+	}
+	#prawa label
+	{
+		display: block;
+		margin-top: 5px;
+	}
+	#prawa input
+	{
+		width: 400px;
+		left: 130px;
+	}
+	#prawa select
+	{
+		width: 400px;
+	}
+	#prawa input[type="radio"]
+	{
+		width: 10px;
+	}
+	#prawa input[type="submit"]
+	{
+		width: 80px;
+		padding: 5px;
+		margin-left: 250px;
+	}
+	footer
+	{
+		clear: both;
+		background: rgb(0,206,209);
+		text-align: center;
+		padding: 10px 0 10px 0;
+	}
+	</style>
+</head>
+<body>
+	<div id="poj">
+		<header>
+			<h1> <i> Strona internetowa </i> </h1>
+			<img src="logo.png" alt="logo1" />
+			<img src="logo.png" alt="logo2" />
+		</header>
+		<div id="główna">
+			<div id="prawa">
+				<h2>Formularz</h2>
+				<form>
+					<label style="margin-left: 73px">
+						<b> Imię </b> <input type="text" name="Imię" />
+					</label>
+					<label>
+						<b> Data urodzenia </b> <input type="date" name="Data" />
+					</label>
+					<label style="margin-left: 65px">
+						<b> Płeć: </b> <input type="radio" name="płeć" /> Kobieta <input type="radio" name="płeć" style="margin-left: 10px" /> Mężczyzna			 	
+					</label>
+					<label style="margin-left:  12px">
+						<b> Zamieszkanie </b>
+						<select>
+							<option> Miasto </option>
+							<option> Wieś </option>
+						</select>
+					</label>
+					<input type="submit" value="Wyślij" name="Wyślij" />
+				</form>
+			</div>
+			<nav>
+				<ul>
+					<li> <a href="#"> Strona Główna </a> </li>
+					<li> <a href="#"> Podstrona nr 1 </a> </li>
+					<li> <a href="#"> Podstrona nr 2 </a> </li>
+					<li> <a href="#"> Pomoc </a> </li>
+				</ul>
+			</nav>
+		</div>
+		<footer>
+			Strona wykonana przez <b>Dawid Sroka</b>
+		</footer>
+	</div>
+</body>
+</html>

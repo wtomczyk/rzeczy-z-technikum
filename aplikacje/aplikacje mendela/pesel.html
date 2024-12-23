@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>zadanie</title>
+        <script>
+		var a = prompt("Podaj PESEL");
+		if (a!=null){
+			if (a.length===11) {
+			var b = Number(a[0]) + 3 * Number(a[1]) + 7 * Number(a[2]) + 9 * Number(a[3]) + 
+			Number(a[4]) + 3 * Number(a[5]) + 7 * Number(a[6]) + 9 * Number(a[7]) + Number(a[8]) 
+			+ 3 * Number(a[9]) + Number(a[10]);
+			var c=b%10;
+			if (c === 0) {
+				var rok = a[0] + a[1]
+				var miesiac = a[2] + a[3]
+				var dzien = a[4] + a[5]
+				var plec = a[9]
+				document.write("PESEL to " + a + "<br>")
+				document.write("Data urodzenia to " + dzien)
+                        switch (miesiac % 20){
+                            case 1: document.write(" styczen"); break
+                            case 2: document.write(" luty"); break
+                            case 3: document.write(" marzec"); break
+                            case 4: document.write(" kwiecien"); break
+                            case 5: document.write(" maj"); break
+                            case 6: document.write(" czerwiec"); break
+                            case 7: document.write(" lipiec"); break
+                            case 8: document.write(" sierpień"); break
+                            case 9: document.write(" wrzesień"); break
+                            case 10: document.write(" październik"); break
+                            case 11: document.write(" listopad"); break
+                            case 12: document.write(" grudzień"); break
+                        }
+						switch (Math.floor(miesiac/20)) {
+							case 0: document.write(" 19"); break
+                            case 1: document.write(" 20"); break
+                            case 2: document.write(" 21"); break
+                            case 3: document.write(" 22"); break
+                            case 4: document.write(" 18"); break    
+                        }
+                        document.write(rok)
+						document.write("<br>Płeć to ")
+                        if (plec%2==1){
+                            document.write("mężczyzna")
+                        } else {
+                            document.write("kobieta")
+                        }
+                    } else {
+                    document.write("nieprawidłowy pesel")
+                    }
+                } else {
+                document.write("Numer " + a + " to nie pesel")
+                }
+            } else {
+            document.write("nie podano peselu")
+            }
+        </script>
+	</head>
+	<body>
+	
+	</body>
+	</html>

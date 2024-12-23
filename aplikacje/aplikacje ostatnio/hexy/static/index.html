@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="three_ver97.js"></script>
+    <script src="script.js"></script>
+    <script src="OrbitControls.js"></script>
+    <script src="Net.js"></script>
+    <script src="Main3D.js"></script>
+    <script src="Doors3D.js"></script>
+    <script src="Hex3D.js"></script>
+    <script src="Level.js"></script>
+    <script src="Settings.js"></script>
+    <script src="Player.js"></script>
+    <script src="Model.js"></script>
+    <script src="Model2.js"></script>
+    <script src="Ally.js"></script>
+    <script src="light.js"></script>
+    <script src="Grid.js"></script>
+    <script src="main.js"></script>
+    <style>
+        *{
+            user-select: none;
+            -webkit-user-select: none
+        }
+    #prawo{
+        height:100vh;
+        float:left;
+        position: relative;
+        
+    }
+    #lewo{
+        width:200px;
+        float: left;
+        height:100vh;
+        background-color: gray;
+        overflow: scroll;
+    }
+    #select{
+        width:100px;
+        margin:20px 20px
+    }
+    img{
+        width:50px;
+        height:50px
+    }
+    .hex{
+        width:50px;
+        height:50px;
+        position: absolute
+    }
+    .strzala{
+        width:25px;
+        height:25px;
+        display: block;
+        position: absolute;
+        top:12.5px;
+        left:12.5px;
+    }
+    #root{
+        position: relative;
+    }
+    #div1{
+        position: absolute;
+        top:50px
+    }
+	#div2{
+        position: absolute;
+        top:150px
+    }
+    </style>
+</head>
+<body>
+    <div id="lewo">
+        <select id="select" oninput="script.czytajliczbe(),script.myFunction()">
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <input type="button" id="sciana" value="sciana" onclick="script.sciana()">
+        <input type="button" id="potwor" value="potwor" onclick="script.potwor()">
+        <input type="button" id="skarb" value="skarb" onclick="script.skarb()">
+        <input type="button" id="swiatlo" value="swiatlo" onclick="script.swiatlo()">
+        <input type="button" id="ally" value="ally" onclick="script.ally()">
+        <input type="button" id="save" value="save" onclick="script.save()">
+        <input type="button" id="load" value="load" onclick="script.load()">
+        <input type="button" id="graj" value="graj" onclick="script.graj()">
+        <input type="button" id="test" value="a" onclick="script.myFunction33()">
+        <input type="button" id="test2" value="aa" onclick="script.myFunction44()">
+        <input type="button" id="test3" value="aaa" onclick="script.myFunction55()">
+        <div id="dane">
+            
+        </div>
+    </div>
+
+    <div id="prawo">
+
+    </div>
+    
+</body>
+</html>

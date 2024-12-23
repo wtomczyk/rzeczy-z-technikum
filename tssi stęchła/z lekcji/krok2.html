@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Zmiana układu strony</title>
+
+<style>
+* {
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+.pojemnik{
+width:80%;
+margin:0 auto;
+background:yellow;
+
+}
+header
+{
+  border-bottom: dashed 1px rgb(153,153,153);
+}
+
+
+.kolumny
+{
+	float:left;
+	width:80%;
+}
+
+nav {
+  float: left;
+  padding: 0 20px 0 10px;
+  width: 25%;
+}
+article {
+  float: right;
+  width: 75%;
+  padding: 0 20px;
+  border-left: dashed 1px rgb(153,153,153);
+  border-right: dashed 1px rgb(153,153,153);
+}
+aside {
+  float: right;
+  width: 20%;	
+  padding: 0 10px 0 20px;
+}
+footer{
+  clear:both;
+  border-top: dashed 1px rgb(153,153,153);
+  }
+  @media (min-width:481px) and (max-width:768px)
+  {
+	aside
+	{
+	float:none;
+	width:auto;
+	clear:both;
+	border-top:4px solid black;
+	padding-top:10px
+	}
+	.kolumny
+	{
+	width:auto
+	}
+	.zawartosc
+	{
+	border-right:none;
+	}
+}
+@media (max-width:480px)
+{
+.zawartosc, .kolumny, nav, aside, article
+{
+float:none;
+width:auto;
+}
+.zawartosc
+{
+border:none
+}
+nav, aside
+{
+border-top:4px solid black;
+}
+header h1
+{
+font-size:1.1em;
+}
+}
+</style>
+</head>
+
+<body>
+<div class="pojemnik">
+<header>
+<h1>Nagłówek</h1>
+</header>
+<div class="zawartosc">
+<div class="kolumny">
+		<article>
+		  <p>Część środkowa Suspendisse vitae quam lorem, in tempus velit. Sed vitae ante quis felis fringSuspendisse vitae quam lorem, in tempus velit. Sed vitae ante quis felis fringSuspendisse vitae quam lorem, in tempus velit. Sed vitae ante quis felis fringSuspendisse vitae quam lorem, in tempus velit. Sed vitae ante quis felis fringSuspendisse vitae quam lorem, in tempus velit. Sed vitae antegSuspendisse vitae quam lorem, in tempus velit. Sed vitae ante quis felis fringSuspendisse vitae quam lorem, in tempus velit. Sed vitae ant quis felis fringilla condimentum. Aenean orci ante,   </p>
+		</article> 
+<!-- pierwszy pasek boczny -->
+		<nav >
+		  <p>Pasek boczny nr 1 Suspendisse vitae quam lorem, in tempus velit. Sed vitae ante quis felis fringilla condimentum. </p>
+		</nav>
+
+</div>
+<!-- drugi pasek boczny -->
+		<aside >
+		  <p>Pasek boczny nr 2 Suspendisse vitae quam lorem, in tempus velit. Sed vitae ante quis felis fringilla condimentum. </p>
+		</aside>
+</div>
+<footer>
+
+<p>Kontakt: <a href="mailto:nobody@nowhere.com">e-mail@here.com</a></p>
+</footer>
+</div>
+</body>
+</html>

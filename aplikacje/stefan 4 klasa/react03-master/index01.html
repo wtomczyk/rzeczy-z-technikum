@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Zad 1</title>
+		<script src="./libs/react.development.js"></script>
+		<script src="./libs/react-dom.development.js"></script>
+		<script src="./libs/babel.js"></script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="text/babel">
+			class MyForm extends React.Component {
+				constructor(props) {
+					super(props)
+					this.state = {
+						data: '',
+						status: 'niewyslane'
+					}
+
+					this.handleChange = this.handleChange.bind(this)
+					this.handleSubmit = this.handleSubmit.bind(this)
+				}
+
+				handleChange(e) {
+					this.setState({ data: e.target.value })
+				}
+
+				handleSubmit(e) {
+					e.preventDefault()
+
+					this.setState({
+						status: 'wyslane'
+					})
+				}
+
+				render() {
+					return (
+						<form onSubmit={this.handleSubmit}>
+							<input
+								type="text"
+								value={this.state.data}
+								onChange={this.handleChange}
+							/>
+							<input type="submit" value="send" />
+							<div>
+								status:{this.state.status}
+								<br />
+								data:{this.state.data}
+							</div>
+						</form>
+					)
+				}
+			}
+
+			ReactDOM.render(<MyForm />, document.getElementById('root'))
+		</script>
+	</body>
+</html>

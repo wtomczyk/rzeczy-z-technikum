@@ -1,0 +1,659 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>zadanie</title>
+        <style>
+        body{
+            background-color: gray
+        }
+        canvas{
+            margin:0;
+            padding:0;
+        }
+        #qqq{
+            width:300px;
+            height:300px;
+            line-height: 0;
+            border:1px solid black;
+            margin: 0 auto;
+            position: relative;
+        }
+        #qwerty4{
+            margin:0 auto;
+            width:100px;
+            height:100px;
+            margin-bottom:10px;
+            overflow: hidden;
+        }
+        #qwerty2{
+            margin:0 auto;
+            width:200px;
+            height:100px;
+            margin-bottom:10px;
+            position: relative;
+        }
+        #qwerty3{
+            width:210px;
+            height:40px;
+            margin:0 auto;
+            margin-bottom:10px;
+        }
+        .przycisk{
+            margin:6px;
+            height:30px;
+            width:40px;
+        }
+        #start{
+            margin:0 auto;
+            text-align: center;
+            height:60px;
+            width:360px;
+        }
+        #start img{
+            float:left
+        }
+        #obrazek{
+            width: 700px;
+            height:100px
+        }
+        #przycisk2_1,#przycisk2_2{
+            position:absolute;
+            width: 40px;
+            height: 20px;
+            top:40px;
+        }
+        #przycisk2_1{
+            left:5px;
+        }
+        #przycisk2_2{
+            right:5px;
+        }
+        #qwerty{
+            display: none
+        }
+        #tabelawynikow{
+            width:800px;
+            height:267px;
+            margin:30px auto;
+            border:1px solid black;
+            background-color: white
+        }
+        table{
+            margin:0
+        }
+        td{
+            border:1px solid black;
+            width:100px;
+            text-align: center;
+            background-color: gray
+            
+        }
+        
+        #tabelawynikow div{
+            float:left;
+            width:200px;
+            height:265px
+        }
+        #start{
+            background-color: white;
+        }
+        </style>
+        <script>
+        obrazki = [];
+        tablica = [];
+        tablicasprawdzajaca = [];
+        warunekwygrania = [];
+        zezwolenie = true;
+        wygrana=0;
+        numerobrazka=0;
+        a=3;
+        b=300/a;
+        bb=0;
+        obrazki[0]="krzeslo.jpg";
+        obrazki[1]="berd.jpg";
+        obrazki[2]="a.jpg";
+        obrazki[3]="lepszekrzeslo.jpg";
+        obrazki[4]="obrazek.jpg";
+        document.write('<div id="qwerty"><img id="source0" src="krzeslo.jpg" width="300px" height="300px"><img id="source1" src="berd.jpg" width="300px" height="300px"><img id="source2" src="a.jpg" width="300px" height="300px"><img id="source3" src="lepszekrzeslo.jpg" width="300px" height="300px"><img id="source4" src="obrazek.jpg" width="300px" height="300px"></div>')
+        document.write('<div id="qwerty2"><input type="button" name="wczesniej" value="<=" id="przycisk2_1" onclick="wczesniej()"><div id="qwerty4"><div id="obrazek" width="600px" height="100px"><img src="obrazek.jpg" height="100px" width="100px"><img src="krzeslo.jpg" height="100px" width="100px"><img src="berd.jpg" height="100px" width="100px"><img src="a.jpg" height="100px" width="100px"><img src="lepszekrzeslo.jpg" height="100px" width="100px"><img src="obrazek.jpg" height="100px" width="100px"><img src="krzeslo.jpg" height="100px" width="100px"></div></div><input type="button" name="dalej" value="=>" id="przycisk2_2" onclick="dalej()"></div>')
+        document.write('<div id="qwerty3"><input type="button" name="3" value="3x3" class="przycisk" id="przycisk3" onclick="funkcja3()"><input type="button" name="4" value="4x4" class="przycisk" id="przycisk4" onclick="funkcja4()"><input type="button" name="5" value="5x5" class="przycisk" id="przycisk5" onclick="funkcja5()"><input type="button" name="6" value="6x6" class="przycisk" id="przycisk6" onclick="funkcja6()"></div>')
+        document.write("<div id='qqq'></div>")
+        document.write("<div id='zegar'></div>")
+        document.write("<div id='start'><img src='0.jpg'><img src='0.jpg'><img src='dwukropek.jpg'><img src='0.jpg'><img src='0.jpg'><img src='dwukropek.jpg'><img src='0.jpg'><img src='0.jpg'><img src='kropka.jpg'><img src='0.jpg'><img src='0.jpg'><img src='0.jpg'></div>")
+        document.write("<div id='tabelawynikow'></div>")
+        document.getElementById("qwerty4").scrollLeft += 100
+        document.getElementById("qwerty4").style.scrollBehavior = "smooth"
+        //a to ilość podziałów
+        for(c=0;c<a+2;c++){
+            tablica[c] = [];
+            tablicasprawdzajaca[c] = [];
+            warunekwygrania[c]=[];
+            for(d=0;d<a+2;d++){
+                tablica[c][d]=0
+                tablicasprawdzajaca[c][d]=0
+                warunekwygrania[c][d]=0
+            }
+        }
+        for(c=1;c<a+1;c++){
+                aa=0; 
+                for(d=1;d<a+1;d++){
+                    var aaa = '<canvas id="l_'+c+'_'+d+'"' + "width=" +b +"px height=" + b + "px onclick='przesunieciekafla()' class='p_"+c+'_'+d+"'></canvas>"
+                    document.getElementById("qqq").innerHTML += aaa;
+                    document.getElementById("l_"+c+'_'+d).style.position = "absolute"
+                    document.getElementById("l_"+c+'_'+d).style.top = bb+"px"
+                    document.getElementById("l_"+c+'_'+d).style.left = aa+"px"
+                    aa=aa+b;
+                    tablica[c][d]="l_"+c+'_'+d
+                    tablicasprawdzajaca[c][d]="p_"+c+'_'+d
+                    warunekwygrania[c][d]="l_"+c+'_'+d
+                }
+                bb=bb+b;
+            }
+            aa=0;
+        bb=0;   
+        function cookiecus(){
+        dlugosccookie = document.cookie.split("; ")
+        numerwyniku=dlugosccookie.length
+        tekst=""
+        tablica3=[];
+        tablica4=[];
+        tablica5=[];
+        tablica6=[];
+        wartosc3=0;
+        wartosc4=0;
+        wartosc5=0;
+        wartosc6=0;
+        for(q=0;q<numerwyniku;q++){
+            dlugosccookie[q]=dlugosccookie[q].replace("=",",")
+            dlugosccookie[q]=dlugosccookie[q].split(",")
+            dlugosccookie[q].splice(0, 1)
+            dlugosccookie[q][0]=parseFloat(dlugosccookie[q][0])
+            if(dlugosccookie[q][2]==3){
+                tablica3[wartosc3]={dlugosc:dlugosccookie[q][0],imie:dlugosccookie[q][1],wynik:dlugosccookie[q][3]}
+                wartosc3++
+            }
+            else if(dlugosccookie[q][2]==4){
+                tablica4[wartosc4]={dlugosc:dlugosccookie[q][0],imie:dlugosccookie[q][1],wynik:dlugosccookie[q][3]}
+                wartosc4++
+            }
+            else if(dlugosccookie[q][2]==5){
+                tablica5[wartosc5]={dlugosc:dlugosccookie[q][0],imie:dlugosccookie[q][1],wynik:dlugosccookie[q][3]}
+                wartosc5++
+            }
+            else if(dlugosccookie[q][2]==6){
+                tablica6[wartosc6]={dlugosc:dlugosccookie[q][0],imie:dlugosccookie[q][1],wynik:dlugosccookie[q][3]}
+                wartosc6++
+            }
+        }
+        tablica3.sort(function(a, b) {
+            return parseFloat(a.dlugosc) - parseFloat(b.dlugosc);
+        });
+        tablica4.sort(function(a, b) {
+            return parseFloat(a.dlugosc) - parseFloat(b.dlugosc);
+        });
+        tablica5.sort(function(a, b) {
+            return parseFloat(a.dlugosc) - parseFloat(b.dlugosc);
+        });
+        tablica6.sort(function(a, b) {
+            return parseFloat(a.dlugosc) - parseFloat(b.dlugosc);
+        });         
+        tekst+="<div><table><tr><td colspan='2'>3x3</td></tr>"
+            for(q=0;q<10;q++){
+                if(tablica3[q]==undefined){
+                    tekst+="<tr><td>---</td><td>---</td></tr>"
+                }
+                else{
+                    tekst+="<tr><td>"+tablica3[q].imie+"</td><td>"+tablica3[q].wynik+"</td></tr>"
+                }
+            }
+            tekst+="</table></div>"
+            document.getElementById("tabelawynikow").innerHTML=tekst
+
+            tekst+="<div><table><tr><td colspan='2'>4x4</td></tr>"
+            for(q=0;q<10;q++){
+                if(tablica4[q]==undefined){
+                    tekst+="<tr><td>---</td><td>---</td></tr>"
+                }
+                else{
+                    tekst+="<tr><td>"+tablica4[q].imie+"</td><td>"+tablica4[q].wynik+"</td></tr>"
+                }
+            }
+            tekst+="</table></div>"
+            document.getElementById("tabelawynikow").innerHTML=tekst
+
+            tekst+="<div><table><tr><td colspan='2'>5x5</td></tr>"
+            for(q=0;q<10;q++){
+                if(tablica5[q]==undefined){
+                    tekst+="<tr><td>---</td><td>---</td></tr>"
+                }
+                else{
+                    tekst+="<tr><td>"+tablica5[q].imie+"</td><td>"+tablica5[q].wynik+"</td></tr>"
+                }
+            }
+            tekst+="</table></div>"
+            document.getElementById("tabelawynikow").innerHTML=tekst
+
+            tekst+="<div><table><tr><td colspan='2'>6x6</td></tr>"
+            for(q=0;q<10;q++){
+                if(tablica6[q]==undefined){
+                    tekst+="<tr><td>---</td><td>---</td></tr>"
+                }
+                else{
+                    tekst+="<tr><td>"+tablica6[q].imie+"</td><td>"+tablica6[q].wynik+"</td></tr>"
+                }
+            }
+            tekst+="</table></div>"
+            document.getElementById("tabelawynikow").innerHTML=tekst
+        }
+        cookiecus();
+        function funkcja(){
+            if(zezwolenie){
+            document.getElementById("qqq").innerHTML = "";
+            b=300/a;
+            bb=0;
+            tablica = [];
+            tablicasprawdzajaca = [];
+            warunekwygrania = [];
+            for(c=0;c<a+2;c++){
+            tablica[c] = [];
+            tablicasprawdzajaca[c] = [];
+            warunekwygrania[c]=[];
+            for(d=0;d<a+2;d++){
+                tablica[c][d]=0
+                tablicasprawdzajaca[c][d]=0
+                warunekwygrania[c][d]=0
+            }
+        }
+                for(c=1;c<a+1;c++){
+                    aa=0;  
+                    for(d=1;d<a+1;d++){
+                        var aaa = '<canvas id="l_'+c+'_'+d+'"' + "width=" +b +"px height=" + b + "px onclick='przesunieciekafla()' class='p_"+c+'_'+d+"'></canvas>"
+                        document.getElementById("qqq").innerHTML += aaa;
+                        document.getElementById("l_"+c+'_'+d).style.position = "absolute"
+                        document.getElementById("l_"+c+'_'+d).style.top = bb+"px"
+                        document.getElementById("l_"+c+'_'+d).style.left = aa+"px"
+                        tablica[c][d]="l_"+c+'_'+d
+                        tablicasprawdzajaca[c][d]="p_"+c+'_'+d
+                        warunekwygrania[c][d]="l_"+c+'_'+d
+                        aa=aa+b;
+                        }
+                        bb=bb+b;
+                        }
+                    aa=0;
+                    bb=0;
+                    for(c=1;c<a;c++){               
+                        for(d=1;d<a+1;d++){
+                            canvas = document.getElementById("l_"+c+'_'+d);
+                            ctx = canvas.getContext('2d');
+                            image = document.getElementById('source' + numerobrazka);
+                            ctx.drawImage(image, aa, bb, b, b, 0, 0, b, b);
+                            aa=aa+b
+                            }
+                        aa=0;
+                        bb=bb+b
+                        }
+                    for(e=1;e<a;e++){
+                        canvas = document.getElementById("l_"+c+'_'+e);
+                        ctx = canvas.getContext('2d');
+                        image = document.getElementById('source' + numerobrazka);
+                        ctx.drawImage(image, aa, bb, b, b, 0, 0, b, b);
+                        aa=aa+b
+                    }
+                }
+            }
+        function funkcja3(){
+            if(zezwolenie){
+            a=3;
+            zegarek();
+            }
+        }
+        function funkcja4(){
+            if(zezwolenie){
+            a=4;
+            zegarek();
+            }
+        }
+        function funkcja5(){
+            if(zezwolenie){
+            a=5;
+            zegarek();
+            }
+        }
+        function funkcja6(){
+            if(zezwolenie){
+            a=6;
+            zegarek();
+            }
+        }
+        function wczesniej(){
+            if(zezwolenie){
+            if(numerobrazka!=0){
+                numerobrazka=numerobrazka-1;
+                document.getElementById("qwerty4").scrollLeft -= 100
+            }
+            else if(numerobrazka==0){
+                numerobrazka=4;
+                document.getElementById("qwerty4").style.scrollBehavior = "auto"
+                document.getElementById("qwerty4").scrollLeft = 700
+                document.getElementById("qwerty4").style.scrollBehavior = "smooth"
+                document.getElementById("qwerty4").scrollLeft -= 100
+            }
+                for(c=1;c<a;c++){               
+                        for(d=1;d<a+1;d++){
+                            canvas = document.getElementById("l_"+c+'_'+d);
+                            ctx = canvas.getContext('2d');
+                            ctx.clearRect(0, 0, b, b);
+                            }
+                        }
+                    for(e=1;e<a;e++){
+                        canvas = document.getElementById("l_"+c+'_'+e);
+                        ctx = canvas.getContext('2d');
+                        ctx.clearRect(0, 0, b, b);
+                }   
+            document.getElementById("start").innerHTML = "<img src='0.jpg'><img src='0.jpg'><img src='dwukropek.jpg'><img src='0.jpg'><img src='0.jpg'><img src='dwukropek.jpg'><img src='0.jpg'><img src='0.jpg'><img src='kropka.jpg'><img src='0.jpg'><img src='0.jpg'><img src='0.jpg'>" 
+        }
+        }
+        function dalej(){
+            if(zezwolenie){
+            if(numerobrazka!=4){
+                numerobrazka=numerobrazka+1;
+                document.getElementById("qwerty4").scrollLeft += 100    
+            }
+            else if(numerobrazka==4){
+                numerobrazka=0;
+                document.getElementById("qwerty4").style.scrollBehavior = "auto"
+                document.getElementById("qwerty4").scrollLeft = 0
+                document.getElementById("qwerty4").style.scrollBehavior = "smooth"
+                document.getElementById("qwerty4").scrollLeft += 100
+            }
+                    for(c=1;c<a;c++){               
+                        for(d=1;d<a+1;d++){
+                            canvas = document.getElementById("l_"+c+'_'+d);
+                            ctx = canvas.getContext('2d');
+                            ctx.clearRect(0, 0, b, b);
+                            }
+                        }
+                    for(e=1;e<a;e++){
+                        canvas = document.getElementById("l_"+c+'_'+e);
+                        ctx = canvas.getContext('2d');
+                        ctx.clearRect(0, 0, b, b);
+                    }   
+            document.getElementById("start").innerHTML = "<img src='0.jpg'><img src='0.jpg'><img src='dwukropek.jpg'><img src='0.jpg'><img src='0.jpg'><img src='dwukropek.jpg'><img src='0.jpg'><img src='0.jpg'><img src='kropka.jpg'><img src='0.jpg'><img src='0.jpg'><img src='0.jpg'>" 
+        }
+        }
+        function zegarek(){
+            funkcja();
+            shuflowanie = a*a*15;
+            licznik=0;
+            function przesuniecie(){
+                
+                for(licznik=0;licznik<shuflowanie;licznik++){
+                    
+                kierunek = Math.floor(Math.random()*4)+1
+                pustepole = document.getElementById("l_"+a+"_"+a).className
+                pustepole2=pustepole.split("_")
+                y=parseFloat(pustepole2[1])
+                x=parseFloat(pustepole2[2])
+                if(kierunek==1){
+                    if(tablicasprawdzajaca[y][x+1]!=0){ 
+                        z=x+1
+                        elemencik=document.getElementsByClassName("p_"+y+"_"+z)[0].id
+                        aaaaa=document.getElementById("l_"+a+"_"+a).style.left
+                        bbbbb=document.getElementById(elemencik).style.left
+                        document.getElementById("l_"+a+"_"+a).style.left=bbbbb
+                        document.getElementById(elemencik).style.left=aaaaa
+                        tablica[y][x+1]="l_"+a+"_"+a
+                        tablica[y][x]= elemencik
+                        document.getElementById("l_"+a+"_"+a).className=document.getElementById(elemencik).className
+                        document.getElementById(elemencik).className=pustepole
+                    }
+                }
+                else if(kierunek==2){
+                    if(tablicasprawdzajaca[y+1][x]!=0){
+                        z=y+1
+                        elemencik=document.getElementsByClassName("p_"+z+"_"+x)[0].id
+                        aaaaa=document.getElementById("l_"+a+"_"+a).style.top
+                        bbbbb=document.getElementById(elemencik).style.top
+                        document.getElementById("l_"+a+"_"+a).style.top=bbbbb
+                        document.getElementById(elemencik).style.top=aaaaa
+                        tablica[y+1][x]="l_"+a+"_"+a
+                        tablica[y][x]= elemencik
+                        document.getElementById("l_"+a+"_"+a).className=document.getElementById(elemencik).className
+                        document.getElementById(elemencik).className=pustepole  
+                    }
+                }  
+                else if(kierunek==3){
+                    if(tablicasprawdzajaca[y][x-1]!=0){
+                        z=x-1
+                        elemencik=document.getElementsByClassName("p_"+y+"_"+z)[0].id
+                        aaaaa=document.getElementById("l_"+a+"_"+a).style.left
+                        bbbbb=document.getElementById(elemencik).style.left
+                        document.getElementById("l_"+a+"_"+a).style.left=bbbbb
+                        document.getElementById(elemencik).style.left=aaaaa
+                        tablica[y][x-1]="l_"+a+"_"+a
+                        tablica[y][x]= elemencik
+                        document.getElementById("l_"+a+"_"+a).className=document.getElementById(elemencik).className
+                        document.getElementById(elemencik).className=pustepole
+                    }
+                }
+                else if(kierunek==4){
+                    if(tablicasprawdzajaca[y-1][x]!=0){
+                        z=y-1
+                        elemencik=document.getElementsByClassName("p_"+z+"_"+x)[0].id
+                        aaaaa=document.getElementById("l_"+a+"_"+a).style.top
+                        bbbbb=document.getElementById(elemencik).style.top
+                        document.getElementById("l_"+a+"_"+a).style.top=bbbbb
+                        document.getElementById(elemencik).style.top=aaaaa
+                        tablica[y-1][x]="l_"+a+"_"+a
+                        tablica[y][x]= elemencik
+                        document.getElementById("l_"+a+"_"+a).className=document.getElementById(elemencik).className
+                        document.getElementById(elemencik).className=pustepole
+                    }
+                } 
+                } 
+                
+                if(licznik==shuflowanie){
+                    
+                    czas();
+                }
+            }
+            function myFunction() {
+                
+                    przesuniecie();
+                
+            }
+            myFunction();
+            zezwolenie = false;
+            function czas(){
+                czas1 = new Date()
+                rozpoczecie = czas1.getTime()
+                jazda = setInterval(function(){ 
+                czas2 = new Date()
+                poczatek = czas2.getTime()
+                czastrwania = poczatek - rozpoczecie
+                    var godzina = (Math.floor(czastrwania / 3600000)).toString()
+                    var minuta = (Math.floor(czastrwania / 60000) - godzina * 60).toString()
+                    var sekunda = (((Math.floor(czastrwania / 1000)) - minuta * 60) - godzina * 3600).toString()
+                    var milisekunda = czastrwania.toString().slice(-3)
+                while (milisekunda.length < 3) {
+                    milisekunda = "0" + milisekunda
+                    }
+                while (sekunda.length < 2) {
+                    sekunda = "0" + sekunda
+                    }   
+                while (minuta.length < 2) {
+                    minuta = "0" + minuta
+                    }
+                while (godzina.length < 2) {
+                    godzina = "0" + godzina
+                    }
+                var czas3 = godzina + ":" + minuta + ":" + sekunda + "." + milisekunda
+                czas3=czas3.split("")
+                czas4=""
+                for(var a=0;a<12;a++){
+                    if(czas3[a]=="0"){
+                        czas4 += '<img src="0.jpg">'
+                    }
+                    else if(czas3[a]=="1"){
+                        czas4 += '<img src="1.jpg">'
+                    } 
+                    else if(czas3[a]=="2"){
+                        czas4 += '<img src="2.jpg">'
+                    }
+                    else if(czas3[a]=="3"){
+                        czas4 += '<img src="3.jpg">'
+                    }
+                    else if(czas3[a]=="4"){
+                        czas4 += '<img src="4.jpg">'
+                    }
+                    else if(czas3[a]=="5"){
+                        czas4 += '<img src="5.jpg">'
+                    }
+                    else if(czas3[a]=="6"){
+                        czas4 += '<img src="6.jpg">'
+                    }
+                    else if(czas3[a]=="7"){
+                        czas4 += '<img src="7.jpg">'
+                    }
+                    else if(czas3[a]=="8"){
+                        czas4 += '<img src="8.jpg">'
+                    }
+                    else if(czas3[a]=="9"){
+                        czas4 += '<img src="9.jpg">'
+                    }
+                    else if(czas3[a]=="."){
+                        czas4 += '<img src="kropka.jpg">'
+                    }
+                    else if(czas3[a]==":"){
+                        czas4 += '<img src="dwukropek.jpg">'
+                    }          
+                }
+                czaskoncowy=czas3.join("")
+                document.getElementById("start").innerHTML = czas4
+                }, 1);
+            }
+        }
+        function zegarek2(){
+            clearInterval(jazda);
+            zezwolenie = true;
+        }
+        function przesunieciekafla(){
+            pozycja = event.target.className
+            pozycja2 = pozycja
+            pozycja = pozycja.split("_")
+            elemencik=event.target.id
+            y = parseFloat(pozycja[1])
+            x = parseFloat(pozycja[2])
+            pustepole = document.getElementById("l_"+a+"_"+a).className
+                if(tablicasprawdzajaca[y][x+1]==document.getElementById("l_"+a+"_"+a).className){
+                    aaaaa=document.getElementById("l_"+a+"_"+a).style.left
+                    bbbbb=document.getElementById(elemencik).style.left
+                    document.getElementById("l_"+a+"_"+a).style.left=bbbbb
+                    document.getElementById(elemencik).style.left=aaaaa
+                    tablica[y][x]="l_"+a+"_"+a
+                    tablica[y][x+1]= elemencik
+                    document.getElementById("l_"+a+"_"+a).className=pozycja2
+                    document.getElementById(elemencik).className=pustepole
+                }
+                else if(tablicasprawdzajaca[y][x-1]==document.getElementById("l_"+a+"_"+a).className){
+                    aaaaa=document.getElementById("l_"+a+"_"+a).style.left
+                    bbbbb=document.getElementById(elemencik).style.left
+                    document.getElementById("l_"+a+"_"+a).style.left=bbbbb
+                    document.getElementById(elemencik).style.left=aaaaa
+                    tablica[y][x]="l_"+a+"_"+a
+                    tablica[y][x-1]= elemencik
+                    document.getElementById("l_"+a+"_"+a).className=pozycja2
+                    document.getElementById(elemencik).className=pustepole
+                }
+                else if(tablicasprawdzajaca[y+1][x]==document.getElementById("l_"+a+"_"+a).className){
+                    aaaaa=document.getElementById("l_"+a+"_"+a).style.top
+                    bbbbb=document.getElementById(elemencik).style.top
+                    document.getElementById("l_"+a+"_"+a).style.top=bbbbb
+                    document.getElementById(elemencik).style.top=aaaaa
+                    tablica[y][x]="l_"+a+"_"+a
+                    tablica[y+1][x]= elemencik
+                    document.getElementById("l_"+a+"_"+a).className=pozycja2
+                    document.getElementById(elemencik).className=pustepole
+                }
+                else if(tablicasprawdzajaca[y-1][x]==document.getElementById("l_"+a+"_"+a).className){
+                    aaaaa=document.getElementById("l_"+a+"_"+a).style.top
+                    bbbbb=document.getElementById(elemencik).style.top
+                    document.getElementById("l_"+a+"_"+a).style.top=bbbbb
+                    document.getElementById(elemencik).style.top=aaaaa
+                    tablica[y][x]="l_"+a+"_"+a
+                    tablica[y-1][x]= elemencik
+                    document.getElementById("l_"+a+"_"+a).className=pozycja2
+                    document.getElementById(elemencik).className=pustepole
+                }  
+            wygrana=0;
+            for(licznik=1;licznik<a+1;licznik++){
+                for(licznik2=1;licznik2<a+1;licznik2++){
+                    if(tablica[licznik][licznik2]!=warunekwygrania[licznik][licznik2]){
+                        wygrana++
+                    }
+                }
+            } 
+            if(wygrana==0){
+				nazwa = "";
+                clearInterval(jazda);
+                setTimeout(()=>{
+
+                 nazwa = prompt("podaj nazwe")
+                 document.cookie= numerwyniku+"= " +czastrwania+","+nazwa+","+a+","+czaskoncowy
+				 
+				 console.log("gg")
+                    
+                    dlugosccookie = document.cookie.split("; ")
+                    if(document.cookie==""){
+                    numerwyniku=1
+                    }
+                    else{
+                    numerwyniku=dlugosccookie.length+1
+                    }
+                    
+                    console.log(numerwyniku+"= " +czastrwania+","+nazwa+","+a+","+czaskoncowy)
+					
+                 cookiecus();
+
+                }), 10;   
+                    
+                    zezwolenie = true;
+                    /*console.log("gg")
+                    
+                    dlugosccookie = document.cookie.split("; ")
+                    if(document.cookie==""){
+                    numerwyniku=1
+                    }
+                    else{
+                    numerwyniku=dlugosccookie.length+1
+                    }
+                    
+                    console.log(numerwyniku+"= " +czastrwania+","+nazwa+","+a+","+czaskoncowy)*/
+                    
+                    
+                
+                
+                /*
+                zezwolenie = true;
+                console.log("gg")
+                nazwa = prompt("podaj nazwe")
+                dlugosccookie = document.cookie.split("; ")
+                if(document.cookie==""){
+                    numerwyniku=1
+                }
+                else{
+                numerwyniku=dlugosccookie.length+1
+                }
+                document.cookie= numerwyniku+"= " +czastrwania+","+nazwa+","+a+","+czaskoncowy
+                console.log(numerwyniku+"= " +czastrwania+","+nazwa+","+a+","+czaskoncowy)
+                cookiecus();
+                clearInterval(jazda);
+                */
+            }
+        }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function czekajNaWynikZKomisji(x) {
+    let i = 0
+    let id;
+    return new Promise(policz => {
+        id = setInterval(() => {
+            console.log(i)
+            i++
+            if (i > 3) {
+                policz(x * x)
+                clearInterval(id)
+            }
+        }, 500);
+
+    });
+    }   
+    async function czekamyNaWynikiWyborow() {
+    console.log("komisje zaczynają liczyć wyniki wyborów...")
+
+    let a = await czekajNaWynikZKomisji(10)
+    console.log("wynik z komisji a=", a)
+
+    let b = await czekajNaWynikZKomisji(20)
+    console.log("wynik z komisji b=", b)
+
+    console.log("sumaryczne wyniki wyborów = ", a + b )
+    }
+    </script>
+</head>
+<body>
+    <button onclick="czekamyNaWynikiWyborow()">Click me</button> 
+</body>
+</html>

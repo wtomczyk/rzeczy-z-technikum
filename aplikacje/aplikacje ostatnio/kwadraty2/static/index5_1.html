@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+    #prawo{
+        width: 300px;
+        height:100vh;
+        background-color: blanchedalmond;
+        float:left;
+        position: relative;
+    }
+    #lewo{
+        width:200px;
+        float: left;
+        height:100vh;
+        background-color: gray
+    }
+    #select{
+        width:100px;
+        margin:20px 20px
+    }
+    img{
+        width:50px;
+        height:50px
+    }
+    .hex{
+        width:50px;
+        height:50px;
+        background-color: red;
+        position: absolute
+    }
+    </style>
+</head>
+<body>
+    <div id="lewo">
+        <select id="select">
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+    </div>
+    <div id="prawo">
+
+    </div>
+
+    <script>
+        var aa = 0
+        var bb = 0
+        var licznik=document.getElementById("select").value
+        console.log(licznik)
+        for(var a=0;a<licznik;a++){
+            var obrazek = document.createElement("div")
+            obrazek.classList.add("hex")    
+            document.getElementById("prawo").appendChild(obrazek)
+            obrazek.style.backgroundImage = "url('hex.jpg')";
+            obrazek.style.backgroundSize="100% 100%"
+            obrazek.style.top=aa+"px"
+            aa+=50
+        }
+    </script>
+</body>
+</html>

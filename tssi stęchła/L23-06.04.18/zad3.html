@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="author" content="Grzegorz Mikołajczyk"/>
+	<title> title </title>
+	<style>
+		form{
+			width:150px;
+			background:#adebeb;
+			padding:10px;
+			position:relative;
+			float:left;
+			border:2px dotted black;
+			margin:0 5px;
+		}
+		label{
+			display:block;
+		}
+		input{
+			position:absolute;
+			right:20px;
+		}
+		input[type="submit"]{
+			position:static;
+			width:100%;
+			height:30px;
+			margin-top:20px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<h1>Ulubiony zawód:</h1>
+		<label><input type="hidden" name="1" value="2137"></label>
+		
+		<input type="submit" value="wybierz">
+	</form>
+</body>
+</html>

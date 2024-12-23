@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="author" content="Grzegorz Mikołajczyk"/>
+	<title> title </title>
+	<style>
+		form{
+			width:600px;
+			background:#adebeb;
+			padding:10px;
+			position:relative;
+			float:left;
+			border:2px dotted black;
+			margin:0 5px;
+		}
+		.field1 label{
+			margin-left:20px;
+		}
+		
+		.field2 label{
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset class="field1">
+		<legend> Kto wygra mistrzostwa?</legend>
+			<label><input type="radio" name="1">Niemcy</label>
+			<label><input type="radio" name="1">Polska</label>
+			<label><input type="radio" name="1">Francja</label>
+			<label><input type="radio" name="1">Włochy</label>
+		</fieldset>
+		
+		<fieldset class="field2">
+		<legend>Kto zostanie powołany do kadry</legend>
+			<label><input type="checkbox" name="2">Lewandowski</label>
+			<label><input type="checkbox" name="3">Błaszczykowki</label>
+			<label><input type="checkbox" name="4">Żurawkis</label>
+			<label><input type="checkbox" name="5">Dudek</label>
+		</fieldset>
+		
+		<input type="submit" value="wybierz">
+	</form>
+</body>
+</html>

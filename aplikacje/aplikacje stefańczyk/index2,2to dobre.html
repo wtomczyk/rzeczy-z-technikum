@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>tytuł</title>
+
+		<script src="libs/jquery331.js"></script>
+		<script>
+		$(document).ready(function (){
+			var okno = $(window).width();
+			var szerokoscpasek = 20;
+			$("#lewy").css("width", okno/2-szerokoscpasek/2);
+            $("#prawy").css("width", okno/2-szerokoscpasek/2);
+            $("#pasek").css("width", szerokoscpasek);
+			
+			$("#pasek").on("mouseover", function() {
+				$(window).on("mousedown", function () {
+					$(window).on("mousemove", function (e) {
+						winWidth = $(window).width();
+						$("#lewy").css("width", e.clientX-szerokoscpasek/2);
+                        $("#prawy").css("width", okno - e.clientX-szerokoscpasek/2);
+						})
+                })
+                $(window).on("mouseup", function () {
+                    $(window).off("mousemove")
+                })
+            })
+			$("#lim").on("mouseout", function() {
+                $(window).off("mousedown");
+            })
+		})
+		</script>
+		<style>
+		body 
+		{
+        margin: 0;
+        padding: 0;
+        }
+		#lewy
+		{
+		background-color: gray;
+		float:left;
+		}
+		#prawy
+		{
+		background-color: yellow;
+		float:right;
+		}
+		#pasek
+		{
+		background-color: blue;
+		float:left;
+		}
+		div 
+		{
+        width: 30px;
+        height: 100vh;
+        font-size: 40px;
+        }
+		</style>
+	</head>
+	<body>
+		<div id="lewy">
+		A
+		</div>
+		<div id="pasek">
+		</div>
+		<div id="prawy">
+		B
+		</div>
+    </body>
+</html>
+	

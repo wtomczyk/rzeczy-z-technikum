@@ -1,0 +1,65 @@
+#baner
+{
+	background-color: #301B5E;
+	color: #FFFFFF;
+	font-family:Arial;
+	height: 60px;
+	padding: 20px;
+}
+#lewy
+{
+	background-color: #0193DA;
+	width: 60%;
+	height: 700px;
+	float: left;
+}
+#lewy label
+{
+	display: block;
+}
+#lewy input[type=submit]
+{
+	background-color: orange;
+	color: #FFFFFF;
+	border: none;
+	padding: 20px;
+}
+#lewy input[type=reset]
+{
+	background-color: orange;
+	color: #FFFFFF;
+	border: none;
+	padding: 20px;
+}
+#prawy
+{
+	float: left;
+	background-color: #2DAFEE;
+	width: 40%;
+	height: 700px;
+	text-align: center;
+}
+#prawy ul
+{
+	list-style-type: none;
+}
+#prawy img
+{
+	padding: 20px;
+	border: 1px dotted orange;
+}
+#prawy a
+{
+	color: white;
+}
+#prawy a:hover
+{
+	color: red;
+}
+#stopka
+{
+	clear: both;
+	background-color: #301B5E;
+	color: #FFFFFF;
+	text-align: center;
+}

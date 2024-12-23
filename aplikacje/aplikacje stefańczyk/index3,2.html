@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="libs/jquery331.js"></script>
+    <script>
+	var tablica = [];
+	$(document).ready(function () {
+	var d=0;
+	var g=1;
+	for (a=0;a<5;a++){
+		var c=0;
+		for (b=0;b<5;b++){
+		var div = $("<div>").addClass("bbb")
+							.css("left",c)
+							.css("top",d)
+							.css("background-color", "white")
+		$("#glowny").append(div)
+		c=c+60;
+		}
+		d=d+60;
+	}
+	var h=0;
+	var i=0;
+	$(".bbb").on("click", function(){
+			this.id="b"
+			if(document.getElementById('b').style.backgroundColor=="white")
+				{
+				var X=this.style.left;
+				var Y=this.style.top;
+				var koordynaty = {x:X, y:Y};
+				tablica.push(koordynaty);
+				console.log(koordynaty);
+				$(this).css("background-color", "yellow");
+				i=i+1;
+				h=i;
+				}
+			else
+				{
+				$(this).css("background-color", "white");
+				tablica.pop();
+				i=i-1;
+				h=i;
+				}
+			document.getElementById("b").removeAttribute("id")
+		})
+		var div2 = $("<div>").addClass("ccc")
+							.css("left",70)
+							.css("top",350)
+		$("#glowny").append(div2)
+		var div3 = $("<div>").addClass("ddd")
+							.css("left",170)
+							.css("top",350)
+		$("#glowny").append(div3)	
+	//i to dlugosc tablicy
+	var u=0;
+	var v=i;
+	var r=0;
+		$("#jeden").on("click", function(){
+			if(h>2){
+				$(".ccc").css("left", tablica[u].x)
+				$(".ccc").css("top", tablica[u].y)
+				$(".ddd").css("left", tablica[i-1].x)
+				$(".ddd").css("top", tablica[i-1].y)
+				g=0;
+				u=u+1;
+				i=i-1;
+			}
+		})
+		$("#dwa").on("click", function(){
+		if(g==0){
+			if(u!=h){
+				if(r==0){
+				$(".ccc").css("left", tablica[u].x)
+				$(".ccc").css("top", tablica[u].y)
+				r=1;
+				}
+				else if(r==1){
+				$(".ddd").css("left", tablica[i-1].x)
+				$(".ddd").css("top", tablica[i-1].y)
+				u=u+1;
+				i=i-1;
+				r=0;
+				}
+				}
+				}
+				})
+		$("#trzy").on("click", function(){
+			$(".ccc").css("left", 70)
+			$(".ccc").css("top", 350)	
+			$(".ddd").css("left", 170)
+			$(".ddd").css("top", 350)
+			$(".bbb").css("background-color", "white");
+			tablica.splice(0,h)
+			g=1;
+			h=0;
+			i=0;
+			u=0;
+			console.log(tablica)
+		})			
+	})
+	</script>
+	<style>
+	#glowny
+	{
+	width:302px;
+	height:302px;
+	border:1px solid black;
+	position:relative;
+	}
+	.bbb
+	{
+	border:1px solid black;
+	width:60px;
+	height:60px;
+	position:absolute;
+	}
+	.ccc
+	{
+	border:1px solid black;
+	width:60px;
+	height:60px;
+	position:absolute;
+	background-color:blue;
+	}
+	.ddd
+	{
+	border:1px solid black;
+	width:60px;
+	height:60px;
+	position:absolute;
+	background-color:red;
+	}
+	button
+	{
+	width:99px;
+	height:35px;
+	margin-top:5px;
+	font-size:13px;
+	}
+	</style>
+</head>
+<body>
+<div id="glowny">
+</div>
+<button id="jeden">zacznij grę</button>
+<button id="dwa">następny ruch</button>
+<button id="trzy">reset</button>
+</body>
+</html>

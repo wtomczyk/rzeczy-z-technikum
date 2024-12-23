@@ -1,0 +1,10 @@
+C:\Users\Piwowarski Michał\source\repos\serverTcp\serverTcp\bin\Debug\serverTcp.exe.config
+C:\Users\Piwowarski Michał\source\repos\serverTcp\serverTcp\bin\Debug\serverTcp.exe
+C:\Users\Piwowarski Michał\source\repos\serverTcp\serverTcp\bin\Debug\serverTcp.pdb
+C:\Users\Piwowarski Michał\source\repos\serverTcp\serverTcp\obj\Debug\serverTcp.csprojAssemblyReference.cache
+C:\Users\Piwowarski Michał\source\repos\serverTcp\serverTcp\obj\Debug\serverTcp.Properties.Resources.resources
+C:\Users\Piwowarski Michał\source\repos\serverTcp\serverTcp\obj\Debug\serverTcp.csproj.GenerateResource.cache
+C:\Users\Piwowarski Michał\source\repos\serverTcp\serverTcp\obj\Debug\serverTcp.csproj.CoreCompileInputs.cache
+C:\Users\Piwowarski Michał\source\repos\serverTcp\serverTcp\obj\Debug\serverTcp.exe
+C:\Users\Piwowarski Michał\source\repos\serverTcp\serverTcp\obj\Debug\serverTcp.pdb
+C:\Users\Piwowarski Michał\source\repos\serverTcp\serverTcp\obj\Debug\serverTcp.fWindow.resources

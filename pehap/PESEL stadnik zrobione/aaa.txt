@@ -1,0 +1,4 @@
+SELECT nazwa FROM `waluty`
+SELECT * FROM kursy LEFT JOIN waluty ON kursy.id_waluta = waluty.id_waluta WHERE waluty.nazwa = "dolar"
+SELECT * FROM kursy LEFT JOIN waluty ON kursy.id_waluta = waluty.id_waluta WHERE kursy.data = "2018-08-19"
+SELECT * FROM kursy LEFT JOIN waluty ON kursy.id_waluta = waluty.id_waluta WHERE waluty.nazwa = "frank szwajcarski" ORDER BY kursy.skup DESC LIMIT 1

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    td{
+        border:1px solid black;
+    }
+    table{
+        margin:0 auto
+    }
+    </style>
+    <script>
+    var a=""
+    var xpath = function(xpathToExecute,aaa){
+    var result = [];
+    var nodesSnapshot = document.evaluate(xpathToExecute, aaa, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );
+    for ( var i=0 ; i < nodesSnapshot.snapshotLength; i++ ){
+        result.push( nodesSnapshot.snapshotItem(i) );
+    }
+    return result;
+    }
+    window.onload = function() {
+        fetch('http://localhost:5500/data.xml')
+            .then(res => res.text())
+            .then(str =>
+            new window.DOMParser().parseFromString(str, 'text/xml')
+                )
+            .then(data => {
+                console.log(data)
+                a=data
+                var lista = "<table><tr>"
+                console.log(xpath("//row[NAZWA_DOD='województwo']",a))
+                var województwa = xpath("//row[NAZWA_DOD='województwo']/WOJ",a)
+                var nazwy = xpath("//row[NAZWA_DOD='województwo']/NAZWA",a)
+                for(var licznik = 0;licznik<województwa.length;licznik++){
+                    console.log(województwa[licznik])
+                    console.log(nazwy[licznik])
+                    lista+="<td class='wojtd' id='aaa_"+województwa[licznik].innerHTML+"' onclick='miasta(this,a)'>"+nazwy[licznik].innerHTML+"</td>"
+                    if(licznik%5==4){
+                        lista+="</tr><tr>"
+                    }
+                }
+                lista+="</tr></table>"
+                console.log(lista)
+                document.getElementById('aaa1').innerHTML=lista
+            })
+    };
+    function miasta(a,lista){
+        console.log(a.id)
+        console.log(a.innerHTML)
+        var idwoj = a.id.split("_")[1]
+        console.log(idwoj)
+        console.log(lista)
+        var miasta = xpath("//row[WOJ='"+idwoj+"'][NAZWA_DOD='miasto']/NAZWA",lista)
+        var miasta2 = xpath("//row[WOJ='"+idwoj+"'][NAZWA_DOD='miasto na prawach powiatu']/NAZWA",lista)
+        console.log(miasta2)
+        var lista = "<table><tr>"
+        var aaa=1
+        for(var licznik = 0;licznik<miasta.length;licznik++){
+
+            lista+="<td class='wojtd'>"+miasta[licznik].innerHTML+"</td>"
+            if(aaa%5==0){
+                lista+="</tr><tr>"
+                aaa=0
+            }
+            aaa++
+        }
+        for(var licznik = 0;licznik<miasta2.length;licznik++){
+
+        lista+="<td class='wojtd'>"+miasta2[licznik].innerHTML+"</td>"
+            if(aaa%5==0){
+                lista+="</tr><tr>"
+                aaa=0
+            }aaa++
+        }
+                lista+="</tr></table>"
+                document.getElementById('aaa2').innerHTML=lista
+        }
+    </script>
+</head>
+<body>
+    <div id="aaa1"></div>
+    <div id="aaa2"></div>
+</body>
+</html>

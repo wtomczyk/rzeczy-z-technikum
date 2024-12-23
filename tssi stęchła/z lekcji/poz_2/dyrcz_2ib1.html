@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Sprawdzian Pozycjonowanie</title>
+		<meta charset='utf-8'/>
+		<meta name='author' content='Jakub Dyrcz 2ib'/>
+		<meta name='keywords' content='pozycjonowanie'/>
+		<style>
+			*
+			{
+				margin: 0;
+				padding: 0;
+				font-family: arial;
+			}
+			.poj
+			{
+				width: 960px;
+				margin: 0 auto;
+				padding: 5px;
+				
+			}
+			.cont
+			{
+				background: rgb(254,206,168);
+				border: 2px solid black;
+				border-radius: 25px;
+			}
+			.hp
+			{
+				width: 600px;
+				margin: 20px auto;
+				position: relative;
+				margin-left: 100px;
+			}
+			header
+			{
+				text-align: center;
+				letter-spacing: 10px;
+				color: black;
+				padding: 50px 0 0 20px;
+				font-weight: bolder;
+				font-size: 2em;
+			}
+			.txt
+			{
+				background: rgb(153,153,153);
+				display: inline-block;
+				width: 200px;
+				color: white;
+				position: absolute;
+				top: 50px;
+				right: 0;
+				padding: 15px;
+			}
+			figure
+			{
+				display: inline-block;
+				width: 200px;
+				height: 200px;
+				position: relative;
+			}
+			figure:hover figcaption
+			{
+				opacity: 1;
+			}
+			img
+			{
+				width: 200px;
+				height: 200px;
+			}
+			figcaption
+			{
+				position: absolute;
+				top: 20px;
+				left: 300px;
+				width: 400px;
+				background: rgb(153,153,153);
+				color: white;
+				transition: opacity 2s;
+				opacity: 0;
+				z-index: 10;
+				padding: 15px;
+			}
+			.txt h1
+			{
+				text-align:center;
+			}
+			h1
+			{
+				font-size: 1.25em;
+				font-weight: bolder;
+				color: black;
+			}
+			footer
+			{
+				border-left: 2px solid black;
+				border-bottom: 2px solid black;
+				border-right: 2px solid black;
+				border-radius: 0 0 25px 25px;
+				padding: 20px;
+				width: 400px;
+				background: rgb(255,132,124);
+				color: white;
+				margin-left: 450px;
+				text-align: center;
+			}
+			u
+			{
+				text-decoration: none;
+				font-weight: bolder;
+			}
+			</style>
+	</head>
+	
+	<body>
+		<div class='poj'>
+			<div class='cont'>
+				<header>
+					Sprawdzian wiadomości<br> pozycjonowanie
+				</header>
+					
+				<div class='hp'>
+					<figure>
+						<img src='rys1.jpg' alt='asd'/>
+						<figcaption>
+							<h1>Opis obrazka 1</h1>
+							Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.
+						</figcaption>
+					</figure>
+					
+					<div class='txt'>
+						<h1>Uwaga #1!</h1>
+						Opis wyświetli się po najechaniu myszką na obrazek1 albo tutaj
+					</div>
+				</div>
+					
+				<div  class='hp'>
+					<figure>
+						<img src='rys2.jpg' alt='asd'/>
+						<figcaption>
+							<h1>Opis obrazka 2</h1>
+							Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.
+						</figcaption>
+					</figure>
+					
+					<div class='txt'>
+						<h1>Uwaga #2!</h1>
+						Opis wyświetli się po najechaniu myszką na obrazek2 albo tutaj
+						</div>
+				</div>
+			</div>
+			
+			<footer>
+				Strona został utworzony <u>Jakuba Dyrcza</u>
+			</footer>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+<!--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.
+
+Tło:	background: rgb(254,206,168);
+
+bloki:	background: rgb(153,153,153);
+
+stopka:	background: rgb(255,132,124);
+
+transition: opacity 1s; - przejście na nowe opacity po 1 sekundzie
+
+img:hover .tekst:hover figcaption
+{
+	opacity:1;
+}
+-->

@@ -1,0 +1,7 @@
+C:\Users\Tomczyk Wojciech\source\repos\Threads\Threads\bin\Debug\Threads.exe.config
+C:\Users\Tomczyk Wojciech\source\repos\Threads\Threads\bin\Debug\Threads.exe
+C:\Users\Tomczyk Wojciech\source\repos\Threads\Threads\bin\Debug\Threads.pdb
+C:\Users\Tomczyk Wojciech\source\repos\Threads\Threads\obj\Debug\Threads.csprojAssemblyReference.cache
+C:\Users\Tomczyk Wojciech\source\repos\Threads\Threads\obj\Debug\Threads.csproj.CoreCompileInputs.cache
+C:\Users\Tomczyk Wojciech\source\repos\Threads\Threads\obj\Debug\Threads.exe
+C:\Users\Tomczyk Wojciech\source\repos\Threads\Threads\obj\Debug\Threads.pdb

@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='UTF-8'/>
+		<title>menu rozwijane</title>
+		<style>
+			*
+			{
+				margin: 0;
+				padding: 0;
+			}
+			#cont
+			{
+				width: 960px;
+				margin: 0 auto;
+			}
+			nav
+			{
+				background: lightblue;
+			}
+			nav ul
+			{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			nav li
+			{
+				display: inline;
+			}
+			nav a
+			{
+				display: inline-block;
+				background: gray;
+				color: white;
+				border: 2px solid black;
+				width: 120px;
+				padding: 10px 20px;
+				margin: 0;
+				margin-top: 2px;
+				border-radius: 5px 5px 0 0;
+				text-decoration: none;
+			}
+			nav ul ul
+			{
+				position: absolute;
+				top: 100%;
+				display: none;
+			}
+			nav ul ul a
+			{
+				display: block;
+				background: rgb(192, 192, 192);
+				color: black;
+				margin: 0;
+				border-radius: 0;
+			}
+			nav ul ul ul
+			{
+				position: absolute;
+				top: 0;
+				left: 100%;
+				display: none;
+			}
+			nav ul ul ul a
+			{
+				background: rgb(223,223,223);
+			}
+			nav ul li:hover >ul
+			{
+				display: block;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cont">
+			<nav>
+				<ul>
+					<li>
+						<a href=''>opcja0-0</a>
+						<ul>
+							<li>
+								<a href=''>opcja0-1</a>
+								<ul>
+									<li>
+										<a href=''>opcja0-1-1</a>
+									</li>
+									<li>
+										<a href=''>opcja0-1-2</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href=''>opcja0-2</a>
+								<ul>
+									<li>
+										<a href=''>opcja0-2-1</a>
+									</li>
+									<li>
+										<a href=''>opcja0-2-2</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href=''>opcja1-0</a>
+						<ul style='left:168px'>
+							<li>
+								<a href=''>opcja1-1</a>
+								<ul>
+									<li>
+										<a href=''>opcja1-1-1</a>
+									</li>
+									<li>
+										<a href=''>opcja1-1-2</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href=''>opcja1-2</a>
+								<ul>
+									<li>
+										<a href=''>opcja1-2-1</a>
+									</li>
+									<li>
+										<a href=''>opcja1-2-2</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href=''>opcja2-0</a>
+					</li>
+					<li>
+						<a href=''>opcja3-0</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</body>
+</html>

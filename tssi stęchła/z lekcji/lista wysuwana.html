@@ -1,0 +1,76 @@
+<html> 
+	<head>
+		<title>zadanie</title>
+		<meta name="author" content="Wojciech Tomczyk">
+		<meta charset="UTF-8">
+		<style>
+		ul
+		{
+		list-style-type:none;
+		padding:0;
+		margin:0;
+		position:relative;
+		}
+		li
+		{
+		display:inline;
+		}
+		a
+		{
+		display:inline-block;
+		border:1px solid black;
+		width:100px;
+		height:30px;
+		line-height:30px;
+		}
+		ul ul
+		{
+		position:absolute;
+		top:100%;
+		display:none;
+		}
+		ul ul a
+		{
+		display:block;
+		}
+		ul li:hover > ul
+		{
+		display:block;
+		}
+		ul .aaa
+		{
+		left:106px;
+		}
+		ul .bbb
+		{
+		left:212px;
+		}
+		body
+		{
+		min-width:400px;
+		}
+		</style>
+	</head>
+	<body>
+	<nav>
+		<ul>
+			<li><a href="">jeden 1</a>
+				<ul>
+					<li><a href="">dwa 1</a></li>
+					<li><a href="">dwa 2</a></li>
+				</ul>
+			</li>
+			<li><a href="">jeden 2</a><ul class="aaa">
+					<li><a href="">dwa 3</a></li>
+					<li><a href="">dwa 4</a></li>
+				</ul>
+			</li>
+			<li><a href="">jeden 3</a>
+			<ul class="bbb">
+					<li><a href="">dwa 5</a></li>
+					<li><a href="">dwa 6</a></li>
+				</ul></li>
+		</ul>
+		</nav>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<meta name="author" content="Wojciech Tomczyk 2ib">
+			<title>Strona</title>
+			<style>
+			body
+			{
+			background-image: url("./../obrazy/tlo.jpg");
+			background-repeat:repeat;
+			}
+			#calosc
+			{
+			width:1200px;
+			background-color:white;
+			margin:60px auto;
+			text-align:center;
+			border:1px solid black;
+			}
+			header
+			{
+			padding:20px 20px;
+			letter-spacing:5px;
+			border-bottom:1px solid black;
+			}
+			h2
+			{
+			padding:10px;
+			}
+			footer
+			{
+			border-top:1px solid black;
+			line-height:40px;
+			height:40px;
+			}
+			#powrot
+			{
+			padding:25px;
+			border-top:1px solid black;
+			}
+			#srodek
+			{
+			height:800px;
+			width:1200px;
+			}
+			div div div
+			{
+			border:1px solid green;
+			width:398px;
+			height:398px;
+			background-color:yellow;
+			float:left;
+			display:grid;
+			grid-template-columns: 20% 20% 20% 20% 20%;
+			grid-template-rows: 20% 20% 20% 20% 20%;
+			}
+			.aab
+			{
+			grid-column-start: 1;
+			grid-column-end:3;
+			}
+			.aabb
+			{
+			grid-column-start: 4;
+			}
+			#ccc
+			{
+			grid-row:3/6;
+			grid-column:3/6;
+			}
+			#cccc
+			{
+			grid-area:2/2/5/5;
+			}
+			#aaaaa
+			{
+			grid-template-columns:repeat(9, 40px);
+			grid-template-rows:repeat(9, 40px);
+			}
+			#aaaaaa
+			{
+			grid-template-columns:40px 80px 60px 1fr 40px;
+			grid-template-rows:40px 100px 1fr 60px;
+			}
+			</style>
+		</head>
+		<body>
+			<div id="calosc">
+				<header>
+					<h1> Kwadraty poustawiane przez grida </h1>
+				</header>
+				<div id="srodek">
+					<div id="a">
+						<img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa">
+					</div>
+					<div id="aa">
+						<img src="./../obrazy/kwadrat_blue.png" alt="aa" class="aab"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa" class="aab"><img src="./../obrazy/kwadrat_blue.png" alt="aa" class="aab"><img src="./../obrazy/kwadrat_blue.png" alt="aa" class="aab"><img src="./../obrazy/kwadrat_blue.png" alt="aa" class="aabb">
+					</div>
+					<div id="aaa">
+						<img src="./../obrazy/kwadrat_blue.png" alt="aa" id="ccc"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa">
+					</div>
+					<div id="aaaa">
+						<img src="./../obrazy/kwadrat_blue.png" alt="aa" id="cccc"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa">
+					</div>
+					<div id="aaaaa">
+						<img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa">
+					</div>
+					<div id="aaaaaa">
+						<img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa"><img src="./../obrazy/kwadrat_blue.png" alt="aa">
+					</div>
+				</div>
+				<div id="powrot">
+				<p><a href="./../podstrony/podstrona1.html" alt="a"><img src="./../obrazy/kwadrat_blue.png" alt="aa"></a></p>
+				</div>
+				<footer>
+					Strona wykonana przez Wojciecha Tomczyka 2ib
+				</footer>
+			</div>
+		</body>
+	</html>

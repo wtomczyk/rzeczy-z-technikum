@@ -1,0 +1,10 @@
+C:\Users\Tomczyk Wojciech\source\repos\Remote_Host_Port_Scanner\Remote_Host_Port_Scanner\bin\Debug\Remote_Host_Port_Scanner.exe.config
+C:\Users\Tomczyk Wojciech\source\repos\Remote_Host_Port_Scanner\Remote_Host_Port_Scanner\bin\Debug\Remote_Host_Port_Scanner.exe
+C:\Users\Tomczyk Wojciech\source\repos\Remote_Host_Port_Scanner\Remote_Host_Port_Scanner\bin\Debug\Remote_Host_Port_Scanner.pdb
+C:\Users\Tomczyk Wojciech\source\repos\Remote_Host_Port_Scanner\Remote_Host_Port_Scanner\obj\Debug\Remote_Host_Port_Scanner.csprojAssemblyReference.cache
+C:\Users\Tomczyk Wojciech\source\repos\Remote_Host_Port_Scanner\Remote_Host_Port_Scanner\obj\Debug\Remote_Host_Port_Scanner.Properties.Resources.resources
+C:\Users\Tomczyk Wojciech\source\repos\Remote_Host_Port_Scanner\Remote_Host_Port_Scanner\obj\Debug\Remote_Host_Port_Scanner.Scanner.resources
+C:\Users\Tomczyk Wojciech\source\repos\Remote_Host_Port_Scanner\Remote_Host_Port_Scanner\obj\Debug\Remote_Host_Port_Scanner.csproj.GenerateResource.cache
+C:\Users\Tomczyk Wojciech\source\repos\Remote_Host_Port_Scanner\Remote_Host_Port_Scanner\obj\Debug\Remote_Host_Port_Scanner.csproj.CoreCompileInputs.cache
+C:\Users\Tomczyk Wojciech\source\repos\Remote_Host_Port_Scanner\Remote_Host_Port_Scanner\obj\Debug\Remote_Host_Port_Scanner.exe
+C:\Users\Tomczyk Wojciech\source\repos\Remote_Host_Port_Scanner\Remote_Host_Port_Scanner\obj\Debug\Remote_Host_Port_Scanner.pdb

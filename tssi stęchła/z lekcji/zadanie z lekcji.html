@@ -1,0 +1,98 @@
+<html> 
+	<head>
+		<title>zadanie</title>
+		<meta name="author" content="Wojciech Tomczyk">
+		<meta charset="UTF-8">
+		<style>
+		ul
+		{
+		list-style-type:none;
+		padding:0;
+		margin:0;
+		position:relative;
+		z-index:3;
+		}
+		li
+		{
+		display:inline;
+		z-index:3;
+		}
+		a
+		{
+		display:inline-block;
+		border:1px solid green;
+		width:150px;
+		height:30px;
+		line-height:30px;
+		text-decoration:none;
+		color:black;
+		text-align:center;
+		background-color:gray;
+		z-index:3;
+		}
+		ul ul
+		{
+		position:absolute;
+		display:none;
+		left:468px;
+		}
+		ul ul a
+		{
+		display:block;
+		}
+		ul li:hover > ul
+		{
+		display:block;
+		}
+		nav
+		{
+		width:700px;
+		height:100px;
+		margin:0 auto;
+		padding:100px;
+		background-color:red;
+		position:relative;
+		z-index:1;
+		}
+		ul ul li a
+		{
+		background-color:white;
+		}
+		img
+		{
+		position:absolute;
+		}
+		.jeden
+		{
+		z-index:2;
+		top:30px;
+		right:100px;
+		}
+		.dwa
+		{
+		width:100px;
+		height:100px;
+		top:100px;
+		left:30px;
+		z-index:333;
+		}
+		</style>
+	</head>
+	<body>
+	<nav>
+	<ul>
+			<li><a href="">home</a></li>
+			<li><a href="">opcja1</a></li>
+			<li><a href="">opcja2</a></li>
+			<li><a href="">opcja3</a>
+			<ul class="bbb">
+					<li><a href="">opcja1</a></li>
+					<li><a href="">opcja2</a></li>
+			</ul></li>
+		</ul>
+		<img src="hat.png" alt="aa" class="jeden">
+	<img src="hat.png" alt="aa" class="dwa">
+	</nav>
+	
+	</body>
+</html>

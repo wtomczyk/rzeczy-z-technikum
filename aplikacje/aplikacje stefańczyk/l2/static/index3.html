@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("ready");
+            $("#clickDiv").on("click", function () {
+                console.log($("#inp1").val());
+                console.log($("#inp2").val());
+                $.ajax({
+                    url: "/",
+                    data: {
+                        a: $("#inp1").val(),
+                        b: $("#inp2").val()
+                    },
+                    type: "POST",
+                    success: function (data) {
+                        //czytamy odesłane z serwera dane
+                        var obj = JSON.parse(data)
+                        alert("odebrałem obliczenia z serwera \n" + obj.suma)
+
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr);
+                    },
+                });
+            })
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <form method="POST">
+        <input type="text" name="txt2" id="inp1">
+        <input type="text" name="txt1" id="inp2">
+        <div id="clickDiv">Kliknij</button>
+    </form>
+</body>
+
+</html>
